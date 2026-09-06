@@ -946,6 +946,15 @@ function applyTextSize(size){
   if(!articleEl) return;
   const px = size === 'small' ? 17 : size === 'medium' ? 20 : size === 'large' ? 24 : size === 'xlarge' ? (25 * 96 / 72) : 20;
   articleEl.style.fontSize = px + 'px';
+  // Scale the complete reading typography while preserving hierarchy.
+  const subhead = size === 'small' ? 18 : size === 'medium' ? 21 : size === 'large' ? 25 : (27 * 96 / 72);
+  const title = size === 'small' ? 25 : size === 'medium' ? 28 : size === 'large' ? 32 : (30 * 96 / 72);
+  const subtitle = size === 'small' ? 16 : size === 'medium' ? 18 : size === 'large' ? 21 : (22 * 96 / 72);
+  const byline = size === 'small' ? 13 : size === 'medium' ? 14 : size === 'large' ? 16 : (16 * 96 / 72);
+  articleEl.querySelectorAll('.subhead').forEach(el=>el.style.fontSize=subhead+'px');
+  articleEl.querySelectorAll('h2').forEach(el=>el.style.fontSize=title+'px');
+  articleEl.querySelectorAll('.sub').forEach(el=>el.style.fontSize=subtitle+'px');
+  articleEl.querySelectorAll('.by').forEach(el=>el.style.fontSize=byline+'px');
   localStorage.setItem(TEXT_SIZE_KEY,size);
   document.querySelectorAll('[data-textsize]').forEach(b=>{
     b.classList.toggle('active', b.dataset.textsize===size);
