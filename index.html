@@ -1,0 +1,1774 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESP1 – Unit 1: Influencer Marketing</title>
+<style>
+:root{--blue:#1556a8;--red:#c62828;--gray:#7a7f87;--article:#eef7ff;--think:#fff8d9;--thinkbd:#d7b742;--final:#edf5ff;--finalbd:#2f6fb8;--line:#d9dee5;--text:#20242a}
+*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#f5f7fa}button,input,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+.landing{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}.card{width:min(840px,96vw);background:#fff;border:1px solid var(--line);border-top:8px solid var(--blue);border-radius:16px;box-shadow:0 12px 30px #00000012;padding:28px 34px}.eyebrow{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}h1{margin:8px 0 3px}.unit{color:var(--red);font-weight:700;font-size:18px}.form{display:grid;grid-template-columns:140px 1fr;gap:12px 16px;margin:24px 0}.form label{font-weight:700;align-self:center}.form input,.inline{padding:10px;border:1px solid #b8c0c9;border-radius:7px;width:100%}.notice{background:#f4f8fd;border:1px solid #bfd5ee;border-radius:10px;padding:16px 18px;line-height:1.5}.notice h2{margin:0 0 8px;font-size:15px;color:var(--blue);text-transform:uppercase}.notice ul{margin:8px 0 0 20px;padding:0}.ack{display:flex;gap:9px;margin:18px 0}.primary{background:var(--blue);color:#fff;border:0;border-radius:8px;padding:11px 18px;font-weight:700}.primary:disabled{opacity:.45;cursor:not-allowed}
+.workspace{height:100vh;display:flex;flex-direction:column}.top{height:58px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 20px;flex:0 0 auto}.top b span{color:var(--red)}.top-id{display:flex;flex-direction:column;gap:3px}.instructor{font-size:12px;font-weight:500;color:#7a828c;letter-spacing:.015em}.term{font-weight:700;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px}.status{font-size:13px;color:#727b85}.nav{min-height:54px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:9px;padding:8px 18px;flex:0 0 auto}.nav button{border:0;border-radius:8px;padding:9px 12px;font-weight:700}.current{background:var(--blue)!important;color:#fff}.finished{background:#e5e7e9!important;color:#555}.unfinished{background:#fdeaea!important;color:var(--red)}.legend{margin-left:auto;font-size:12px;color:#6c737b}
+.main{flex:1;min-height:0;overflow:hidden;display:flex}.full{width:100%;overflow:auto;background:#fff;padding:28px max(32px,calc((100vw - 980px)/2))}.split{display:grid;grid-template-columns:48% 8px 1fr;width:100%;min-height:0}.article{background:var(--article);overflow:auto;padding:28px 34px}.divider{background:#d5dae0;cursor:col-resize}.tasks{background:#fff;overflow:auto;padding:28px 34px}.kicker{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red)}.title{font-size:25px;margin:4px 0 18px}.article h2{font-size:25px;margin:4px 0 8px}.article .sub{font-style:italic;color:#4c5966}.article .by{font-size:13px;color:#6a727c;margin-bottom:22px}.article p{line-height:1.62}.n{font-weight:700;color:var(--blue)}.subhead{font-weight:700;font-size:17px;margin-top:18px}.prompt,.exercise{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0;background:#fff}.exercise{border:0;border-bottom:1px solid #edf0f3;border-radius:0;padding:0 0 24px;margin:0 0 24px}.excerpt{border-left:4px solid var(--blue);background:#f6f9fc;padding:14px 16px;margin:14px 0;line-height:1.55}.thinking,.final{border-radius:9px;padding:12px 14px;margin-top:12px}.thinking{background:var(--think);border:1px solid var(--thinkbd)}.final{background:var(--final);border:1px solid var(--finalbd)}.lab{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}.thinking .lab{color:#75600d}.final .lab{color:#174f91}.req{color:var(--red)}textarea{width:100%;min-height:95px;resize:vertical;padding:10px;border:1px solid #bbc3cc;border-radius:7px;background:#fff}.thinking textarea{min-height:110px}.option{display:block;margin:8px 0}.inline{display:inline-block;width:190px;padding:7px 9px}.fill{margin:12px 0;line-height:1.5}.subnav{display:flex;gap:8px;margin-bottom:20px}.subnav button{border:1px solid #bdc8d4;background:#fff;color:#36546f;border-radius:7px;padding:8px 12px;font-weight:700}.subnav button.active{background:var(--blue);color:#fff;border-color:var(--blue)}.foot{min-height:58px;background:#fff;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:8px 18px;flex:0 0 auto}.secondary{border:1px solid #b7c0c9;background:#fff;border-radius:8px;padding:9px 13px;font-weight:700}
+@media(max-width:760px){body:before{content:"This worksheet is designed for a laptop or tablet in landscape mode.";position:fixed;inset:0;background:#fff;z-index:9999;display:flex;align-items:center;justify-content:center;text-align:center;padding:28px;font-size:20px;font-weight:700;color:var(--blue)}}
+
+/* Stage 3 v4 — IELTS-style utility menu + landing restore */
+.top{
+  position:relative;
+  z-index:100;
+  overflow:visible;
+}
+.nav{
+  position:relative;
+  z-index:20;
+}
+.top-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-left:auto;
+  position:relative;
+  height:100%;
+}
+.menu-btn{
+  width:40px;
+  height:40px;
+  border:0;
+  border-radius:8px;
+  background:transparent;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+}
+.menu-btn:hover,.menu-btn:focus-visible{background:#f1f4f8;outline:none}
+.menu-icon{
+  width:24px;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+.menu-icon span{
+  display:block;
+  width:24px;
+  height:4px;
+  background:#111;
+  border-radius:999px;
+}
+.menu-pop{
+  position:absolute;
+  right:0;
+  top:52px;
+  width:240px;
+  background:#fff;
+  border:1px solid #e0e5eb;
+  border-radius:18px;
+  box-shadow:0 14px 38px rgba(31,48,68,.18);
+  padding:10px;
+  z-index:9999;
+  overflow:visible;
+}
+.menu-pop>button,.menu-row-main{
+  width:100%;
+  min-height:46px;
+  border:0;
+  border-radius:10px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 13px;
+  text-align:left;
+  color:#35516f;
+  font-size:15px;
+  font-weight:500;
+}
+.menu-pop>button:hover,.menu-row-main:hover{background:#f4f7fb}
+.menu-left{
+  display:flex;
+  align-items:center;
+  gap:11px;
+}
+.menu-glyph{
+  width:22px;
+  height:22px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  color:#35516f;
+  flex:0 0 22px;
+}
+.menu-arrow{
+  font-size:18px;
+  color:#526b84;
+  transition:transform .16s ease;
+}
+.menu-row.open .menu-arrow{transform:rotate(180deg)}
+.submenu{
+  position:static;
+  min-width:0;
+  border:0;
+  border-top:1px solid #edf0f4;
+  box-shadow:none;
+  border-radius:0;
+  margin:2px 8px 6px 42px;
+  padding:6px 0 0;
+  background:#fff;
+}
+.submenu button{
+  width:100%;
+  border:0;
+  background:#fff;
+  border-radius:8px;
+  padding:9px 10px;
+  text-align:left;
+  color:#4c6278;
+  font-size:14px;
+}
+.submenu button:hover{background:#f4f7fb}
+.submenu button.active{
+  background:#edf4fc;
+  color:#1556a8;
+  font-weight:700;
+}
+.landing-restore{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid #e2e7ed;
+}
+.restore-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.restore-note{
+  margin-top:7px;
+  font-size:12px;
+  color:#6c737b;
+  line-height:1.45;
+}
+.restore-file-name{
+  font-size:12px;
+  color:#52606d;
+}
+
+
+/* ===== Stage 4: Focus Mode + Timer ===== */
+.top{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+}
+.top-id{justify-self:start}
+.top-center{
+  justify-self:center;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.timer-display{
+  font-size:24px;
+  line-height:1;
+  font-weight:700;
+  color:#1556a8;
+  letter-spacing:.03em;
+  min-width:110px;
+  text-align:center;
+  cursor:pointer;
+  user-select:none;
+}
+.timer-display.hidden{display:none}
+.top-actions{justify-self:end}
+
+.timer-panel{
+  position:absolute;
+  top:52px;
+  left:50%;
+  transform:translateX(-50%);
+  width:260px;
+  background:#fff;
+  border:1px solid #dfe5ec;
+  border-radius:16px;
+  box-shadow:0 14px 38px rgba(31,48,68,.18);
+  padding:16px;
+  z-index:9999;
+}
+.timer-panel h4{
+  margin:0 0 12px;
+  font-size:15px;
+  color:#2f4153;
+}
+.timer-set-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.timer-set-row input{
+  width:110px;
+  padding:9px 10px;
+  border:1px solid #ccd5df;
+  border-radius:8px;
+  font-size:16px;
+}
+.timer-set-row span{
+  color:#6c737b;
+  font-size:13px;
+}
+.timer-actions{
+  display:flex;
+  gap:8px;
+  margin-top:12px;
+}
+.timer-actions button{
+  flex:1;
+  border:1px solid #cfd8e3;
+  border-radius:8px;
+  padding:9px 10px;
+  background:#fff;
+  cursor:pointer;
+}
+.timer-actions .primary-action{
+  background:#1556a8;
+  color:#fff;
+  border-color:#1556a8;
+}
+.timer-message{
+  margin-top:10px;
+  min-height:18px;
+  font-size:12px;
+  color:#6c737b;
+}
+
+/* Focus mode menu */
+.focus-submenu{
+  position:static;
+  min-width:0;
+  border:0;
+  border-top:1px solid #edf0f4;
+  box-shadow:none;
+  border-radius:0;
+  margin:2px 8px 6px 42px;
+  padding:6px 0 0;
+  background:#fff;
+}
+.focus-submenu button{
+  width:100%;
+  border:0;
+  background:#fff;
+  border-radius:8px;
+  padding:9px 10px;
+  text-align:left;
+  color:#4c6278;
+  font-size:14px;
+}
+.focus-submenu button:hover{background:#f4f7fb}
+.focus-submenu button.active{
+  background:#edf4fc;
+  color:#1556a8;
+  font-weight:700;
+}
+
+/* Focus layouts */
+body.focus-reading .split{grid-template-columns:1fr !important}
+body.focus-reading .tasks{display:none !important}
+body.focus-reading .divider{display:none !important}
+
+body.focus-tasks .split{grid-template-columns:1fr !important}
+body.focus-tasks .article{display:none !important}
+body.focus-tasks .divider{display:none !important}
+
+body.focus-split .article,
+body.focus-split .tasks{display:block}
+
+
+#timerMinutes::-webkit-outer-spin-button,
+#timerMinutes::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+#timerMinutes{-moz-appearance:textfield}
+
+
+/* ===== Stage 5: Highlight + Notes ===== */
+.selection-toolbar{
+  position:fixed;
+  z-index:12000;
+  display:flex;
+  gap:6px;
+  padding:6px;
+  background:#fff;
+  border:1px solid #d9e0e8;
+  border-radius:10px;
+  box-shadow:0 8px 26px rgba(31,48,68,.18);
+}
+.selection-toolbar button{
+  border:0;
+  background:#f4f7fb;
+  color:#30475e;
+  border-radius:7px;
+  padding:7px 10px;
+  font-size:12px;
+  cursor:pointer;
+}
+.selection-toolbar button:hover{background:#eaf1f9}
+.selection-toolbar .hl-btn{background:#fff4a8;color:#463b00}
+.selection-toolbar .remove-btn{background:#fff;color:#8a3030}
+
+.article mark.student-highlight{
+  background:#fff2a8 !important;
+  background-color:#fff2a8 !important;
+  color:inherit;
+  padding:0;
+  border-radius:2px;
+}
+.note-panel{
+  position:fixed;
+  top:0;
+  right:0;
+  width:min(390px,34vw);
+  min-width:320px;
+  height:100vh;
+  background:#fff;
+  border-left:1px solid #dbe2ea;
+  box-shadow:-10px 0 30px rgba(31,48,68,.14);
+  z-index:11000;
+  display:flex;
+  flex-direction:column;
+}
+.note-panel.hidden{display:none}
+.note-header{
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:14px 16px;
+  border-bottom:1px solid #e5eaf0;
+}
+.note-header h3{
+  margin:0;
+  font-size:18px;
+  color:#23405f;
+}
+.note-close{
+  width:34px;height:34px;
+  border:0;
+  border-radius:8px;
+  background:transparent;
+  font-size:22px;
+  cursor:pointer;
+  color:#53677b;
+}
+.note-close:hover{background:#f1f4f8}
+.note-body{
+  flex:1;
+  overflow:auto;
+  padding:16px;
+}
+.note-general-label{
+  font-size:12px;
+  font-weight:700;
+  color:#5c6f82;
+  margin-bottom:7px;
+}
+.note-general{
+  width:100%;
+  min-height:180px;
+  resize:vertical;
+  border:1px solid #cfd8e3;
+  border-radius:10px;
+  padding:11px 12px;
+  font:inherit;
+  line-height:1.5;
+  box-sizing:border-box;
+  background:#fffdf3;
+}
+.note-divider{
+  margin:18px 0 12px;
+  border:0;
+  border-top:1px solid #e5eaf0;
+}
+.note-list-title{
+  font-size:13px;
+  font-weight:700;
+  color:#405870;
+  margin-bottom:10px;
+}
+.note-card{
+  border:1px solid #dde4ec;
+  border-radius:10px;
+  padding:11px;
+  margin-bottom:10px;
+  background:#fff;
+}
+.note-quote{
+  font-size:12px;
+  color:#5e6d7c;
+  padding-left:9px;
+  border-left:3px solid #f0d75a;
+  margin-bottom:8px;
+}
+.note-card textarea{
+  width:100%;
+  min-height:72px;
+  resize:vertical;
+  border:1px solid #d3dbe5;
+  border-radius:8px;
+  padding:8px 9px;
+  font:inherit;
+  box-sizing:border-box;
+}
+.note-card-actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:7px;
+}
+.note-card-actions button{
+  border:0;
+  background:transparent;
+  color:#9a3f3f;
+  cursor:pointer;
+  font-size:12px;
+}
+.note-empty{
+  font-size:12px;
+  color:#7b8794;
+  padding:6px 0 10px;
+}
+.menu-note-count{
+  margin-left:auto;
+  min-width:18px;
+  height:18px;
+  padding:0 5px;
+  border-radius:9px;
+  background:#edf4fc;
+  color:#1556a8;
+  font-size:11px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+/* Stage 5 v3: yellow highlights, gray text-linked notes */
+.article mark.student-highlight{
+  background:#fff2a8 !important;
+  background-color:#fff2a8 !important;
+  color:inherit;
+  padding:0;
+  border-radius:2px;
+}
+.article mark.student-note{
+  background:#e7e9ec;
+  color:inherit;
+  padding:0;
+  border-radius:2px;
+  box-shadow:inset 0 -2px 0 #8b949e;
+}
+.selection-toolbar .note-btn{
+  background:#eceff2;
+  color:#3f4b57;
+}
+.linked-note-card{
+  border:1px solid #dde4ec;
+  border-radius:10px;
+  padding:11px;
+  margin-top:10px;
+  background:#fff;
+}
+.linked-note-quote{
+  font-size:12px;
+  color:#596775;
+  padding-left:9px;
+  border-left:3px solid #aeb5bd;
+  margin-bottom:8px;
+  cursor:pointer;
+}
+.linked-note-card textarea{
+  width:100%;
+  min-height:70px;
+  resize:vertical;
+  border:1px solid #d3dbe5;
+  border-radius:8px;
+  padding:8px 9px;
+  box-sizing:border-box;
+  font:inherit;
+}
+.linked-note-actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:6px;
+}
+.linked-note-actions button{
+  border:0;
+  background:transparent;
+  color:#9a3f3f;
+  cursor:pointer;
+  font-size:12px;
+}
+
+
+/* ===== Stage 6: Export PDF ===== */
+.menu-pop button.export-not-ready{
+  color:#8b95a1;
+}
+.export-count{
+  margin-left:auto;
+  font-size:11px;
+  color:#8b95a1;
+  white-space:nowrap;
+}
+
+</style>
+</head><body>
+<div id="landing" class="landing"><div class="card"><div class="eyebrow">ESP1 – Reading Speaking Skills</div><h1>Unit 1</h1><div class="unit">Influencer Marketing</div>
+<div class="form"><label>Student Number *</label><input id="sid"><label>Full name *</label><input id="name"><label>Class *</label><input id="class"></div>
+<div class="notice"><h2>Before you start</h2>Your work will be saved automatically on the browser and device you use.<ul><li>Enter your <b>Student Number, full name, and class correctly</b>. These details will identify your work and your final PDF.</li><li>To continue later, reopen this worksheet using the <b>same device and browser</b>.</li><li>To continue on another device/browser, choose <b>Download Backup</b> first, then use <b>Restore Backup</b> on the other device.</li><li>You may also complete the worksheet in one session and export the final PDF when you finish.</li><li><b>Do not use Private/Incognito mode or clear browser data while working</b>, because locally saved progress may be lost.</li></ul><div style="font-size:12px;color:#6c737b;margin-top:8px">You can download a backup file at any time and restore it on another device/browser.</div></div>
+<label class="ack"><input type="checkbox" id="ack"> I understand how my work is saved.</label>
+<div id="newControls"><button id="start" class="primary" disabled>START UNIT</button></div>
+<div id="resumeControls" class="hidden" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+  <button id="continue" class="primary">CONTINUE MY WORK</button>
+  <button id="startAgain" class="secondary">START AGAIN</button>
+  <span id="resumeInfo" style="font-size:12px;color:#6c737b"></span>
+</div><div class="landing-restore">
+  <div class="restore-row">
+    <button id="landingRestoreBtn" class="secondary" type="button">RESTORE BACKUP</button>
+    <span id="restoreFileName" class="restore-file-name">No backup file selected</span>
+  </div>
+  <div class="restore-note">Select a Unit 1 backup file (.json). The restored student information and answers will load before you enter the worksheet.</div>
+</div>
+<input type="file" id="backupFileInput" accept=".json,application/json" hidden>
+</div></div>
+
+<div id="workspace" class="workspace hidden"><header class="top"><div class="top-id"><b>ESP1 • Unit 1 <span>Influencer Marketing</span></b><div class="instructor">Instructor · Ms. Tra</div></div>
+<div class="top-center">
+  <div id="timerDisplay" class="timer-display hidden">00:00</div>
+  <div id="timerPanel" class="timer-panel hidden">
+    <h4 id="timerPanelTitle">Set Timer</h4>
+    <div id="timerSetup">
+      <div class="timer-set-row">
+        <input id="timerMinutes" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" placeholder="Minutes">
+        <span>minutes</span>
+      </div>
+      <div class="timer-actions">
+        <button id="timerStart" class="primary-action" type="button">Start</button>
+      </div>
+    </div>
+    <div id="timerRunningControls" class="hidden">
+      <div class="timer-actions">
+        <button id="timerPause" type="button">Pause</button>
+        <button id="timerReset" type="button">Reset</button>
+      </div>
+    </div>
+    <div id="timerPausedControls" class="hidden">
+      <div class="timer-actions">
+        <button id="timerResume" class="primary-action" type="button">Resume</button>
+        <button id="timerResetPaused" type="button">Reset</button>
+      </div>
+    </div>
+    <div id="timerFinishedControls" class="hidden">
+      <div class="timer-actions">
+        <button id="timerResetFinished" class="primary-action" type="button">Reset</button>
+      </div>
+    </div>
+    <div id="timerMessage" class="timer-message"></div>
+  </div>
+</div>
+<div class="top-actions">
+  <div class="status" id="saveStatus">Saved locally ✓</div>
+  <button id="menuBtn" class="menu-btn" aria-label="Open menu" title="Menu" aria-expanded="false">
+    <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+  </button>
+  <div id="menu" class="menu-pop hidden" role="menu">
+    <button id="downloadBackup" type="button">
+      <span class="menu-left"><span class="menu-glyph">⇩</span><span>Download Backup</span></span>
+    </button>
+
+    <button id="exportPdfBtn" type="button" class="export-not-ready">
+      <span class="menu-left"><span class="menu-glyph">▧</span><span>Export PDF</span></span>
+      <span id="exportCount" class="export-count"></span>
+    </button>
+
+    <div class="menu-row" id="focusModeRow">
+      <button id="focusModeBtn" class="menu-row-main" type="button" aria-expanded="false">
+        <span class="menu-left"><span class="menu-glyph">◫</span><span>Focus Mode</span></span>
+        <span class="menu-arrow">⌄</span>
+      </button>
+      <div id="focusModeSubmenu" class="focus-submenu hidden">
+        <button type="button" data-focus="split" class="active">Split View</button>
+        <button type="button" data-focus="reading">Reading Only</button>
+        <button type="button" data-focus="tasks">Tasks Only</button>
+      </div>
+    </div>
+
+    <button id="notesMenuBtn" type="button">
+      <span class="menu-left"><span class="menu-glyph">▤</span><span>Notes</span></span>
+      <span id="menuNoteCount" class="menu-note-count hidden">0</span>
+    </button>
+
+    <div class="menu-row" id="textSizeRow">
+      <button id="textSizeMenuBtn" class="menu-row-main" type="button" aria-expanded="false">
+        <span class="menu-left"><span class="menu-glyph">T</span><span>Text Size</span></span>
+        <span class="menu-arrow">⌄</span>
+      </button>
+      <div id="textSizeSubmenu" class="submenu hidden">
+        <button type="button" data-textsize="small">Small</button>
+        <button type="button" data-textsize="medium" class="active">Medium</button>
+        <button type="button" data-textsize="large">Large</button>
+      </div>
+    </div>
+
+    <button id="timerMenuBtn" type="button">
+      <span class="menu-left"><span class="menu-glyph">◷</span><span>Timer</span></span>
+    </button>
+  </div>
+</div></header>
+<nav class="nav"><button data-s="pre" class="current">1 PRE-READING</button><button data-s="understand" class="unfinished">2 UNDERSTAND</button><button data-s="vocab" class="unfinished">3 VOCABULARY</button><button data-s="exam" class="unfinished">4 EXAM PREPARATION</button><div class="legend">Blue = current · Gray = finished · Red = unfinished final answer(s)</div></nav>
+<main class="main"><section id="pre" class="full"><div class="kicker">Section 1</div><h2 class="title">Pre-reading</h2><div class="prompt"><b>1. Read this excerpt from a blog about influencer marketing. Would you like to read for more information from this blog? Why or why not?</b><div class="excerpt"><b>What is influencer marketing?</b><br>At a fundamental level, influencer marketing is a type of social media marketing that uses endorsements and product mentions from influencers–individuals who have a dedicated social following and are viewed as experts within their niche. Influencer marketing works because of the high amount of trust that social influencers have built up with their following, and recommendations from them serve as a form of social proof to your brand’s potential customers.</div><p><b>2.</b> Have you ever bought any products based on the review of an influencer? What are the differences between a mega and micro influencer?</p><p><b>3.</b> What is your own experience of any influencers or any products they endorse? Share your experience with a partner.</p><p><b>4.</b> In your opinion, what kinds of product/service/activity would influencers often promote?</p><p style="font-size:13px;color:#68717a">Beauty products · Charity · Fashion/clothing line · Technical devices · Supplement diet · Books/educational programs</p></div><div class="thinking"><div class="lab">Thinking Space</div><textarea placeholder="Brainstorm, write keywords, examples, or ideas here..."></textarea></div></section>
+
+<section id="rw" class="split hidden"><article class="article" id="article"><div class="kicker">Main article</div><h2>Why Consumers Care About Influencers, and Why You Should Too?</h2><p class="sub">More than half of people globally have bought something in the past six months based on the recommendation of an online influencer.</p><div class="by">By Jason Falls · February 10, 2021</div>
+<p><span class="n">1</span> What do you think of when you hear the word “pudding”? For most people, it probably brings up some childhood memory of after-school snacks. But one group of people who may have a very different answer is women who love their curly hair. Pantene Pro-V Curl Defining Pudding is a popular <span class="term">finishing-touch item</span> in the brand’s Gold Series of hair care products. It helps curly hair stay moisturized, retaining its natural curl without frizzing.</p>
+<p><span class="n">2</span> According to several dozen product reviews I read, it also smells good and leaves hair shiny. The Curl Defining Pudding was often mentioned by influencers in Pantene’s Gold Series campaign in the early summer months of 2019. The Procter & Gamble brand chose 25 Black women who were Instagram influencers, with content centered on beauty, hair and lifestyle. Four of the influencers had a good number, but not millions of subscribers on YouTube. Each was engaged to place at least one sponsored post apiece on each channel. The goal was to <span class="term">drive awareness</span> of Pantene’s Gold Series Collection, which includes the Curl Defining Pudding.</p>
+<p><span class="n">3</span> At the time of the campaign, the online influencers’ audiences ranged from ChiziDuru’s (@chiziduru) 122,000 Instagram followers to Lisa-Jean Francois’ (@lisaalamode) 36,000. (Duru also had 381,000 YouTube subscribers, which were enough to place her on both lists of Pantene Gold Series influencers — Instagram and YouTube.) In total, the potential reach of the influencer effort based on their number of followers was more than 2.5 million people. <span class="term">The proof is indeed in the pudding.</span></p>
+<p><span class="n">4</span> These numbers are strong, if not outstanding. More important for the brand, the main talking points and unique selling propositions were called out by each of the influencers. The specific products in the line, including the Curl Defining Pudding, were mentioned. The fact that the Gold Series was developed by a team of Black scientists was prominent in many of the posts. The influencer campaign did exactly what the brand team hoped to accomplish: create greater awareness of the Gold Series Collection within the intended <span class="term">target audience</span>.</p>
+<p><span class="n">5</span> This was a Winfluence campaign, not just an influencer marketing one. It leveraged online influencers, but in a targeted manner with strategic purpose that moved the business forward. It wasn’t just buying sponsored posts on famous Instagrammers’ accounts and hoping people would think you were cool by association. Another factor that makes this a Winfluence campaign is its construction. Even the largest advertiser in the world — Procter & Gamble — with its bleeding-edge marketing approaches, didn’t spend marketing dollars on mega-influencers with millions of followers. It focused on mid-tier and even smaller influencers with engaged audiences who could persuade those fans to take action.</p><div class="subhead">Fish where the fish are</div>
+<p><span class="n">6</span> So let’s take a look at why Procter & Gamble is investing their considerable resources in influence marketing online. They’re doing it because the internet is where consumers decide to buy products. People who buy hair care products don’t watch TV commercials, look for an ad in the Sunday paper or flip through magazines anymore. Instead, they’re looking for information online. And more than any other company in the world, P&G knows to fish where the fish are.</p>
+<p><span class="n">7</span> People don’t trust traditional media. And people demand trust. For several years now, the Edelman Trust Barometer has been <span class="term">the bible on understanding consumer trust</span>. And the special report on brands may as well have been a big, flashing neon sign that said, “Consumers Trust Influencers!” In it, 63% of people said they trust influencers’ opinions of products “much more” than what brands say about themselves. And 58% — almost six out of ten consumers — confirmed they had bought a new product in the past six months because of an influencer’s recommendation.</p>
+<p><span class="n">8</span> Read that again. Not because of a recommendation from a family member, a friend or an online review. More than half of people globally have bought something in the past six months based on the recommendation of an online influencer. Consumers also confirm another assertion we’ve discussed: It’s not always about popularity. An influencer’s ability to connect with them in a meaningful way is a better indicator of persuasive success than how many followers they have or how famous they are. Edelman’s namesake president and CEO, Richard Edelman, told Ad Age while discussing the report, “Influencers matter. They’re credible.”</p>
+<p><span class="n">9</span> The indicators are there. So is the data. Consumers <span class="term">give a damn about</span> influencers. Enlightened brands know this and give a damn about them, too.</p></article><div class="divider" id="divider"></div><section class="tasks">
+<div id="understand"><div class="kicker">Section 2</div><h2 class="title">Understanding the Article</h2><div class="exercise"><h3>Exercise 1</h3><p><b>Why do corporations like P&G hire influencers to promote their haircare product?</b> Look at the list of reasons below. Skim the article and check which ones are mentioned.</p><label class="option"><input class="ucheck" type="checkbox" value="A"> A. As a way to tell the customers about the new product</label><label class="option"><input class="ucheck" type="checkbox" value="B"> B. As a way of getting attention</label><label class="option"><input class="ucheck" type="checkbox" value="C"> C. As a way to promote the company</label><label class="option"><input class="ucheck" type="checkbox" value="D"> D. As a way of feeling popular</label><label class="option"><input class="ucheck" type="checkbox" value="E"> E. As a way of connecting with potential customers</label><div class="thinking"><div class="lab">Thinking Space</div><textarea placeholder="Evidence, reasoning, keywords..."></textarea></div><div class="final"><div class="lab">Final Answer <span class="req">*</span></div><div>Your selections above are your final answer.</div><div id="sum" style="font-size:13px;color:#3e5874;margin-top:7px">Selected: —</div></div></div><div class="exercise"><h3>Exercise 2</h3><p>Can you add any more reasons to the list above?</p><div class="thinking"><div class="lab">Thinking Space</div><textarea></textarea></div></div><div class="exercise"><h3>Exercise 3</h3><p>Has the article changed your viewpoint of influencers and influencer marketing in any way? If so, why?</p><div class="thinking"><div class="lab">Thinking Space</div><textarea></textarea></div></div></div>
+<div id="vocab" class="hidden"><div class="kicker">Section 3</div><h2 class="title">Vocabulary Work</h2><div class="exercise"><h3>Exercise 1 — Guessing from context</h3><p>Read the following words taken from the article from i to v, guess their meaning by choosing A or B.</p>
+<p><b>i. Retain (para. 1)</b></p><label class="option"><input type="radio" name="v1" value="A"> A. Maintain</label><label class="option"><input type="radio" name="v1" value="B"> B. Continue to hold</label>
+<p><b>ii. Leverage (para. 5)</b></p><label class="option"><input type="radio" name="v2" value="A"> A. Balance between two things</label><label class="option"><input type="radio" name="v2" value="B"> B. Use something to maximum advantage</label>
+<p><b>iii. Bleeding-edge (para. 5)</b></p><label class="option"><input type="radio" name="v3" value="A"> A. New, experimental</label><label class="option"><input type="radio" name="v3" value="B"> B. Dangerous, unsafe</label>
+<p><b>iv. Assertion (para. 8)</b></p><label class="option"><input type="radio" name="v4" value="A"> A. Confident statement of fact</label><label class="option"><input type="radio" name="v4" value="B"> B. Belief</label>
+<p><b>v. Indicator (para. 8)</b></p><label class="option"><input type="radio" name="v5" value="A"> A. Trend or fact to prove something</label><label class="option"><input type="radio" name="v5" value="B"> B. Trend or fact to measure the level of something</label></div>
+<div class="exercise"><h3>Exercise 2 — Complete the sentences</h3><p>Complete the sentences below with a word from Exercise 1. You may need to change to the plural form.</p><div class="fill">a. <input class="inline vfill"> are substances that change colour when they are added to acidic or alkaline solutions.</div><div class="fill">b. This book began with the <input class="inline vfill"> that it is the optimists who get things done.</div><div class="fill">c. Under the constitution, the provinces <input class="inline vfill"> all the powers not delegated to the federal government.</div><div class="fill">d. You can <input class="inline vfill"> private sector investment through loans.</div><div class="fill">e. However, in many cases <input class="inline vfill"> software is pushed out to help validate it and try out new features.</div></div><div class="thinking"><div class="lab">Shared Thinking Space — Exercises 1 & 2</div><textarea placeholder="Context clues, possible meanings, word forms, corrections..."></textarea></div></div>
+<div id="exam" class="hidden"><div class="kicker">Section 4</div><h2 class="title">Exam Preparation</h2><div class="subnav"><button class="active" data-sub="phrases">Words &amp; Phrases</button><button data-sub="comp">Comprehension</button></div><div id="phrases"><p>Explain the following words and expressions, as used in the article.</p></div><div id="comp" class="hidden"><p>Read the article and answer the following questions.</p></div></div>
+</section></section></main><footer class="foot"><button id="prev" class="secondary" disabled>‹ PREVIOUS</button><button id="next" class="primary">NEXT: UNDERSTAND ›</button></footer></div>
+
+<div id="selectionToolbar" class="selection-toolbar hidden">
+  <button id="highlightSelection" class="hl-btn" type="button">Highlight</button>
+  <button id="noteSelection" class="note-btn" type="button">Note</button>
+  <button id="removeHighlightSelection" class="remove-btn hidden" type="button">Remove</button>
+</div>
+
+<aside id="notePanel" class="note-panel hidden" aria-label="Notes">
+  <div class="note-header">
+    <h3>Notes</h3>
+    <button id="closeNotes" class="note-close" type="button" aria-label="Close notes">×</button>
+  </div>
+  <div class="note-body">
+    <div class="note-general-label">My notes</div>
+    <textarea id="generalNotes" class="note-general" placeholder="Write your notes here..."></textarea>
+    <hr class="note-divider">
+    <div class="note-list-title">Notes linked to the reading</div>
+    <div id="linkedNotesList"></div>
+  </div>
+</aside>
+
+<script>
+const sections=['pre','understand','vocab','exam'],labels={pre:'PRE-READING',understand:'UNDERSTAND',vocab:'VOCABULARY',exam:'EXAM PREPARATION'};let current='pre';const visited=new Set(['pre']);
+const ack=document.getElementById('ack'),start=document.getElementById('start'),fields=['sid','name','class'].map(id=>document.getElementById(id));function valid(){start.disabled=!(ack.checked&&fields.every(x=>x.value.trim()))}ack.onchange=valid;fields.forEach(x=>x.oninput=valid);start.onclick=()=>{landing.classList.add('hidden');workspace.classList.remove('hidden');show('pre')};
+const phrasePrompts=['a. finishing-touch item','b. drive awareness','c. The proof is indeed in the pudding','d. target audience','e. the bible on understanding consumer trust','f. give a damn about'];const compPrompts=['a. What kind of product does the author mention in the article? How does it differ from other similar products?','b. What did P&G do to promote their new product?','c. What kind of influencers did P&G hire for their campaign?','d. What did influencers do to increase sales?','e. Was their ad campaign successful? Why or why not?','f. What does the author mean by saying “fish where the fish are”?','g. Why do customers trust influencers more than TV commercials or newspaper ads?','h. Why does the author take P&G as an example of an enlightened brand?'];function qa(p){let d=document.createElement('div');d.className='exercise';d.innerHTML=`<h3>${p}</h3><div class="thinking"><div class="lab">Thinking Space</div><textarea placeholder="Evidence, notes, possible wording..."></textarea></div><div class="final"><div class="lab">Final Answer <span class="req">*</span></div><textarea class="reqfinal" placeholder="Write your final answer here..."></textarea></div>`;return d}phrasePrompts.forEach(p=>phrases.appendChild(qa(p)));compPrompts.forEach(p=>comp.appendChild(qa(p)));
+function complete(s){if(s==='pre')return visited.has('pre');if(s==='understand')return document.querySelectorAll('.ucheck:checked').length>0;if(s==='vocab'){return ['v1','v2','v3','v4','v5'].every(n=>document.querySelector(`input[name="${n}"]:checked`))&&[...document.querySelectorAll('.vfill')].every(x=>x.value.trim())}if(s==='exam')return [...document.querySelectorAll('#exam .reqfinal')].every(x=>x.value.trim());}
+function nav(){document.querySelectorAll('.nav button[data-s]').forEach(b=>{let s=b.dataset.s;b.className='';if(s===current)b.classList.add('current');else if(s==='pre'?visited.has('pre'):complete(s))b.classList.add('finished');else b.classList.add('unfinished')})}
+function show(s){current=s;visited.add(s);pre.classList.toggle('hidden',s!=='pre');rw.classList.toggle('hidden',s==='pre');understand.classList.toggle('hidden',s!=='understand');vocab.classList.toggle('hidden',s!=='vocab');exam.classList.toggle('hidden',s!=='exam');let i=sections.indexOf(s);prev.disabled=i===0;prev.textContent=i?'‹ PREVIOUS: '+labels[sections[i-1]]:'‹ PREVIOUS';if(i===3){next.disabled=true;next.textContent='END OF UNIT'}else{next.disabled=false;next.textContent='NEXT: '+labels[sections[i+1]]+' ›'}nav()}
+document.querySelectorAll('.nav button[data-s]').forEach(b=>b.onclick=()=>show(b.dataset.s));prev.onclick=()=>{let i=sections.indexOf(current);if(i)show(sections[i-1])};next.onclick=()=>{let i=sections.indexOf(current);if(i<3)show(sections[i+1])};document.addEventListener('input',nav);document.addEventListener('change',()=>{let a=[...document.querySelectorAll('.ucheck:checked')].map(x=>x.value);sum.textContent='Selected: '+(a.length?a.join(', '):'—');nav()});
+document.querySelectorAll('.subnav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.subnav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');phrases.classList.toggle('hidden',b.dataset.sub!=='phrases');comp.classList.toggle('hidden',b.dataset.sub!=='comp')});
+let drag=false;divider.onmousedown=()=>drag=true;window.onmouseup=()=>drag=false;window.onmousemove=e=>{if(!drag||rw.classList.contains('hidden'))return;let r=rw.getBoundingClientRect(),p=Math.max(32,Math.min(68,(e.clientX-r.left)/r.width*100));rw.style.gridTemplateColumns=`${p}% 8px 1fr`};
+
+/* ===== Stage 2: autosave + localStorage ===== */
+const STORAGE_KEY='esp1_unit1_influencer_marketing_v2';
+let restoring=false,saveTimer=null;
+
+function stableKeys(){
+  document.querySelectorAll('#pre textarea').forEach((x,i)=>x.dataset.key='pre-think-'+i);
+  document.querySelectorAll('#understand textarea').forEach((x,i)=>x.dataset.key='understand-think-'+i);
+  document.querySelectorAll('.ucheck').forEach(x=>x.dataset.key='understand-ex1');
+  document.querySelectorAll('#vocab textarea').forEach((x,i)=>x.dataset.key='vocab-think-'+i);
+  ['v1','v2','v3','v4','v5'].forEach(n=>document.querySelectorAll(`input[name="${n}"]`).forEach(x=>x.dataset.key='radio-'+n));
+  document.querySelectorAll('.vfill').forEach((x,i)=>x.dataset.key='vfill-'+i);
+  document.querySelectorAll('#phrases .exercise').forEach((d,i)=>{
+    const a=d.querySelectorAll('textarea'); if(a[0])a[0].dataset.key='phrase-think-'+i;if(a[1])a[1].dataset.key='phrase-final-'+i;
+  });
+  document.querySelectorAll('#comp .exercise').forEach((d,i)=>{
+    const a=d.querySelectorAll('textarea'); if(a[0])a[0].dataset.key='comp-think-'+i;if(a[1])a[1].dataset.key='comp-final-'+i;
+  });
+}
+stableKeys();
+
+function collect(){
+  const vals={};
+  document.querySelectorAll('textarea,input').forEach((el,i)=>{
+    if(['ack','sid','name','class'].includes(el.id))return;
+    const k=el.dataset.key||el.id||el.name||('field-'+i);
+    if(el.type==='checkbox'||el.type==='radio'){
+      let optionId=el.value;
+      if(el.type==='radio' && (!el.hasAttribute('value') || optionId==='on')){
+        const group=[...document.querySelectorAll(`input[type="radio"][name="${el.name}"]`)];
+        optionId='option-'+group.indexOf(el);
+      }
+      vals[k+'::'+optionId]={checked:el.checked};
+    }else vals[k]={value:el.value};
+  });
+  return {
+    version:1,savedAt:new Date().toISOString(),current,visited:[...visited],
+    student:{sid:document.getElementById('sid').value,name:document.getElementById('name').value,className:document.getElementById('class').value},
+    vals,
+    articleScroll:document.getElementById('article').scrollTop||0,
+    taskScroll:document.querySelector('.tasks').scrollTop||0,
+    examSub:document.querySelector('.subnav button.active')?.dataset.sub||'phrases'
+  };
+}
+function saved(){try{const x=localStorage.getItem(STORAGE_KEY);return x?JSON.parse(x):null}catch(e){return null}}
+function status(t){const x=document.getElementById('saveStatus');if(x)x.textContent=t}
+function saveNow(){
+  if(restoring)return;
+  try{status('Saving...');localStorage.setItem(STORAGE_KEY,JSON.stringify(collect()));setTimeout(()=>status('Saved locally ✓'),150);resumeState()}catch(e){status('Unable to save locally')}
+}
+function queueSave(){if(restoring)return;clearTimeout(saveTimer);status('Saving...');saveTimer=setTimeout(saveNow,350)}
+
+function resumeState(){
+  const s=saved(),fresh=document.getElementById('newControls'),res=document.getElementById('resumeControls'),info=document.getElementById('resumeInfo');
+  if(s&&s.student&&(s.student.sid||s.student.name||s.student.className)){
+    fresh.classList.add('hidden');res.classList.remove('hidden');
+    document.getElementById('sid').value=s.student.sid||'';document.getElementById('name').value=s.student.name||'';document.getElementById('class').value=s.student.className||'';
+    ack.checked=true;
+    const who=[s.student.className,s.student.sid,s.student.name].filter(Boolean).join(' · ');
+    const when=s.savedAt?new Date(s.savedAt).toLocaleString():'';
+    info.textContent=who+(when?' · last saved '+when:'');
+  }else{res.classList.add('hidden');fresh.classList.remove('hidden');valid()}
+}
+function restore(){
+  const s=saved();if(!s)return;
+  restoring=true;
+  document.querySelectorAll('textarea,input').forEach((el,i)=>{
+    if(['ack','sid','name','class'].includes(el.id))return;
+    const k=el.dataset.key||el.id||el.name||('field-'+i);
+    if(el.type==='checkbox'||el.type==='radio'){
+      let optionId=el.value;
+      if(el.type==='radio' && (!el.hasAttribute('value') || optionId==='on')){
+        const group=[...document.querySelectorAll(`input[type="radio"][name="${el.name}"]`)];
+        optionId='option-'+group.indexOf(el);
+      }
+      const rec=s.vals?.[k+'::'+optionId];if(rec)el.checked=!!rec.checked;
+    }else{const rec=s.vals?.[k];if(rec)el.value=rec.value||''}
+  });
+  if(s.visited){visited.clear();s.visited.forEach(x=>visited.add(x))}
+  const sub=document.querySelector(`.subnav button[data-sub="${s.examSub||'phrases'}"]`);if(sub)sub.click();
+  restoring=false;
+  landing.classList.add('hidden');workspace.classList.remove('hidden');show(sections.includes(s.current)?s.current:'pre');
+  requestAnimationFrame(()=>{article.scrollTop=s.articleScroll||0;document.querySelector('.tasks').scrollTop=s.taskScroll||0});
+  let a=[...document.querySelectorAll('.ucheck:checked')].map(x=>x.value);sum.textContent='Selected: '+(a.length?a.join(', '):'—');nav();status('Saved locally ✓');
+  if(typeof updateExportState==='function') updateExportState();
+}
+document.addEventListener('input',queueSave);
+document.addEventListener('change',queueSave);
+article.addEventListener('scroll',queueSave,{passive:true});
+document.querySelector('.tasks').addEventListener('scroll',queueSave,{passive:true});
+document.querySelectorAll('.nav button[data-s],#prev,#next,.subnav button').forEach(x=>x.addEventListener('click',queueSave));
+
+start.onclick=()=>{landing.classList.add('hidden');workspace.classList.remove('hidden');show('pre');saveNow()};
+document.getElementById('continue').onclick=restore;
+document.getElementById('startAgain').onclick=()=>{
+  if(confirm('Start this Unit again? Your current locally saved work will be deleted.')){
+    localStorage.removeItem(STORAGE_KEY);
+    document.querySelectorAll('textarea,.vfill').forEach(x=>x.value='');
+    document.querySelectorAll('.ucheck,input[type="radio"]').forEach(x=>x.checked=false);
+    ['sid','name','class'].forEach(id=>document.getElementById(id).value='');ack.checked=false;valid();resumeState();
+  }
+};
+window.addEventListener('beforeunload',()=>{if(!restoring&&!workspace.classList.contains('hidden'))try{localStorage.setItem(STORAGE_KEY,JSON.stringify(collect()))}catch(e){}});
+resumeState();
+
+
+/* ===== Stage 3: Download Backup + Restore Backup ===== */
+const BACKUP_FORMAT = 'ESP1_UNIT1_BACKUP';
+const BACKUP_VERSION = 1;
+
+function safeFilenamePart(value){
+  return String(value || '')
+    .trim()
+    .replace(/[\\/:*?"<>|]+/g,'-')
+    .replace(/\s+/g,' ')
+    .slice(0,80) || 'Unknown';
+}
+
+function downloadBackup(){
+  // Force the latest in-memory work into localStorage before exporting.
+  saveNow();
+  const state = collect();
+  const payload = {
+    format: BACKUP_FORMAT,
+    backupVersion: BACKUP_VERSION,
+    unit: {
+      course: 'ESP1 - Reading Speaking Skills',
+      number: 1,
+      title: 'Influencer Marketing'
+    },
+    exportedAt: new Date().toISOString(),
+    state
+  };
+
+  const cls = safeFilenamePart(state.student?.className);
+  const sid = safeFilenamePart(state.student?.sid);
+  const name = safeFilenamePart(state.student?.name);
+  const filename = `Backup - ${cls} - ${sid} - ${name} - Unit 1.json`;
+
+  const blob = new Blob([JSON.stringify(payload,null,2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),500);
+  status('Backup downloaded ✓');
+  setTimeout(()=>status('Saved locally ✓'),1200);
+}
+
+function validateBackupPayload(payload){
+  if(!payload || payload.format !== BACKUP_FORMAT) {
+    throw new Error('This is not a valid Unit 1 backup file.');
+  }
+  if(payload.backupVersion !== BACKUP_VERSION) {
+    throw new Error('This backup version is not supported by this worksheet.');
+  }
+  if(!payload.state || !payload.state.student || !payload.state.vals) {
+    throw new Error('The backup file is incomplete or damaged.');
+  }
+  return payload.state;
+}
+
+function applyImportedState(state){
+  // Save exact imported state first, then use the existing restore routine.
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  resumeState();
+  restore();
+}
+
+document.getElementById('landingRestoreBtn')?.addEventListener('click',()=>{
+  const input = document.getElementById('backupFileInput');
+  if(input){
+    input.value = '';
+    input.click();
+  }
+});
+
+document.getElementById('backupFileInput')?.addEventListener('change', async (e)=>{
+  const file = e.target.files?.[0];
+  if(!file) return;
+  const fileNameEl = document.getElementById('restoreFileName');
+  if(fileNameEl) fileNameEl.textContent = file.name;
+
+  try{
+    const raw = await file.text();
+    const payload = JSON.parse(raw);
+    const imported = validateBackupPayload(payload);
+
+    const importedWho = [
+      imported.student?.className,
+      imported.student?.sid,
+      imported.student?.name
+    ].filter(Boolean).join(' · ');
+
+    const current = saved();
+    const hasCurrent = !!(current && current.student && (
+      current.student.sid || current.student.name || current.student.className
+    ));
+
+    let ok = true;
+    if(hasCurrent){
+      ok = confirm(
+        `Restore backup for ${importedWho || 'this student'}?\n\n` +
+        `This will replace the work currently saved in this browser for Unit 1.`
+      );
+    }
+    if(!ok) return;
+
+    applyImportedState(imported);
+    alert('Backup restored successfully.');
+    status('Backup restored ✓');
+    setTimeout(()=>status('Saved locally ✓'),1200);
+  }catch(err){
+    console.error(err);
+    alert(err.message || 'Could not restore this backup file.');
+  }
+});
+
+
+
+/* ===== Stage 3 menu ===== */
+const menuBtn = document.getElementById('menuBtn');
+const menuEl = document.getElementById('menu');
+const textSizeMenuBtn = document.getElementById('textSizeMenuBtn');
+const textSizeSubmenu = document.getElementById('textSizeSubmenu');
+const textSizeRow = document.getElementById('textSizeRow');
+const TEXT_SIZE_KEY = 'esp1_unit1_text_size';
+
+function closeUtilityMenu(){
+  menuEl?.classList.add('hidden');
+  menuBtn?.setAttribute('aria-expanded','false');
+  textSizeSubmenu?.classList.add('hidden');
+  textSizeMenuBtn?.setAttribute('aria-expanded','false');
+  textSizeRow?.classList.remove('open');
+  document.getElementById('focusModeSubmenu')?.classList.add('hidden');
+  document.getElementById('focusModeBtn')?.setAttribute('aria-expanded','false');
+  document.getElementById('focusModeRow')?.classList.remove('open');
+}
+
+menuBtn?.addEventListener('click',(e)=>{
+  e.stopPropagation();
+  if(typeof updateExportState==='function') updateExportState();
+  const opening = menuEl?.classList.contains('hidden');
+  if(opening){
+    menuEl?.classList.remove('hidden');
+    menuBtn.setAttribute('aria-expanded','true');
+  }else{
+    closeUtilityMenu();
+  }
+});
+
+menuEl?.addEventListener('click',(e)=>e.stopPropagation());
+
+textSizeMenuBtn?.addEventListener('click',(e)=>{
+  e.stopPropagation();
+  const opening = textSizeSubmenu?.classList.contains('hidden');
+  textSizeSubmenu?.classList.toggle('hidden', !opening);
+  textSizeMenuBtn.setAttribute('aria-expanded', opening ? 'true':'false');
+  textSizeRow?.classList.toggle('open', opening);
+});
+
+function applyTextSize(size){
+  const articleEl = document.getElementById('article');
+  if(!articleEl) return;
+  const px = size === 'small' ? 15 : size === 'large' ? 19 : 17;
+  articleEl.style.fontSize = px + 'px';
+  localStorage.setItem(TEXT_SIZE_KEY,size);
+  document.querySelectorAll('[data-textsize]').forEach(b=>{
+    b.classList.toggle('active', b.dataset.textsize===size);
+  });
+}
+
+document.querySelectorAll('[data-textsize]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    applyTextSize(btn.dataset.textsize);
+    closeUtilityMenu();
+  });
+});
+
+document.getElementById('downloadBackup')?.addEventListener('click',()=>{
+  downloadBackup();
+  closeUtilityMenu();
+});
+
+document.addEventListener('click',()=>{
+  closeUtilityMenu();
+  document.getElementById('timerPanel')?.classList.add('hidden');
+});
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeUtilityMenu()});
+applyTextSize(localStorage.getItem(TEXT_SIZE_KEY)||'medium');
+
+
+/* ===== Stage 4: Focus Mode ===== */
+const FOCUS_KEY='esp1_unit1_focus_mode';
+const focusModeBtn=document.getElementById('focusModeBtn');
+const focusModeSubmenu=document.getElementById('focusModeSubmenu');
+const focusModeRow=document.getElementById('focusModeRow');
+
+function applyFocusMode(mode){
+  document.body.classList.remove('focus-split','focus-reading','focus-tasks');
+  document.body.classList.add('focus-'+mode);
+  localStorage.setItem(FOCUS_KEY,mode);
+  document.querySelectorAll('[data-focus]').forEach(b=>{
+    b.classList.toggle('active',b.dataset.focus===mode);
+  });
+  // Preserve article/task scroll positions implicitly by not recreating DOM.
+}
+
+focusModeBtn?.addEventListener('click',(e)=>{
+  e.stopPropagation();
+  const opening=focusModeSubmenu?.classList.contains('hidden');
+  focusModeSubmenu?.classList.toggle('hidden',!opening);
+  focusModeBtn.setAttribute('aria-expanded',opening?'true':'false');
+  focusModeRow?.classList.toggle('open',opening);
+});
+
+focusModeSubmenu?.addEventListener('click',(e)=>e.stopPropagation());
+
+document.querySelectorAll('[data-focus]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    applyFocusMode(btn.dataset.focus);
+    closeUtilityMenu();
+  });
+});
+
+applyFocusMode(localStorage.getItem(FOCUS_KEY)||'split');
+
+/* ===== Stage 4: Timer ===== */
+const TIMER_KEY='esp1_unit1_timer_state';
+const timerDisplay=document.getElementById('timerDisplay');
+const timerPanel=document.getElementById('timerPanel');
+const timerMenuBtn=document.getElementById('timerMenuBtn');
+const timerMinutes=document.getElementById('timerMinutes');
+const timerSetup=document.getElementById('timerSetup');
+const timerRunningControls=document.getElementById('timerRunningControls');
+const timerPausedControls=document.getElementById('timerPausedControls');
+const timerFinishedControls=document.getElementById('timerFinishedControls');
+const timerPause=document.getElementById('timerPause');
+const timerResume=document.getElementById('timerResume');
+const timerReset=document.getElementById('timerReset');
+const timerResetPaused=document.getElementById('timerResetPaused');
+const timerMessage=document.getElementById('timerMessage');
+
+let timerTick=null;
+let timerState={
+  status:'idle', // idle | running | paused | finished
+  durationSec:0,
+  remainingSec:0,
+  endAt:null
+};
+
+function fmt(sec){
+  sec=Math.max(0,Math.floor(sec));
+  const h=Math.floor(sec/3600);
+  const m=Math.floor((sec%3600)/60);
+  const s=sec%60;
+  if(h>0){
+    return String(h)+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  }
+  return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+}
+
+function persistTimer(){
+  localStorage.setItem(TIMER_KEY,JSON.stringify(timerState));
+}
+
+function syncRemaining(){
+  if(timerState.status==='running' && timerState.endAt){
+    timerState.remainingSec=Math.max(0,Math.ceil((timerState.endAt-Date.now())/1000));
+    if(timerState.remainingSec<=0){
+      timerState.remainingSec=0;
+      timerState.status='finished';
+      timerState.endAt=null;
+      clearInterval(timerTick);
+      timerTick=null;
+      persistTimer();
+    }
+  }
+}
+
+function renderTimer(){
+  syncRemaining();
+  const active=timerState.status!=='idle';
+  timerDisplay.classList.toggle('hidden',!active);
+  timerDisplay.textContent=fmt(timerState.remainingSec);
+
+  timerSetup.classList.toggle('hidden',timerState.status!=='idle');
+  timerRunningControls.classList.toggle('hidden',timerState.status!=='running');
+  timerPausedControls.classList.toggle('hidden',timerState.status!=='paused');
+  timerFinishedControls.classList.toggle('hidden',timerState.status!=='finished');
+
+  if(timerState.status==='finished'){
+    timerMessage.textContent="Time's up. You can continue working.";
+  }else if(timerState.status==='paused'){
+    timerMessage.textContent='Paused';
+  }else{
+    timerMessage.textContent='';
+  }
+}
+
+function startTick(){
+  clearInterval(timerTick);
+  if(timerState.status!=='running')return;
+  timerTick=setInterval(()=>{
+    renderTimer();
+    persistTimer();
+    if(timerState.status!=='running'){
+      clearInterval(timerTick);
+      timerTick=null;
+    }
+  },250);
+}
+
+function startTimerFromMinutes(){
+  const mins=parseInt(timerMinutes.value,10);
+  if(!Number.isInteger(mins)||mins<1){
+    timerMessage.textContent='Enter a whole number of minutes (minimum 1).';
+    return;
+  }
+  timerState={
+    status:'running',
+    durationSec:mins*60,
+    remainingSec:mins*60,
+    endAt:Date.now()+mins*60*1000
+  };
+  persistTimer();
+  renderTimer();
+  startTick();
+  timerPanel.classList.add('hidden');
+}
+
+
+timerMinutes?.addEventListener('input',()=>{
+  timerMinutes.value = timerMinutes.value.replace(/\D+/g,'');
+});
+
+document.getElementById('timerStart')?.addEventListener('click',startTimerFromMinutes);
+
+timerPause?.addEventListener('click',()=>{
+  syncRemaining();
+  timerState.status='paused';
+  timerState.endAt=null;
+  persistTimer();
+  clearInterval(timerTick);timerTick=null;
+  renderTimer();
+});
+
+timerResume?.addEventListener('click',()=>{
+  if(timerState.remainingSec<=0)return;
+  timerState.status='running';
+  timerState.endAt=Date.now()+timerState.remainingSec*1000;
+  persistTimer();
+  renderTimer();
+  startTick();
+});
+
+function resetTimer(){
+  timerState={status:'idle',durationSec:0,remainingSec:0,endAt:null};
+  persistTimer();
+  clearInterval(timerTick);timerTick=null;
+  timerMinutes.value='';
+  renderTimer();
+  timerPanel.classList.remove('hidden');
+  setTimeout(()=>timerMinutes?.focus(),0);
+}
+timerReset?.addEventListener('click',resetTimer);
+timerResetPaused?.addEventListener('click',resetTimer);
+document.getElementById('timerResetFinished')?.addEventListener('click',resetTimer);
+
+timerDisplay?.addEventListener('click',(e)=>{
+  e.stopPropagation();
+  timerPanel.classList.toggle('hidden');
+});
+
+timerMenuBtn?.addEventListener('click',(e)=>{
+  e.stopPropagation();
+  timerPanel.classList.remove('hidden');
+  closeUtilityMenu();
+});
+
+timerPanel?.addEventListener('click',(e)=>e.stopPropagation());
+
+function loadTimer(){
+  try{
+    const raw=localStorage.getItem(TIMER_KEY);
+    if(raw){
+      const parsed=JSON.parse(raw);
+      if(parsed&&parsed.status)timerState=parsed;
+    }
+  }catch(e){}
+  renderTimer();
+  if(timerState.status==='running')startTick();
+}
+loadTimer();
+
+
+/* ===== Stage 5 v3: separate yellow highlights + gray linked notes ===== */
+const ANNO_KEY='esp1_unit1_annotations_v3';
+const GENERAL_NOTE_KEY='esp1_unit1_general_notes_v3';
+
+const selectionToolbar=document.getElementById('selectionToolbar');
+const highlightSelectionBtn=document.getElementById('highlightSelection');
+const noteSelectionBtn=document.getElementById('noteSelection');
+const removeSelectionBtn=document.getElementById('removeHighlightSelection');
+const notePanel=document.getElementById('notePanel');
+const notesMenuBtn=document.getElementById('notesMenuBtn');
+const closeNotesBtn=document.getElementById('closeNotes');
+const generalNotes=document.getElementById('generalNotes');
+const linkedNotesList=document.getElementById('linkedNotesList');
+const menuNoteCount=document.getElementById('menuNoteCount');
+
+let pendingSelection=null;
+let selectedGroupId=null;
+let annotations=[];
+
+function loadAnnotations(){
+  try{
+    const raw=localStorage.getItem(ANNO_KEY);
+    annotations=raw?JSON.parse(raw):[];
+    if(!Array.isArray(annotations))annotations=[];
+  }catch(e){annotations=[]}
+}
+function saveAnnotations(){
+  localStorage.setItem(ANNO_KEY,JSON.stringify(annotations));
+  updateNoteIndicator();
+}
+function updateNoteIndicator(){
+  const linked=annotations.filter(a=>a.type==='note' && (a.note||'').trim()).length;
+  const hasGeneral=!!generalNotes.value.trim();
+  const count=linked+(hasGeneral?1:0);
+  if(menuNoteCount){
+    menuNoteCount.textContent=count;
+    menuNoteCount.classList.toggle('hidden',count===0);
+  }
+}
+
+/* ---------- Notes panel ---------- */
+function openNotes(){
+  notePanel.classList.remove('hidden');
+  renderLinkedNotes();
+  closeUtilityMenu?.();
+}
+function closeNotes(){ notePanel.classList.add('hidden'); }
+
+notesMenuBtn?.addEventListener('click',(e)=>{e.stopPropagation();openNotes();});
+closeNotesBtn?.addEventListener('click',closeNotes);
+
+generalNotes.value=localStorage.getItem(GENERAL_NOTE_KEY)||'';
+generalNotes.addEventListener('input',()=>{
+  localStorage.setItem(GENERAL_NOTE_KEY,generalNotes.value);
+  updateNoteIndicator();
+});
+
+function esc(s){
+  return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+}
+function renderLinkedNotes(){
+  const groups=new Map();
+  annotations.filter(a=>a.type==='note').forEach(a=>{
+    if(!groups.has(a.groupId)) groups.set(a.groupId,{groupId:a.groupId,note:a.note||'',quotes:[]});
+    groups.get(a.groupId).quotes.push(a.quote);
+  });
+  if(!groups.size){
+    linkedNotesList.innerHTML='<div class="note-empty">No notes linked to the reading yet.</div>';
+    return;
+  }
+  linkedNotesList.innerHTML='';
+  [...groups.values()].forEach(g=>{
+    const card=document.createElement('div');
+    card.className='linked-note-card';
+    const quote=g.quotes.join(' … ');
+    card.innerHTML=`
+      <div class="linked-note-quote">${esc(quote)}</div>
+      <textarea placeholder="Write your note...">${esc(g.note)}</textarea>
+      <div class="linked-note-actions"><button type="button">Remove note</button></div>
+    `;
+    card.querySelector('textarea').addEventListener('input',(e)=>{
+      annotations.forEach(a=>{if(a.groupId===g.groupId && a.type==='note')a.note=e.target.value});
+      saveAnnotations();
+    });
+    card.querySelector('.linked-note-quote').addEventListener('click',()=>{
+      const mark=document.querySelector(`mark[data-annotation-group="${g.groupId}"]`);
+      if(mark)mark.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+    card.querySelector('button').addEventListener('click',()=>{
+      annotations=annotations.filter(a=>a.groupId!==g.groupId);
+      saveAnnotations();renderAnnotations();renderLinkedNotes();
+    });
+    linkedNotesList.appendChild(card);
+  });
+}
+
+/* ---------- Paragraph IDs and offsets ---------- */
+function articleParagraphs(){return [...document.querySelectorAll('#article h1, #article h2, #article h3, #article .sub, #article .by, #article p')];}
+function initializeParagraphIds(){articleParagraphs().forEach((p,i)=>p.dataset.pid='p'+(i+1));}
+function getParagraphId(p){if(!p.dataset.pid)initializeParagraphIds();return p.dataset.pid;}
+
+function textOffsetWithin(root,node,offset){
+  const r=document.createRange();
+  r.selectNodeContents(root);
+  r.setEnd(node,offset);
+  return r.toString().length;
+}
+
+function unwrapAnnotations(){
+  document.querySelectorAll('#article mark.student-highlight,#article mark.student-note').forEach(mark=>{
+    mark.replaceWith(document.createTextNode(mark.textContent));
+  });
+  document.getElementById('article')?.normalize();
+}
+
+/*
+ Robust renderer: wraps each intersecting TEXT NODE separately instead of using
+ Range.surroundContents(). This avoids failures when a selection crosses <b>,
+ <span>, underlined target phrases, or multiple paragraphs.
+*/
+function wrapSegment(p,start,end,type,groupId){
+  if(end<=start)return;
+  const walker=document.createTreeWalker(p,NodeFilter.SHOW_TEXT);
+  const targets=[];
+  let pos=0,node;
+  while((node=walker.nextNode())){
+    const len=node.nodeValue.length;
+    const segStart=Math.max(start,pos);
+    const segEnd=Math.min(end,pos+len);
+    if(segEnd>segStart){
+      targets.push({
+        node,
+        localStart:segStart-pos,
+        localEnd:segEnd-pos
+      });
+    }
+    pos+=len;
+  }
+
+  // Reverse order so DOM splitting does not invalidate nodes still to process.
+  targets.reverse().forEach(t=>{
+    let node=t.node;
+    const originalLength=node.nodeValue.length;
+
+    if(t.localEnd<originalLength){
+      node.splitText(t.localEnd);
+    }
+    if(t.localStart>0){
+      node=node.splitText(t.localStart);
+    }
+
+    const mark=document.createElement('mark');
+    mark.className=type==='note'?'student-note':'student-highlight';
+    mark.dataset.annotationGroup=groupId;
+    node.parentNode.insertBefore(mark,node);
+    mark.appendChild(node);
+  });
+}
+
+function renderAnnotations(){
+  unwrapAnnotations();
+  initializeParagraphIds();
+
+  const groupedByP={};
+  annotations.forEach(a=>{
+    if(!groupedByP[a.pid])groupedByP[a.pid]=[];
+    groupedByP[a.pid].push(a);
+  });
+
+  Object.entries(groupedByP).forEach(([pid,list])=>{
+    const p=document.querySelector(`#article p[data-pid="${pid}"]`);
+    if(!p)return;
+    // descending ranges makes overlaps less disruptive
+    list.sort((a,b)=>b.start-a.start).forEach(a=>{
+      wrapSegment(p,a.start,a.end,a.type,a.groupId);
+    });
+  });
+}
+
+/* ---------- Cross-paragraph selection ---------- */
+function captureSelection(){
+  const sel=window.getSelection();
+  if(!sel||sel.rangeCount===0||sel.isCollapsed)return null;
+  const range=sel.getRangeAt(0);
+  const article=document.getElementById('article');
+  const sEl=range.startContainer.nodeType===1?range.startContainer:range.startContainer.parentElement;
+  const eEl=range.endContainer.nodeType===1?range.endContainer:range.endContainer.parentElement;
+  if(!article?.contains(sEl)||!article?.contains(eEl))return null;
+
+  const startP=sEl.closest('h1,h2,h3,.sub,.by,p');
+  const endP=eEl.closest('h1,h2,h3,.sub,.by,p');
+  if(!startP||!endP)return null;
+
+  const paras=articleParagraphs();
+  const si=paras.indexOf(startP), ei=paras.indexOf(endP);
+  if(si<0||ei<0)return null;
+
+  // Standard browser selections expose start <= end in document order.
+  const from=Math.min(si,ei), to=Math.max(si,ei);
+  const segments=[];
+
+  for(let i=from;i<=to;i++){
+    const p=paras[i];
+    let start=0,end=p.textContent.length;
+
+    if(p===startP) start=textOffsetWithin(p,range.startContainer,range.startOffset);
+    if(p===endP) end=textOffsetWithin(p,range.endContainer,range.endOffset);
+
+    if(end>start){
+      segments.push({
+        pid:getParagraphId(p),
+        start,end,
+        quote:p.textContent.slice(start,end)
+      });
+    }
+  }
+  return segments.length?{range:range.cloneRange(),segments}:null;
+}
+
+function placeToolbar(range){
+  const rect=range.getBoundingClientRect();
+  selectionToolbar.style.left=Math.min(window.innerWidth-230,Math.max(10,rect.left+rect.width/2-95))+'px';
+  selectionToolbar.style.top=Math.max(8,rect.top-48)+'px';
+  selectionToolbar.classList.remove('hidden');
+}
+function hideToolbar(){
+  selectionToolbar.classList.add('hidden');
+  pendingSelection=null;
+  selectedGroupId=null;
+  highlightSelectionBtn.classList.remove('hidden');
+  noteSelectionBtn.classList.remove('hidden');
+  removeSelectionBtn.classList.add('hidden');
+}
+
+document.getElementById('article')?.addEventListener('mouseup',()=>{
+  setTimeout(()=>{
+    const data=captureSelection();
+    if(!data)return;
+    pendingSelection=data;
+    selectedGroupId=null;
+    highlightSelectionBtn.classList.remove('hidden');
+    noteSelectionBtn.classList.remove('hidden');
+    removeSelectionBtn.classList.add('hidden');
+    placeToolbar(data.range);
+  },0);
+});
+
+function createAnnotation(type){
+  if(!pendingSelection)return null;
+  const groupId=(type==='note'?'n_':'h_')+Date.now()+'_'+Math.random().toString(36).slice(2,7);
+  pendingSelection.segments.forEach(seg=>{
+    annotations.push({...seg,groupId,type,note:''});
+  });
+  saveAnnotations();renderAnnotations();
+  window.getSelection()?.removeAllRanges();
+  return groupId;
+}
+
+highlightSelectionBtn?.addEventListener('click',()=>{
+  createAnnotation('highlight');
+  hideToolbar();
+});
+
+noteSelectionBtn?.addEventListener('click',()=>{
+  const groupId=createAnnotation('note');
+  hideToolbar();
+  if(groupId){
+    openNotes();
+    setTimeout(()=>{
+      const cards=[...document.querySelectorAll('.linked-note-card')];
+      const target=cards[cards.length-1];
+      const ta=target?.querySelector('textarea');
+      if(ta){ta.focus();target.scrollIntoView({block:'center'})}
+    },0);
+  }
+});
+
+document.getElementById('article')?.addEventListener('click',(e)=>{
+  const mark=e.target.closest('mark.student-highlight,mark.student-note');
+  if(!mark)return;
+  e.stopPropagation();
+  selectedGroupId=mark.dataset.annotationGroup;
+  pendingSelection=null;
+  highlightSelectionBtn.classList.add('hidden');
+  noteSelectionBtn.classList.add('hidden');
+  removeSelectionBtn.classList.remove('hidden');
+  removeSelectionBtn.textContent=mark.classList.contains('student-note')?'Remove Note':'Remove Highlight';
+  const rect=mark.getBoundingClientRect();
+  selectionToolbar.style.left=Math.min(window.innerWidth-180,Math.max(10,rect.left))+'px';
+  selectionToolbar.style.top=Math.max(8,rect.top-48)+'px';
+  selectionToolbar.classList.remove('hidden');
+});
+
+removeSelectionBtn?.addEventListener('click',()=>{
+  if(selectedGroupId){
+    annotations=annotations.filter(a=>a.groupId!==selectedGroupId);
+    saveAnnotations();renderAnnotations();renderLinkedNotes();
+  }
+  hideToolbar();
+});
+
+document.addEventListener('click',(e)=>{
+  if(!selectionToolbar.contains(e.target)&&!e.target.closest('mark.student-highlight,mark.student-note')){
+    hideToolbar();
+  }
+});
+
+loadAnnotations();
+initializeParagraphIds();
+renderAnnotations();
+renderLinkedNotes();
+updateNoteIndicator();
+
+/* ---------- Backup integration ---------- */
+const _collectStage4=collect;
+collect=function(){
+  const state=_collectStage4();
+  state.annotationsV3=annotations;
+  state.generalNotes=generalNotes.value;
+  return state;
+};
+
+const _applyImportedStateStage4=applyImportedState;
+applyImportedState=function(state){
+  _applyImportedStateStage4(state);
+  if(Array.isArray(state.annotationsV3)){
+    annotations=state.annotationsV3;
+    saveAnnotations();
+  }
+  if(typeof state.generalNotes==='string'){
+    generalNotes.value=state.generalNotes;
+    localStorage.setItem(GENERAL_NOTE_KEY,state.generalNotes);
+  }
+  renderAnnotations();
+  renderLinkedNotes();
+  updateNoteIndicator();
+  if(typeof updateExportState==='function') updateExportState();
+};
+
+
+/* ===== Stage 6: gated Final Answer PDF export ===== */
+const exportPdfBtn=document.getElementById('exportPdfBtn');
+const exportCount=document.getElementById('exportCount');
+
+function requiredFinalStatus(){
+  const missing=[];
+
+  // Understanding - Exercise 1 (one required final-answer group)
+  if(document.querySelectorAll('.ucheck:checked').length===0){
+    missing.push('Understanding the Article - Exercise 1');
+  }
+
+  // Vocabulary - Exercise 1 radio groups
+  ['v1','v2','v3','v4','v5'].forEach((name,i)=>{
+    if(!document.querySelector(`input[name="${name}"]:checked`)){
+      missing.push(`Vocabulary - Exercise 1 (${i+1})`);
+    }
+  });
+
+  // Vocabulary - Exercise 2 fill-ins
+  [...document.querySelectorAll('.vfill')].forEach((el,i)=>{
+    if(!el.value.trim()) missing.push(`Vocabulary - Exercise 2 (${String.fromCharCode(97+i)})`);
+  });
+
+  // Exam Preparation - 6 phrases + 8 comprehension
+  [...document.querySelectorAll('#exam .reqfinal')].forEach((el,i)=>{
+    if(!el.value.trim()){
+      const label=i<6 ? `Words & Phrases (${String.fromCharCode(97+i)})`
+                      : `Comprehension (${String.fromCharCode(97+i-6)})`;
+      missing.push(`Exam Preparation - ${label}`);
+    }
+  });
+
+  return {
+    total:25,
+    completed:25-missing.length,
+    missing
+  };
+}
+
+function updateExportState(){
+  const s=requiredFinalStatus();
+  if(!exportPdfBtn)return;
+  exportPdfBtn.classList.toggle('export-not-ready',s.missing.length>0);
+  exportCount.textContent=s.missing.length ? `${s.missing.length} left` : 'Ready';
+  exportPdfBtn.title=s.missing.length
+    ? `Complete ${s.missing.length} remaining final answer(s) to export.`
+    : 'Export final answers as PDF';
+}
+
+function htmlEscape(value){
+  return String(value ?? '').replace(/[&<>"']/g,c=>({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+  }[c]));
+}
+
+function getLabelText(input){
+  const label=input.closest('label');
+  return label ? label.textContent.replace(/\s+/g,' ').trim() : input.value;
+}
+
+function collectFinalAnswerReport(){
+  const student={
+    sid:document.getElementById('sid').value.trim(),
+    name:document.getElementById('name').value.trim(),
+    className:document.getElementById('class').value.trim()
+  };
+
+  // Understanding
+  const understanding=[...document.querySelectorAll('.ucheck:checked')].map(x=>getLabelText(x));
+
+  // Vocabulary Ex1
+  const vocabEx1=['v1','v2','v3','v4','v5'].map((name,i)=>{
+    const q=document.querySelector(`input[name="${name}"]`);
+    const ex=q?.closest('.exercise');
+    const allOptions=ex ? [...ex.querySelectorAll(`input[name="${name}"]`)] : [];
+    const checked=document.querySelector(`input[name="${name}"]:checked`);
+    const prompt = checked?.closest('label')?.parentElement?.previousElementSibling?.textContent?.trim()
+      || `Item ${i+1}`;
+    return {
+      label:`${['i','ii','iii','iv','v'][i]}. ${prompt}`,
+      answer:checked ? getLabelText(checked) : ''
+    };
+  });
+
+  // Better prompt extraction directly from visible option block preceding each radio group.
+  const vocabPromptTexts=[
+    'Retain (paragraph 1)',
+    'Leverage (paragraph 5)',
+    'Bleeding-edge (paragraph 5)',
+    'Assertion (paragraph 8)',
+    'Indicator (paragraph 8)'
+  ];
+  vocabEx1.forEach((x,i)=>x.label=`${['i','ii','iii','iv','v'][i]}. ${vocabPromptTexts[i]}`);
+
+  // Vocabulary Ex2
+  const vocabFillPrompts=[
+    'a. ___ are substances that change colour when they are added to acidic or alkaline solutions.',
+    'b. This book began with the ___ that it is the optimists who get things done.',
+    'c. Under the constitution, the provinces ___ all the powers not delegated to the federal government.',
+    'd. You can ___ private sector investment through loans.',
+    'e. However, in many cases ___ software is pushed out to help validate it and try out new features.'
+  ];
+  const vocabEx2=[...document.querySelectorAll('.vfill')].map((x,i)=>({
+    label:vocabFillPrompts[i],
+    answer:x.value.trim()
+  }));
+
+  // Exam Preparation
+  const phraseItems=[...document.querySelectorAll('#phrases .exercise')].map((d,i)=>({
+    label:d.querySelector('h3')?.textContent.trim() || `Phrase ${i+1}`,
+    answer:d.querySelector('.reqfinal')?.value.trim() || ''
+  }));
+  const compItems=[...document.querySelectorAll('#comp .exercise')].map((d,i)=>({
+    label:d.querySelector('h3')?.textContent.trim() || `Question ${i+1}`,
+    answer:d.querySelector('.reqfinal')?.value.trim() || ''
+  }));
+
+  return {student,understanding,vocabEx1,vocabEx2,phraseItems,compItems};
+}
+
+function makeAnswerRows(items){
+  return items.map(item=>`
+    <div class="answer-item">
+      <div class="question">${htmlEscape(item.label)}</div>
+      <div class="answer">${htmlEscape(item.answer)}</div>
+    </div>
+  `).join('');
+}
+
+function exportFinalAnswersPdf(){
+  const statusInfo=requiredFinalStatus();
+  if(statusInfo.missing.length){
+    alert(
+      `PDF export is not available yet.\n\n`+
+      `Complete ${statusInfo.missing.length} remaining Final Answer${statusInfo.missing.length===1?'':'s'} first.`
+    );
+    return;
+  }
+
+  saveNow();
+  const r=collectFinalAnswerReport();
+  const now=new Date();
+  const exportedAt=now.toLocaleString();
+  const safe=s=>String(s||'').replace(/[\\/:*?"<>|]+/g,'-').replace(/\s+/g,' ').trim();
+  const filename=`${safe(r.student.className)} - ${safe(r.student.sid)} - ${safe(r.student.name)} - Unit 1`;
+
+  const understandingAnswer=r.understanding.join('; ');
+
+  const reportHtml=`<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>${htmlEscape(filename)}</title>
+<style>
+  @page{size:A4;margin:16mm 15mm 18mm}
+  *{box-sizing:border-box}
+  body{
+    margin:0;color:#1f2d3a;background:#fff;
+    font-family:Arial,Helvetica,sans-serif;font-size:10.5pt;line-height:1.45
+  }
+  .header{border-bottom:2px solid #1556a8;padding-bottom:10px;margin-bottom:16px}
+  .course{font-size:11pt;font-weight:700;color:#1556a8}
+  h1{font-size:18pt;margin:3px 0 3px;color:#233f5d}
+  .instructor{font-size:9.5pt;color:#6a7682}
+  .meta{
+    margin:14px 0 18px;
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:6px 20px;font-size:10pt
+  }
+  .meta b{color:#3c536a}
+  h2{
+    font-size:13pt;color:#1556a8;
+    margin:20px 0 9px;padding-bottom:4px;border-bottom:1px solid #d8e1eb
+  }
+  h3{font-size:11pt;margin:14px 0 7px;color:#31485f}
+  .answer-item{margin:0 0 10px;break-inside:avoid}
+  .question{font-weight:700;margin-bottom:3px}
+  .answer{
+    border-left:3px solid #9db9d8;
+    padding:5px 8px;background:#f7f9fc;
+    white-space:pre-wrap
+  }
+  .footer-note{
+    margin-top:20px;padding-top:8px;border-top:1px solid #d8e1eb;
+    font-size:8.5pt;color:#7a858f
+  }
+  @media print{
+    body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="course">ESP1 - Reading Speaking Skills</div>
+    <h1>Unit 1 - Influencer Marketing</h1>
+    <div class="instructor">Instructor: Ms. Tra</div>
+  </div>
+
+  <div class="meta">
+    <div><b>Student Number:</b> ${htmlEscape(r.student.sid)}</div>
+    <div><b>Full name:</b> ${htmlEscape(r.student.name)}</div>
+    <div><b>Class:</b> ${htmlEscape(r.student.className)}</div>
+    <div><b>Exported:</b> ${htmlEscape(exportedAt)}</div>
+  </div>
+
+  <h2>Understanding the Article</h2>
+  <div class="answer-item">
+    <div class="question">Exercise 1. Why do corporations like P&G hire influencers to promote their haircare product?</div>
+    <div class="answer">${htmlEscape(understandingAnswer)}</div>
+  </div>
+
+  <h2>Vocabulary Work</h2>
+  <h3>Exercise 1 - Meaning in context</h3>
+  ${makeAnswerRows(r.vocabEx1)}
+  <h3>Exercise 2 - Complete the sentences</h3>
+  ${makeAnswerRows(r.vocabEx2)}
+
+  <h2>Exam Preparation</h2>
+  <h3>Words & Phrases Explanation</h3>
+  ${makeAnswerRows(r.phraseItems)}
+  <h3>Comprehension Questions</h3>
+  ${makeAnswerRows(r.compItems)}
+
+  <div class="footer-note">
+    This PDF contains Final Answers only. Thinking Space, highlights and notes are not included.
+  </div>
+
+<script>
+window.addEventListener('load',()=>{
+  setTimeout(()=>window.print(),250);
+});
+<\/script>
+</body>
+</html>`;
+
+  const w=window.open('','_blank');
+  if(!w){
+    alert('Your browser blocked the PDF window. Please allow pop-ups for this worksheet and try again.');
+    return;
+  }
+  w.document.open();
+  w.document.write(reportHtml);
+  w.document.close();
+  closeUtilityMenu?.();
+}
+
+exportPdfBtn?.addEventListener('click',(e)=>{
+  e.stopPropagation();
+  exportFinalAnswersPdf();
+});
+
+document.addEventListener('input',updateExportState);
+document.addEventListener('change',updateExportState);
+updateExportState();
+
+</script></body></html>
