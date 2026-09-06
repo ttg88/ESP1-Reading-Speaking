@@ -614,6 +614,7 @@ body.focus-split .tasks{display:block}
         <button type="button" data-textsize="small">Small</button>
         <button type="button" data-textsize="medium" class="active">Medium</button>
         <button type="button" data-textsize="large">Large</button>
+        <button type="button" data-textsize="xlarge">Extra Large</button>
       </div>
     </div>
 
@@ -943,7 +944,7 @@ textSizeMenuBtn?.addEventListener('click',(e)=>{
 function applyTextSize(size){
   const articleEl = document.getElementById('article');
   if(!articleEl) return;
-  const px = size === 'small' ? 15 : size === 'large' ? 19 : 17;
+  const px = size === 'small' ? 17 : size === 'medium' ? 20 : size === 'large' ? 24 : size === 'xlarge' ? (25 * 96 / 72) : 20;
   articleEl.style.fontSize = px + 'px';
   localStorage.setItem(TEXT_SIZE_KEY,size);
   document.querySelectorAll('[data-textsize]').forEach(b=>{
@@ -1345,7 +1346,7 @@ function renderAnnotations(){
   });
 
   Object.entries(groupedByP).forEach(([pid,list])=>{
-    const p=document.querySelector(`#article p[data-pid="${pid}"]`);
+    const p=document.querySelector(`#article [data-pid="${pid}"]`);
     if(!p)return;
     // descending ranges makes overlaps less disruptive
     list.sort((a,b)=>b.start-a.start).forEach(a=>{
@@ -1409,17 +1410,30 @@ function hideToolbar(){
   removeSelectionBtn.classList.add('hidden');
 }
 
-document.getElementById('article')?.addEventListener('mouseup',()=>{
-  setTimeout(()=>{
-    const data=captureSelection();
-    if(!data)return;
-    pendingSelection=data;
-    selectedGroupId=null;
-    highlightSelectionBtn.classList.remove('hidden');
-    noteSelectionBtn.classList.remove('hidden');
-    removeSelectionBtn.classList.add('hidden');
-    placeToolbar(data.range);
-  },0);
+function showToolbarForCurrentSelection(){
+  const data=captureSelection();
+  if(!data)return;
+  pendingSelection=data;
+  selectedGroupId=null;
+  highlightSelectionBtn.classList.remove('hidden');
+  noteSelectionBtn.classList.remove('hidden');
+  removeSelectionBtn.classList.add('hidden');
+  placeToolbar(data.range);
+}
+
+const articleForSelection=document.getElementById('article');
+articleForSelection?.addEventListener('mouseup',()=>setTimeout(showToolbarForCurrentSelection,20));
+articleForSelection?.addEventListener('pointerup',()=>setTimeout(showToolbarForCurrentSelection,40));
+articleForSelection?.addEventListener('touchend',()=>setTimeout(showToolbarForCurrentSelection,120),{passive:true});
+let selectionTimer=null;
+document.addEventListener('selectionchange',()=>{
+  clearTimeout(selectionTimer);
+  selectionTimer=setTimeout(()=>{
+    const sel=window.getSelection();
+    if(!sel||sel.isCollapsed)return;
+    const anchor=sel.anchorNode?.nodeType===1?sel.anchorNode:sel.anchorNode?.parentElement;
+    if(articleForSelection?.contains(anchor))showToolbarForCurrentSelection();
+  },120);
 });
 
 function createAnnotation(type){
@@ -1477,7 +1491,9 @@ removeSelectionBtn?.addEventListener('click',()=>{
 });
 
 document.addEventListener('click',(e)=>{
-  if(!selectionToolbar.contains(e.target)&&!e.target.closest('mark.student-highlight,mark.student-note')){
+  const sel=window.getSelection();
+  const hasActiveSelection=sel && !sel.isCollapsed && sel.toString().trim();
+  if(!selectionToolbar.contains(e.target)&&!e.target.closest('mark.student-highlight,mark.student-note')&&!hasActiveSelection){
     hideToolbar();
   }
 });
