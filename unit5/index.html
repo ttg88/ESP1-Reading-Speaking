@@ -785,15 +785,15 @@
       sections: [
         {
           id:'pre',title:'Pre-reading',tasks:[
-            {id:'u5-pre-1',type:'checkbox',exerciseTitle:'Exercise 1',prompt:'<strong>1. Have you ever used any environmentally friendly products? Select the products that you use.</strong>',options:['paper straw','reusable water bottle','tote bag','wooden toothbrush','biodegradable trash bag'],required:false,export:false,finalSummary:false},
-            {id:'u5-pre-2',type:'thinking-only',exerciseTitle:'Exercise 2',prompt:'<strong>2. Which products are most popular in your country? Discuss your answer with a partner.</strong>'},
-            {id:'u5-pre-3',type:'thinking-only',exerciseTitle:'Exercise 3',prompt:'<strong>3. What is environmental performance? Discuss with a partner.</strong>'}
+            {id:'u5-pre-1',type:'checkbox',exerciseTitle:'Exercise 1',prompt:'<strong>Have you ever used any environmentally friendly products? Select the products that you use.</strong>',options:['paper straw','reusable water bottle','tote bag','wooden toothbrush','biodegradable trash bag'],required:false,export:false,finalSummary:false},
+            {id:'u5-pre-2',type:'thinking-only',exerciseTitle:'Exercise 2',prompt:'<strong>Which products are most popular in your country? Discuss your answer with a partner.</strong>'},
+            {id:'u5-pre-3',type:'thinking-only',exerciseTitle:'Exercise 3',prompt:'<strong>What is environmental performance? Discuss with a partner.</strong>'}
           ]
         },
         {
           id:'understand',title:'Understand the Article',tasks:[
             {
-              id:'u5-focus-1-1',type:'editable-table',exerciseTitle:'Exercise 1: Focus on the news: opposing views',
+              id:'u5-focus-1-1',type:'editable-table',exerciseTitle:'Exercise 1',
               prompt:'<p>Articles often give both sides of a story. Sometimes, the writer offers a balanced perspective, or argues the case for one particular side. Whichever focus they use, an argument must be supported, either by evidence or by a quote from someone who knows a lot about the subject.</p><p><strong>1.1. Read the following argument descriptors. Match each argument (1–3) with its counter-argument (a–c).</strong></p>',
               columns:['Column A','Column B','Answer'],
               rows:[
@@ -801,6 +801,12 @@
                 {cells:[{text:'2. Dufoe buys “green” stuff to save the environment.'},{text:'b. The author says “The notion of shopping for salvation turns my stomach”.'},{answerId:'u5-focus-1-1-a2',prefix:'2.',placeholder:'Letter'}]},
                 {cells:[{text:'3. People buy more stuff because they’re environmentally friendly.'},{text:'c. Compared with a plastic bag, a reusable tote bag requires far more resources to produce.'},{answerId:'u5-focus-1-1-a3',prefix:'3.',placeholder:'Letter'}]}
               ],
+              exportFormat:'table',
+              exportTable:{columns:['Column A','Column B','Answer'],rows:[
+                {cells:[{text:'1. A reusable tote bag is environmentally friendly.'},{text:'a. It turns out that more materials are used to make these products when people buy more than they need.'},{answerId:'u5-focus-1-1-a1'}]},
+                {cells:[{text:'2. Dufoe buys “green” stuff to save the environment.'},{text:'b. The author says “The notion of shopping for salvation turns my stomach”.'},{answerId:'u5-focus-1-1-a2'}]},
+                {cells:[{text:'3. People buy more stuff because they’re environmentally friendly.'},{text:'c. Compared with a plastic bag, a reusable tote bag requires far more resources to produce.'},{answerId:'u5-focus-1-1-a3'}]}
+              ]},
               subAnswers:[
                 {id:'u5-focus-1-1-a1',type:'short-text',required:true,export:true,prompt:'1.'},
                 {id:'u5-focus-1-1-a2',type:'short-text',required:true,export:true,prompt:'2.'},
@@ -808,7 +814,7 @@
               ]
             },
             {
-              id:'u5-focus-1-2',type:'gap-fill-set',exerciseTitle:'Exercise 1.2',
+              id:'u5-focus-1-2',type:'gap-fill-set',
               prompt:'<strong>1.2. Now scan the article and match each descriptor above with its paragraph number in the article.</strong>',
               rows:[
                 {answerId:'u5-focus-1-2-1',prefix:'1. ',placeholder:'Paragraph'},
@@ -829,7 +835,7 @@
             },
             {
               id:'u5-understand-2',type:'editable-table',exerciseTitle:'Exercise 2',
-              prompt:'<strong>2. In which paragraphs can you find the following ideas? Each idea may match more than one paragraph.</strong>',
+              prompt:'<strong>In which paragraphs can you find the following ideas? Each idea may match more than one paragraph.</strong>',
               columns:['Idea','Paragraph number(s)'],
               rows:[
                 {cells:[{text:'Conscious consumerism & its consequences'},{answerId:'u5-understand-2-a',placeholder:'Paragraph number(s)'}]},
@@ -853,7 +859,7 @@
         {
           id:'vocabulary',title:'Vocabulary Work',tasks:[
             {
-              id:'u5-vocab-1',type:'gap-fill-set',exerciseTitle:'Exercise 1',prompt:'<strong>1. Find phrases in the article which have the following meanings.</strong>',
+              id:'u5-vocab-1',type:'gap-fill-set',exerciseTitle:'Exercise 1',prompt:'<strong>Find phrases in the article which have the following meanings.</strong>',
               rows:[
                 {answerId:'u5-vocab-1-a',prefix:'a. Beginning to grow or develop rapidly (para. 1) ',placeholder:'Phrase'},
                 {answerId:'u5-vocab-1-b',prefix:'b. Opposite to reusable (para. 1) ',placeholder:'Phrase'},
@@ -868,7 +874,7 @@
               ]
             },
             {
-              id:'u5-vocab-2',type:'editable-table',exerciseTitle:'Exercise 2',prompt:'<strong>2. Word formation is an important feature of English vocabulary. Complete the grid below.</strong>',
+              id:'u5-vocab-2',type:'editable-table',exerciseTitle:'Exercise 2',prompt:'<strong>Word formation is an important feature of English vocabulary. Complete the grid below.</strong>',
               columns:['VERB','NOUN','ADJECTIVE'],
               rows:[
                 {cells:[{answerId:'u5-vocab-2-disposable-v',placeholder:'Verb'},{answerId:'u5-vocab-2-disposable-n',placeholder:'Noun'},{text:'disposable'}]},
@@ -899,7 +905,7 @@
               ]
             },
             {
-              id:'u5-vocab-3',type:'gap-fill-set',exerciseTitle:'Exercise 3',prompt:'<strong>3. Complete the sentences with the correct forms of the words from Exercise 2.</strong>',
+              id:'u5-vocab-3',type:'gap-fill-set',exerciseTitle:'Exercise 3',prompt:'<strong>Complete the sentences with the correct forms of the words from Exercise 2.</strong>',
               rows:[
                 {answerId:'u5-vocab-3-a',prefix:'a. You should quit the habit of using ',suffix:' cups to drink.',placeholder:'Word'},
                 {answerId:'u5-vocab-3-b',prefix:'b. Since this bag is a ',suffix:' edition, only a few wealthy figures own it.',placeholder:'Word'},
