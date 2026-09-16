@@ -779,7 +779,7 @@
       sections:[
         {id:'pre',title:'Pre-reading',tasks:[
           {id:'u2-pre-match',type:'editable-table',exerciseTitle:'Exercise 1',
-           prompt:'<strong>1. Match each term with the correct description(s). One term may match more than one description.</strong>',
+           prompt:'<strong>Match each term with the correct description(s). One term may match more than one description.</strong>',
            instructions:'<strong>Descriptions</strong><br>1. National climate plans setting out targets and actions to reduce greenhouse-gas emissions.<br>2. The point at which greenhouse-gas emissions reach their highest level before declining.<br>3. A global climate agreement aimed at limiting global warming.<br>4. Updated every five years, with each successive plan expected to represent a progression beyond the previous one.<br>5. A state in which greenhouse gases released are balanced by those removed from the atmosphere.<br>6. Seeks to keep warming well below 2°C and pursue 1.5°C, reach peak emissions as soon as possible and net zero around mid-century, while strengthening adaptation and climate finance.',
            columns:['Term','Description number(s)'],
            rows:[
@@ -800,12 +800,12 @@
              {id:'u2-pre-c',type:'short-text',required:false,export:true},
              {id:'u2-pre-d',type:'short-text',required:false,export:true}
            ]},
-          {id:'u2-pre-2',type:'thinking-only',exerciseTitle:'Exercise 2',prompt:'<strong>2. What kinds of targets, commitments, or actions are commonly included in a country’s NDC?</strong>'},
-          {id:'u2-pre-3',type:'thinking-only',exerciseTitle:'Exercise 3',prompt:'<strong>3. What climate commitments or actions do you know Vietnam has made to reduce greenhouse-gas emissions?</strong>'}
+          {id:'u2-pre-2',type:'thinking-only',exerciseTitle:'Exercise 2',prompt:'<strong>What kinds of targets, commitments, or actions are commonly included in a country’s NDC?</strong>'},
+          {id:'u2-pre-3',type:'thinking-only',exerciseTitle:'Exercise 3',prompt:'<strong>What climate commitments or actions do you know Vietnam has made to reduce greenhouse-gas emissions?</strong>'}
         ]},
         {id:'understand',title:'Understand the Article',tasks:[
           {id:'u2-understand-1',type:'editable-table',exerciseTitle:'Exercise 1',
-           prompt:'<strong>1. Which paragraphs in the article contain the following main ideas? Each idea may match more than one paragraph.</strong>',
+           prompt:'<strong>Which paragraphs in the article contain the following main ideas? Each idea may match more than one paragraph.</strong>',
            columns:['Main idea','Paragraph(s)'],
            rows:[
              {cells:[{text:'A. Continued optimism about climate action'},{answerId:'u2-understand-a',placeholder:'Paragraph number(s)'}]},
@@ -825,12 +825,12 @@
            ]},
            subAnswers:['a','b','c','d','e','f'].map(letter=>({id:'u2-understand-'+letter,type:'short-text',required:true,export:true}))},
           {id:'u2-understand-2',type:'textarea-final',exerciseTitle:'Exercise 2',
-           prompt:'<strong>2. What is the author’s overall attitude towards the failure to meet the 1.5°C target? Support your answer with evidence from the article.</strong>',
+           prompt:'<strong>What is the author’s overall attitude towards the failure to meet the 1.5°C target? Support your answer with evidence from the article.</strong>',
            thinking:true,required:true,export:true}
         ]},
         {id:'vocabulary',title:'Vocabulary Work',tasks:[
           {id:'u2-vocab-1',type:'editable-table',exerciseTitle:'Exercise 1',
-           prompt:'<strong>1. Match the words and phrases with their meanings as used in the article.</strong>',
+           prompt:'<strong>Match the words and phrases with their meanings as used in the article.</strong>',
            instructions:'<strong>Definitions</strong><br>a. continuing as planned and likely to achieve a goal<br>b. force something difficult to be accepted or completed<br>c. prevent something harmful or undesirable from happening<br>d. an important event or achievement marking major progress<br>e. a standard used to measure or compare progress',
            columns:['Word or phrase','Answer (a–e)'],
            rows:[
@@ -849,7 +849,7 @@
            ]},
            subAnswers:[1,2,3,4,5].map(n=>({id:'u2-vocab-1-'+n,type:'short-text',required:true,export:true}))},
           {id:'u2-vocab-2',type:'gap-fill-set',exerciseTitle:'Exercise 2',
-           prompt:'<strong>2. Complete each sentence with the correct word or phrase from Exercise 1. Change the form if necessary.</strong>',
+           prompt:'<strong>Complete each sentence with the correct word or phrase from Exercise 1. Change the form if necessary.</strong>',
            rows:[
              {answerId:'u2-vocab-2-1',prefix:'1. The project is still ',suffix:' to meet its emissions-reduction target by 2030.',placeholder:'Word or phrase'},
              {answerId:'u2-vocab-2-2',prefix:'2. Despite strong opposition, the government managed to ',suffix:' the new environmental regulations.',placeholder:'Word or phrase'},
