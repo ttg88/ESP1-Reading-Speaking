@@ -986,7 +986,7 @@ textSizeMenuBtn?.addEventListener('click',(e)=>{
 function applyTextSize(size){
   const articleEl = document.getElementById('article');
   if(!articleEl) return;
-  const px = size === 'small' ? 17 : size === 'medium' ? 20 : size === 'large' ? 24 : size === 'xlarge' ? (25 * 96 / 72) : 20;
+  const px = size === 'small' ? 17 : size === 'medium' ? 20 : size === 'large' ? 24 : size === 'xlarge' ? (45 * 96 / 72) : 20;
   articleEl.style.fontSize = px + 'px';
 
   // Keep every part of the reading proportional to the selected body size.
