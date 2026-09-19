@@ -772,53 +772,11 @@ document.querySelectorAll('.nav button[data-s],#prev,#next,.subnav button').forE
 start.onclick=()=>{landing.classList.add('hidden');workspace.classList.remove('hidden');show('pre');saveNow()};
 document.getElementById('continue').onclick=restore;
 document.getElementById('startAgain').onclick=()=>{
-  if(confirm('Start Unit 1 again? This will delete your saved work for Unit 1 only. Your work in other units will not be affected.')){
-    // Clear Unit 1 work state only. Preserve user interface preferences
-    // such as Text Size and Focus Mode.
+  if(confirm('Start this Unit again? Your current locally saved work will be deleted.')){
     localStorage.removeItem(STORAGE_KEY);
-    localStorage.removeItem(TIMER_KEY);
-    localStorage.removeItem(ANNO_KEY);
-    localStorage.removeItem(GENERAL_NOTE_KEY);
-
-    // Clear worksheet responses and student details for this unit.
     document.querySelectorAll('textarea,.vfill').forEach(x=>x.value='');
     document.querySelectorAll('.ucheck,input[type="radio"]').forEach(x=>x.checked=false);
-    ['sid','name','class'].forEach(id=>document.getElementById(id).value='');
-    ack.checked=false;
-
-    // Reset Unit 1 timer in memory without touching other-unit storage.
-    clearInterval(timerTick);
-    timerTick=null;
-    timerState={status:'idle',durationSec:0,remainingSec:0,endAt:null};
-    if(timerMinutes) timerMinutes.value='';
-    renderTimer();
-    timerPanel?.classList.add('hidden');
-
-    // Reset Unit 1 highlights, linked notes, and general notes.
-    annotations=[];
-    pendingSelection=null;
-    selectedGroupId=null;
-    generalNotes.value='';
-    renderAnnotations();
-    renderLinkedNotes();
-    updateNoteIndicator();
-    closeNotes();
-    hideToolbar();
-
-    // Reset navigation/progress display for this unit.
-    visited.clear();
-    visited.add('pre');
-    current='pre';
-    const articleEl=document.getElementById('article');
-    const tasksEl=document.querySelector('.tasks');
-    if(articleEl) articleEl.scrollTop=0;
-    if(tasksEl) tasksEl.scrollTop=0;
-    sum.textContent='Selected: —';
-
-    valid();
-    resumeState();
-    nav();
-    if(typeof updateExportState==='function') updateExportState();
+    ['sid','name','class'].forEach(id=>document.getElementById(id).value='');ack.checked=false;valid();resumeState();
   }
 };
 window.addEventListener('beforeunload',()=>{if(!restoring&&!workspace.classList.contains('hidden'))try{localStorage.setItem(STORAGE_KEY,JSON.stringify(collect()))}catch(e){}});
@@ -986,7 +944,7 @@ textSizeMenuBtn?.addEventListener('click',(e)=>{
 function applyTextSize(size){
   const articleEl = document.getElementById('article');
   if(!articleEl) return;
-  const px = size === 'small' ? 17 : size === 'medium' ? 20 : size === 'large' ? 24 : size === 'xlarge' ? 56;
+  const px = size === 'small' ? 17 : size === 'medium' ? 20 : size === 'large' ? 24 : size === 'xlarge' ? (25 * 96 / 72) : 20;
   articleEl.style.fontSize = px + 'px';
 
   // Keep every part of the reading proportional to the selected body size.
