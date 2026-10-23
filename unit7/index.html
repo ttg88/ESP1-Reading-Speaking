@@ -1,0 +1,2080 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ESP1 Interactive Reading Worksheet</title>
+  <style>
+:root{--blue:#1558b0;--blue-soft:#eaf3ff;--red:#d91515;--red-soft:#fde9e9;--gray:#e8e8e8;--line:#d8e0e8;--ink:#15202b;--article-bg:#eaf5ff;--thinking:#fff8dc;--thinking-border:#e3b11b;--panel:#fff;--article-size:20px;--divider:7px;--notes-width:390px;font-family:Arial,Helvetica,sans-serif;color:var(--ink)}*{box-sizing:border-box}html,body{height:100%;margin:0;background:#f3f5f7}.hidden{display:none!important}.btn{border:1px solid #b8c6d6;background:#fff;border-radius:7px;padding:9px 14px;font-weight:700;cursor:pointer}.btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}.btn:disabled{opacity:.45;cursor:not-allowed}.wide{width:100%}.muted{color:#758292;font-size:12px}.landing-page{min-height:100vh;padding:8px}.landing-card{max-width:560px;margin:0 auto;background:#fff;border-radius:12px;padding:20px 24px;box-shadow:0 2px 10px #0001;border-top:5px solid var(--blue)}.landing-kicker{font-size:12px;color:var(--blue);font-weight:800;letter-spacing:.04em}.landing-card h1{margin:6px 0 2px;font-size:22px}.landing-unit-title{color:var(--red);font-weight:800;margin-bottom:16px}.student-form{display:grid;gap:8px}.student-form label{display:grid;grid-template-columns:105px 1fr;align-items:center;font-size:12px;font-weight:700}.student-form input{padding:8px;border:1px solid #b8c6d6;border-radius:5px}.before-start-box{margin-top:16px;border:1px solid #b8d4f5;background:#f5f9ff;border-radius:7px;padding:12px;font-size:12px;line-height:1.45}.before-start-box strong{color:var(--blue)}.before-start-box ul{padding-left:18px}.consent-row{display:flex;gap:8px;align-items:center;font-size:12px;margin:12px 0}.landing-actions,.restore-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.landing-card hr{border:0;border-top:1px solid var(--line);margin:12px 0}.workspace{height:100vh;display:flex;flex-direction:column;background:#fff}.top-header{height:58px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:6px 14px;border-top:4px solid #333;border-bottom:1px solid var(--line)}.course-title{display:flex;flex-direction:column;font-size:16px}.course-title strong{color:var(--blue)}.course-title small{font-weight:400;color:#65758a;font-size:12px;margin-top:2px}.unit-red{color:var(--red)}.timer-display{font-weight:800;font-size:24px;color:var(--blue);letter-spacing:.03em;cursor:pointer;user-select:none;-webkit-user-select:none;min-width:72px;text-align:center}.header-right{display:flex;justify-content:flex-end;align-items:center;gap:10px;font-size:12px;color:#65758a}.icon-btn{border:0;background:transparent;font-size:28px;line-height:1;cursor:pointer}.section-tabs{min-height:54px;display:flex;align-items:center;gap:9px;padding:8px 12px;border-bottom:1px solid var(--line);position:relative}.section-tab{border:0;border-radius:9px;padding:9px 13px;font-weight:800;font-size:16px;background:var(--red-soft);color:var(--red);cursor:pointer}.section-tab.current{background:var(--blue);color:#fff}.section-tab.finished{background:var(--gray);color:#444}.section-tab.empty{background:#efefef;color:#777}.status-legend{margin-left:auto;font-size:12px;color:#64748b}.menu-panel{position:absolute;right:14px;top:50px;width:240px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:0 14px 35px #0002;z-index:40}.menu-panel>button,.menu-group>button,.submenu button{width:100%;border:0;background:#fff;padding:11px 9px;text-align:left;display:flex;align-items:center;gap:12px;color:#415b78;font-size:16px;cursor:pointer;border-radius:8px}.menu-panel button small{margin-left:auto}.submenu{padding-left:32px}.submenu button{font-size:14px}.submenu button.active{background:#eaf2fd;color:var(--blue);font-weight:800}.content-frame{position:relative;display:flex;flex:1;min-height:0;overflow:hidden}.work-area{display:flex;flex:1;min-width:0;min-height:0;overflow:hidden}.article-pane,.task-pane{overflow:auto;min-width:0}.article-pane{width:47%;background:var(--article-bg);padding:20px 28px;font-size:var(--article-size);line-height:1.55}.article-pane h1{font-size:1.55em;line-height:1.12;margin:.2em 0 .65em}.article-pane .subtitle{font-size:.92em;font-style:italic;color:#3d5268}.article-pane .byline{font-size:.72em;color:#62758b}.article-pane p{margin:1em 0}.task-pane{flex:1;background:#fff;padding:20px 32px;font-size:16px;line-height:1.45}.divider{width:var(--divider);cursor:col-resize;background:#cdd6df;flex:0 0 var(--divider)}.content-frame.reading-mode .task-pane,.content-frame.reading-mode .divider{display:none}.content-frame.reading-mode .article-pane{width:100%}.content-frame.tasks-mode .article-pane,.content-frame.tasks-mode .divider{display:none}.content-frame.tasks-mode .task-pane{width:100%}.notes-panel{width:var(--notes-width);border-left:1px solid var(--line);background:#fff;flex:0 0 var(--notes-width);overflow:auto}.notes-header{display:flex;justify-content:space-between;padding:18px;border-bottom:1px solid var(--line);font-size:18px}.notes-body{padding:14px 16px}.notes-body textarea{width:100%;min-height:180px;margin-top:8px;border:1px solid #cbd5e1;border-radius:10px;padding:12px;font-size:16px;background:#fffdf5}.notes-body hr{border:0;border-top:1px solid var(--line);margin:20px 0}.linked-note-card{border:1px solid #d7e0ea;border-radius:10px;padding:10px;margin:10px 0}.linked-note-quote{border-left:3px solid #b3c2d2;padding-left:8px;color:#56687a;font-size:12px;max-height:90px;overflow:hidden}.linked-note-card textarea{min-height:70px;background:#fff}.remove-note{display:block;margin-left:auto;border:0;background:transparent;color:#ad3636;cursor:pointer}.bottom-nav{height:58px;display:flex;justify-content:space-between;align-items:center;padding:8px 14px;border-top:1px solid var(--line)}.popover{position:absolute;z-index:50;top:56px;left:50%;transform:translateX(-50%);width:260px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 14px 35px #0002}.timer-input-row,.timer-control-row{display:flex;gap:10px;align-items:center;margin:12px 0}.timer-input-row input{width:110px;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}.timer-control-row .btn{flex:1}.toast{position:absolute;left:50%;bottom:72px;transform:translateX(-50%);background:#1f2937;color:#fff;padding:10px 14px;border-radius:8px;z-index:60}.empty-state{height:100%;display:grid;place-items:center;color:#7b8794;text-align:center}.section-heading{color:var(--red);font-size:14px;letter-spacing:.04em}.task-pane h2{margin:.15em 0 .7em}.exercise{border-bottom:1px solid #e4e9ef;padding-bottom:20px;margin-bottom:20px}.thinking-box{border:1px solid var(--thinking-border);background:var(--thinking);border-radius:10px;padding:14px;margin:14px 0}.thinking-box label,.final-box label{display:block;font-size:13px;font-weight:800;letter-spacing:.04em;margin-bottom:8px}.thinking-box textarea,.final-box textarea,.short-text-input{width:100%;border:1px solid #b9c8d8;border-radius:6px;padding:10px;font-size:16px}.thinking-box textarea,.final-box textarea{min-height:110px}.final-box{border:1px solid #1f6bc3;background:var(--blue-soft);border-radius:10px;padding:14px;margin:12px 0}.final-box label{color:#004b9a}.required-star{color:var(--red)}.option-row{display:flex;gap:8px;align-items:flex-start;margin:7px 0}.task-error{border:1px solid #e12d2d;background:#fff1f1;color:#9b1c1c;padding:10px;border-radius:8px}.highlight-yellow{background:#ffe783}.linked-note-mark{border-bottom:2px solid #8996a3;background:#f1f3f5}.text-small{--article-size:17px}.text-medium{--article-size:20px}.text-large{--article-size:24px}.text-xlarge{--article-size:56px}
+.section-subtabs{display:flex;gap:8px;margin:8px 0 18px}.section-subtab{border:1px solid #b8c6d6;background:#fff;color:#21496f;border-radius:7px;padding:8px 13px;font-weight:700;cursor:pointer}.section-subtab.active{background:var(--blue);border-color:var(--blue);color:#fff}.section-tab-intro{margin:-4px 0 16px;color:#22313f}.gapfill-line{font-size:16px;line-height:2.1;margin:10px 0 18px}.gapfill-input{display:inline-block;width:190px;max-width:45%;margin:0 4px;padding:8px 10px;border:1px solid #9fb2c5;border-radius:7px;font-size:16px;vertical-align:middle}.selection-toolbar{position:fixed;z-index:90;display:flex;gap:6px;background:#fff;border:1px solid #cfd9e4;border-radius:12px;padding:6px;box-shadow:0 8px 24px #0003}.selection-toolbar button{border:0;border-radius:8px;padding:8px 11px;font-size:13px;cursor:pointer}.selection-toolbar .highlight-action{background:#fff0a8;color:#5f4d00}.selection-toolbar .note-action{background:#eef2f6;color:#34495e}.selection-toolbar .remove-annotation-action{background:#fff1f1;color:#a12222}.highlight-yellow,.linked-note-mark{cursor:pointer}.highlight-yellow{background:#ffe783}.linked-note-mark{background:#f1f3f5;border-bottom:2px solid #8996a3}.print-answer-preview{white-space:pre-wrap}@media(max-width:900px){.status-legend{display:none}.article-pane{width:50%;padding:18px}.task-pane{padding:18px}.notes-panel{position:absolute;right:0;top:0;bottom:0;z-index:30;box-shadow:-8px 0 24px #0002}.section-tab{font-size:13px;padding:8px}.top-header{grid-template-columns:1fr auto 1fr}}@media(max-width:680px){body:before{content:"This worksheet is designed for laptop/iPad use. Mobile layout is not supported.";position:fixed;inset:0;z-index:9999;background:#fff;display:grid;place-items:center;text-align:center;padding:30px;font-weight:700}.workspace,.landing-page{display:none!important}}
+
+
+  .task-data-table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:0.98em}
+  .task-data-table th,.task-data-table td{border:1px solid #c6d3e1;padding:9px 10px;vertical-align:middle;text-align:left}
+  .task-data-table th{background:#f2f6fb;color:#27445f;font-weight:800}
+  .task-data-table input[type="text"],.task-data-table select{width:100%;min-height:38px;border:1px solid #b8c7d8;border-radius:7px;padding:7px 9px;background:#fff;font:inherit;color:#17212b}
+  .task-data-table .marker-cell{width:28%;font-weight:700}
+  .task-data-table .dropdown-cell{width:30%}
+  .task-data-table .meaning-cell{width:42%}
+  .task-data-table .answer-cell{min-width:120px}
+  .task-data-table .cell-answer-wrap{display:flex;align-items:center;gap:7px}
+  .task-data-table .cell-answer-wrap>span{white-space:nowrap;font-weight:700}
+  .thinking-box.thinking-small textarea{min-height:72px}
+  .gapfill-set .gapfill-row{padding:10px 0}
+  .gapfill-set .gapfill-row + .gapfill-row{border-top:1px solid #e3e8ee}
+  .restore-status{display:block;margin-top:7px;font-size:12px;font-weight:700}
+  .restore-status.error{color:#b42318}
+  .restore-status.success{color:#137333}
+  @media (max-width:760px){.task-data-table{font-size:0.92em}.task-data-table th,.task-data-table td{padding:7px}.task-data-table .marker-cell{width:26%}}
+
+
+/* Resizable overlay notes: its own scroll area continues into linked annotations. */
+.notes-panel{position:absolute;inset:0 0 0 auto;z-index:30;width:var(--notes-width);max-width:100%;overflow:visible;display:flex;flex-direction:column;box-shadow:-6px 0 20px #0002}
+.notes-header{flex:none;padding:10px 16px;min-height:48px}
+.notes-body{flex:1;min-height:0;overflow:auto;padding:12px 16px;scrollbar-gutter:stable}
+.my-notes{display:flex;flex-direction:column;min-height:100%;gap:8px;padding-bottom:3px}
+.notes-toolbar{display:flex;flex-wrap:wrap;gap:5px;align-items:center;position:sticky;top:0;z-index:1;background:#fff;padding:6px 0;border-bottom:1px solid var(--line);font:13px Arial,sans-serif}
+.notes-toolbar button,.notes-toolbar select{font:inherit;border:1px solid #cbd5e1;border-radius:5px;background:#fff;padding:6px;cursor:pointer;color:#15202b}
+.notes-toolbar button:disabled{opacity:.4;cursor:default}
+.notes-toolbar label{display:flex;align-items:center;gap:4px;white-space:nowrap}
+.notes-toolbar input[type=color]{width:30px;height:30px;padding:2px;border:1px solid #cbd5e1;background:white}
+.notes-editor{flex:1;min-height:180px;border:1px solid #cbd5e1;border-radius:8px;background:#fff;padding:12px;font-family:'Times New Roman',serif;font-size:16pt;line-height:1.5;overflow-wrap:anywhere;outline:none}
+.notes-editor:focus{border-color:#1558b0;box-shadow:0 0 0 2px #1558b01a}
+.notes-editor:empty:before{content:attr(data-placeholder);color:#8994a2;pointer-events:none}
+.notes-editor p{margin:0 0 .6em}
+.notes-resize{position:absolute;left:-5px;top:0;bottom:0;width:10px;cursor:ew-resize;touch-action:none;z-index:3}
+.notes-resize:after{content:'';position:absolute;top:45%;left:3px;width:4px;height:48px;border-radius:3px;background:#9dabbc}
+.notes-resize:focus-visible{outline:2px solid #1558b0}
+
+
+.notes-toolbar{gap:3px;padding:5px 0}
+.notes-toolbar button{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:4px;border-color:transparent;border-radius:3px;font-size:16px}
+.notes-toolbar button:hover:not(:disabled){background:#eef3f8;border-color:#cbd5e1}
+.notes-toolbar select{height:30px;min-width:53px;padding:3px;border-radius:3px}
+.notes-toolbar .notes-color{position:relative;width:30px;height:30px;justify-content:center;font:bold 19px Georgia,serif;border-radius:3px;cursor:pointer}
+.notes-color span{border-bottom:3px solid var(--notes-text-color,#15202b);line-height:21px;padding:0 3px}
+.notes-toolbar .notes-color input[type=color]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.notes-color:focus-within{outline:2px solid #1558b0}
+.notes-editor li::marker{font-size:1em}
+
+.highlight-yellow{background:#fff2b3}.highlight-red{background:#ffd4d8}.highlight-blue{background:#a9cff7}.highlight-green{background:#d9efce}.highlight-purple{background:#e8dafa}
+.highlight-palette{display:flex;gap:5px;align-items:center}
+.selection-toolbar .highlight-palette button{width:27px;height:27px;padding:0;border:2px solid transparent;border-radius:50%;background:var(--swatch);box-shadow:inset 0 0 0 1px #0002}
+.selection-toolbar .highlight-palette button[aria-pressed=true]{border-color:#334155;outline:1px solid #fff;outline-offset:-4px}
+.linked-note-mark{background:transparent;border-bottom:2px dotted #65758a}
+
+.ranking-list{list-style:none;padding:0;margin:14px 0;display:grid;gap:8px}
+.ranking-row{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid #cbd5e1;border-radius:7px;background:#fff}
+.rank-handle{touch-action:none;cursor:grab;user-select:none;font-size:22px;border:0;background:transparent;color:#64748b;padding:5px}
+.rank-number{background:#eaf3ff;color:#1558b0;font-weight:bold;border-radius:50%;min-width:28px;height:28px;display:grid;place-items:center}
+.rank-label{flex:1}.rank-actions{display:flex;gap:4px}.rank-actions button{border:1px solid #cbd5e1;border-radius:4px;background:white;padding:5px 9px;font-size:18px;cursor:pointer}.rank-actions button:disabled{opacity:.3}
+.rank-dragging{background:#eef5ff;outline:2px solid #1558b0}.rank-confirm-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.rank-status{font-size:13px;color:#536479}
+.task-data-table textarea{width:100%;min-height:240px;resize:vertical;padding:10px;border:1px solid #b8c7d8;border-radius:7px;font:inherit;background:#fff}.task-data-table .cell-answer-wrap{align-items:flex-start}.print-table td{white-space:pre-wrap}
+</style>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <section id="landingPage" class="landing-page" aria-labelledby="landingTitle">
+      <div class="landing-card">
+        <div class="landing-kicker">ESP1 – READING SPEAKING SKILLS</div>
+        <h1 id="landingTitle">Unit <span data-unit-number>—</span></h1>
+        <div class="landing-unit-title" data-unit-title>No unit content loaded</div>
+
+        <div class="student-form">
+          <label>Student Number *<input id="studentNumber" autocomplete="off" /></label>
+          <label>Full name *<input id="fullName" autocomplete="name" /></label>
+          <label>Class *<input id="studentClass" autocomplete="off" /></label>
+        </div>
+
+        <div class="before-start-box">
+          <strong>BEFORE YOU START</strong>
+          <p>Your work will be saved automatically on the browser and device you use.</p>
+          <ul>
+            <li>Enter your Student Number, full name, and class correctly.</li>
+            <li>To continue later, reopen this worksheet using the same device and browser.</li>
+            <li>To continue on another device/browser, choose Download Backup first, then use Restore Backup.</li>
+            <li>Do not use Private/Incognito mode or clear browser data while working.</li>
+          </ul>
+          <small>You can download a backup file at any time and restore it on another device/browser.</small>
+        </div>
+
+        <label class="consent-row"><input type="checkbox" id="saveConsent" /> I understand how my work is saved.</label>
+        <div class="landing-actions">
+          <button id="continueBtn" class="btn primary">CONTINUE MY WORK</button>
+          <button id="startAgainBtn" class="btn">START AGAIN</button>
+          <span id="lastSavedText" class="muted"></span>
+        </div>
+        <hr />
+        <div class="restore-row">
+          <button id="restoreBtn" class="btn">RESTORE BACKUP</button>
+          <input id="restoreInput" type="file" accept="application/json,.json" hidden />
+          <span id="restoreFilename" class="muted">No backup file selected</span>
+        </div>
+        <small class="muted">Select this unit's backup file (.json). Restored student information and answers will load before you enter the worksheet.</small>
+        <small id="restoreStatus" class="restore-status hidden" role="status" aria-live="polite"></small>
+      </div>
+    </section>
+
+    <section id="workspace" class="workspace hidden">
+      <header class="top-header">
+        <div class="course-title"><strong>ESP1 • Unit <span data-unit-number>—</span> <span class="unit-red" data-unit-title>No unit content loaded</span></strong><small>Instructor · Ms. Tra</small></div>
+        <div id="timerDisplay" class="timer-display"></div>
+        <div class="header-right"><span id="saveStatus">Saved locally ✓</span><button id="menuBtn" class="icon-btn" aria-expanded="false" aria-controls="menuPanel">☰</button></div>
+      </header>
+
+      <nav class="section-tabs" aria-label="Worksheet sections">
+        <button class="section-tab" data-section="pre">1 PRE-READING</button>
+        <button class="section-tab" data-section="understand">2 UNDERSTAND</button>
+        <button class="section-tab" data-section="vocabulary">3 VOCABULARY</button>
+        <button class="section-tab" data-section="exam">4 EXAM PREPARATION</button>
+        <div class="status-legend">Blue = current · Gray = finished · Red = unfinished final answer(s)</div>
+      </nav>
+
+      <aside id="menuPanel" class="menu-panel hidden">
+        <button data-action="download-backup">⇩ <span>Download Backup</span></button>
+        <button data-action="export-pdf" id="exportPdfMenu">▧ <span>Export PDF</span><small id="remainingCount">No unit</small></button>
+        <div class="menu-group">
+          <button data-toggle="focus-submenu">◫ <span>Focus Mode</span><span>⌄</span></button>
+          <div id="focusSubmenu" class="submenu hidden">
+            <button data-focus="split">Split View</button>
+            <button data-focus="reading">Reading Only</button>
+            <button data-focus="tasks">Tasks Only</button>
+          </div>
+        </div>
+        <button data-action="toggle-notes">▤ <span>Notes</span></button>
+        <div class="menu-group">
+          <button data-toggle="text-submenu">T <span>Text Size</span><span>⌄</span></button>
+          <div id="textSubmenu" class="submenu hidden">
+            <button data-text-size="small">Small</button>
+            <button data-text-size="medium">Medium</button>
+            <button data-text-size="large">Large</button>
+            <button data-text-size="xlarge">Extra Large</button>
+          </div>
+        </div>
+        <button data-action="toggle-timer">◷ <span>Timer</span></button>
+      </aside>
+
+      <div id="contentFrame" class="content-frame split-mode">
+        <main id="workArea" class="work-area">
+          <section id="articlePane" class="article-pane"></section>
+          <div id="divider" class="divider" role="separator" aria-orientation="vertical" tabindex="0"></div>
+          <section id="taskPane" class="task-pane"></section>
+        </main>
+        <aside id="notesPanel" class="notes-panel hidden">
+          <div id="notesResize" class="notes-resize" role="separator" aria-label="Resize notes" aria-orientation="vertical" tabindex="0"></div><div class="notes-header"><strong>Notes</strong><button id="closeNotesBtn" class="icon-btn">×</button></div>
+          <div class="notes-body">
+            <section class="my-notes"><strong>My notes</strong>
+            <div id="notesToolbar" class="notes-toolbar" role="toolbar" aria-label="My notes formatting">
+              <button type="button" data-note-command="bold" title="Bold" aria-label="Bold"><b>B</b></button>
+              <button type="button" data-note-command="italic" title="Italic" aria-label="Italic"><i>I</i></button>
+              <button type="button" data-note-command="underline" title="Underline" aria-label="Underline"><u>U</u></button>
+              <label><select id="notesFontSize" aria-label="Font size in points"><option value="12">12</option><option value="14">14</option><option value="16" selected>16</option><option value="18">18</option><option value="20">20</option><option value="24">24</option><option value="28">28</option><option value="32">32</option></select></label>
+              <label class="notes-color" title="Text color"><span aria-hidden="true">A</span><input id="notesTextColor" type="color" value="#15202b" aria-label="Text color"></label>
+              <button type="button" data-note-command="insertUnorderedList" title="Bullets" aria-label="Bullets"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/><path d="M9 6h12M9 12h12M9 18h12"/></svg></button>
+              <button type="button" data-note-command="insertOrderedList" title="Numbering" aria-label="Numbering"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h1v5M3 8h2M2 12c0-3 4-2 3 0l-3 3h3M3 18h2l-1 2c3 0 1 3-1 2M9 6h12M9 12h12M9 18h12"/></svg></button>
+              <button type="button" data-note-command="undo" title="Undo" aria-label="Undo"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5 3 10l5 5M3 10h11a6 6 0 0 1 0 12"/></svg></button>
+              <button type="button" data-note-command="redo" title="Redo" aria-label="Redo"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 5 5 5-5 5M21 10H10a6 6 0 0 0 0 12"/></svg></button>
+            </div>
+            <div id="generalNotes" class="notes-editor" contenteditable="true" role="textbox" aria-multiline="true" aria-label="My notes" data-placeholder="Write your notes here..."></div></section>
+            <hr />
+            <strong>Linked notes — Reading &amp; Tasks</strong>
+            <div id="linkedNotesList" class="linked-notes-list"><p class="muted">No linked notes yet.</p></div>
+          </div>
+        </aside>
+      </div>
+
+      <footer class="bottom-nav">
+        <button id="prevBtn" class="btn">‹ PREVIOUS</button>
+        <button id="nextBtn" class="btn primary">NEXT ›</button>
+      </footer>
+
+      <div id="timerPopover" class="popover hidden">
+        <strong>Set Timer</strong>
+        <div id="timerSetup"><div class="timer-input-row"><input id="timerMinutes" type="number" min="1" step="1" placeholder="Minutes" /><span>minutes</span></div><button id="timerStartBtn" class="btn primary wide">Start</button></div>
+        <div id="timerControls" class="hidden"><div class="timer-control-row"><button id="timerPauseBtn" class="btn">Pause</button><button id="timerResetBtn" class="btn">Reset</button></div><small id="timerMessage" class="muted"></small></div>
+      </div>
+
+      <div id="selectionToolbar" class="selection-toolbar hidden" role="toolbar" aria-label="Reading selection actions">
+        <div class="highlight-palette" role="group" aria-label="Highlight color"><button type="button" data-highlight-color="yellow" title="Highlight: yellow" aria-label="Highlight yellow" style="--swatch:#fff2b3"></button><button type="button" data-highlight-color="red" title="Highlight: red" aria-label="Highlight red" style="--swatch:#ffd4d8"></button><button type="button" data-highlight-color="blue" title="Highlight: blue" aria-label="Highlight blue" style="--swatch:#a9cff7"></button><button type="button" data-highlight-color="green" title="Highlight: green" aria-label="Highlight green" style="--swatch:#d9efce"></button><button type="button" data-highlight-color="purple" title="Highlight: purple" aria-label="Highlight purple" style="--swatch:#e8dafa"></button></div><button id="highlightSelectionBtn" class="highlight-action" type="button" title="Apply selected color">Highlight</button><button id="removeSelectedHighlights" type="button" title="Remove highlight from selected text">Remove</button>
+        <button id="noteSelectionBtn" class="note-action" type="button">Note</button>
+      </div>
+      <div id="annotationToolbar" class="selection-toolbar hidden" role="toolbar" aria-label="Reading annotation actions">
+        <button id="removeAnnotationBtn" class="remove-annotation-action" type="button">Remove</button>
+      </div>
+      <div id="toast" class="toast hidden" role="status"></div>
+    </section>
+  </div>
+
+  <script>
+(function(){
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const attrs=t=>`data-answer-id="${esc(t.id)}" data-answer-type="${esc(t.type)}"`;
+  function normalizePromptMarkup(html){
+    const raw=String(html??'');
+    // Global renderer rule: if a question/item body is bold, keep its leading marker (a., 1., i., etc.) inside the same bold span.
+    return raw.replace(/^\s*((?:[A-Za-z]|\d+|[ivxlcdm]+)[.)])\s*<strong>([\s\S]*)<\/strong>\s*$/i,'<strong>$1 $2</strong>');
+  }
+  function wrap(t,inner){const prompt=t.prompt?normalizePromptMarkup(t.prompt):'';return `<div class="exercise" data-task-id="${esc(t.id)}">${t.exerciseTitle?`<h3>${esc(t.exerciseTitle)}</h3>`:''}${prompt?`<div class="task-prompt">${prompt}</div>`:''}${inner}</div>`}
+  function thinking(t,label='THINKING SPACE'){return `<div class="thinking-box"><label>${esc(label)}</label><textarea data-thinking-id="${esc(t.id)}" placeholder="${esc(t.thinkingPlaceholder||'Evidence, reasoning, keywords...')}"></textarea></div>`}
+  function finalTextarea(t){return `<div class="final-box"><label>FINAL ANSWER ${t.required?'<span class="required-star">*</span>':''}</label><textarea ${attrs(t)} placeholder="${esc(t.placeholder||'Write your final answer here...')}"></textarea></div>`}
+  function renderThinkingOnly(t){return wrap(t,thinking(t))}
+  function renderFinalTextarea(t){return wrap(t,(t.thinking?thinking(t):'')+finalTextarea(t))}
+  function renderShortText(t){return wrap(t,(t.thinking?thinking(t):'')+`<div class="final-box"><label>FINAL ANSWER ${t.required?'<span class="required-star">*</span>':''}</label><input class="short-text-input" type="text" ${attrs(t)} placeholder="${esc(t.placeholder||'')}" /></div>`)}
+  function renderGapFill(t){return wrap(t,`${t.instructions?`<div class="task-instructions">${t.instructions}</div>`:''}<div class="gapfill-line">${t.prefix||''}<input class="gapfill-input" type="text" ${attrs(t)} placeholder="${esc(t.placeholder||'')}" />${t.suffix||''}</div>${t.thinking?thinking(t):''}`)}
+  function renderGapFillSet(t){
+    const rows=(t.rows||[]).map((r,i)=>`<div class="gapfill-row">${r.prefix||''}<input class="gapfill-input" type="text" data-answer-id="${esc(r.answerId||`${t.id}-row-${i+1}`)}" data-answer-type="gap-fill" placeholder="${esc(r.placeholder||'')}" />${r.suffix||''}</div>`).join('');
+    return wrap(t,`${t.instructions?`<div class="task-instructions">${t.instructions}</div>`:''}<div class="gapfill-set">${rows}</div>${t.thinking?thinking(t):''}`);
+  }
+  function optionGroup(t,inputType){
+    const options=(t.options||[]).map((o,i)=>{const value=typeof o==='string'?o:(o.value??o.label??''); const label=typeof o==='string'?o:(o.label??o.value??''); return `<label class="option-row"><input type="${inputType}" name="${esc(t.id)}" value="${esc(value)}" ${attrs(t)} /><span>${label}</span></label>`}).join('');
+    const summary=t.finalSummary!==false?`<div class="final-box selection-summary" data-summary-for="${esc(t.id)}"><label>FINAL ANSWER ${t.required?'<span class="required-star">*</span>':''}</label><div>Your selections above are your final answer.</div><small>Selected: <span>—</span></small></div>`:'';
+    return wrap(t,options+(t.thinking?thinking(t):'')+summary);
+  }
+  function renderRadioGroup(t){return optionGroup(t,'radio')}
+  function renderCheckboxGroup(t){return optionGroup(t,'checkbox')}
+  function renderTermTable(t){
+    const rows=(t.rows||[]).map((r,i)=>`<tr><td><strong>${esc(r.term||'')}</strong></td><td><input type="text" data-answer-id="${esc(r.answerId||`${t.id}-row-${i+1}`)}" data-answer-type="short-text" placeholder="${esc(r.placeholder||'Write your explanation...')}" /></td></tr>`).join('');
+    return wrap(t,`<table class="task-data-table"><thead><tr><th>${esc(t.termHeader||'Term')}</th><th>${esc(t.explanationHeader||'Explanation')}</th></tr></thead><tbody>${rows}</tbody></table>`);
+  }
+  function renderCollocationTable(t){
+    const opts=(t.options||[]).map(o=>{const value=typeof o==='string'?o:(o.value??o.label??'');const label=typeof o==='string'?o:(o.label??o.value??'');return `<option value="${esc(value)}">${esc(label)}</option>`}).join('');
+    const rows=(t.rows||[]).map((r,i)=>`<tr><td class="marker-cell"><strong>${esc(r.marker||'')} ${esc(r.stem||'')}</strong></td><td class="dropdown-cell"><select data-answer-id="${esc(r.matchId)}" data-answer-type="short-text"><option value="">Choose...</option>${opts}</select></td><td class="meaning-cell"><input type="text" data-answer-id="${esc(r.meaningId)}" data-answer-type="short-text" placeholder="${esc(r.meaningPlaceholder||'Explain the meaning...')}" /></td></tr>`).join('');
+    return wrap(t,`${t.instructions?`<div class="task-instructions">${t.instructions}</div>`:''}<table class="task-data-table"><thead><tr><th>${esc(t.columnAHeader||'Column A')}</th><th>${esc(t.dropdownHeader||'Column B')}</th><th>${esc(t.meaningHeader||'Meaning')}</th></tr></thead><tbody>${rows}</tbody></table>`);
+  }
+  function renderEditableTable(t){
+    const headers=(t.columns||[]).map(c=>`<th>${esc(typeof c==='string'?c:(c.label||''))}</th>`).join('');
+    const rows=(t.rows||[]).map(row=>`<tr>${(row.cells||[]).map(cell=>{
+      if(cell&&cell.answerId){
+        return `<td class="answer-cell"><div class="cell-answer-wrap">${cell.prefix?`<span>${esc(cell.prefix)}</span>`:''}${cell.multiline?`<textarea data-answer-id="${esc(cell.answerId)}" data-answer-type="short-text" placeholder="${esc(cell.placeholder||'Write brief notes...')}"></textarea>`:cell.options?`<select data-answer-id="${esc(cell.answerId)}" data-answer-type="short-text"><option value="">Choose...</option>${cell.options.map(o=>`<option value="${esc(typeof o==='string'?o:o.value)}">${esc(typeof o==='string'?o:o.label)}</option>`).join('')}</select>`:`<input type="text" data-answer-id="${esc(cell.answerId)}" data-answer-type="short-text" placeholder="${esc(cell.placeholder||'')}" />`}${cell.suffix?`<span>${esc(cell.suffix)}</span>`:''}</div></td>`;
+      }
+      return `<td>${cell?.html||esc(cell?.text||'')}</td>`;
+    }).join('')}</tr>`).join('');
+    return wrap(t,`${t.instructions?`<div class="task-instructions">${t.instructions}</div>`:''}<table class="task-data-table"><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table>${t.thinking?thinking(t):''}`);
+  }
+  function renderRanking(t){
+    return wrap(t,`<div class="ranking-widget" data-ranking-id="${esc(t.id)}"><ol class="ranking-list">${(t.options||[]).map((o,i)=>{const value=typeof o==='string'?o:o.value,label=typeof o==='string'?o:o.label;return `<li class="ranking-row" data-rank-value="${esc(value)}"><button type="button" class="rank-handle" aria-label="Drag ${esc(label)}" title="Drag to reorder">⋮⋮</button><span class="rank-number">${i+1}</span><span class="rank-label" data-task-block-id="rank-${esc(value)}">${esc(label)}</span><span class="rank-actions"><button type="button" data-rank-move="-1" aria-label="Move ${esc(label)} up">↑</button><button type="button" data-rank-move="1" aria-label="Move ${esc(label)} down">↓</button></span></li>`}).join('')}</ol><div class="rank-confirm-row"><button type="button" class="btn" data-rank-confirm>Confirm ranking</button><span class="rank-status" role="status" aria-live="polite">Not confirmed</span></div></div>`);
+  }
+  window.ESP1TaskRenderers={
+    'thinking-only':renderThinkingOnly,
+    'textarea-final':renderFinalTextarea,
+    'short-text':renderShortText,
+    'gap-fill':renderGapFill,
+    'gap-fill-set':renderGapFillSet,
+    'radio':renderRadioGroup,
+    'checkbox':renderCheckboxGroup,
+    'term-table':renderTermTable,
+    'collocation-table':renderCollocationTable,
+    'ranking':renderRanking,
+    'editable-table':renderEditableTable
+  };
+})();
+
+  </script>
+  <script>
+(function(){
+  'use strict';
+  const byId=id=>document.getElementById(id);
+  const query=(sel,root=document)=>root.querySelector(sel);
+  const queryAll=(sel,root=document)=>[...root.querySelectorAll(sel)];
+  const SECTION_ORDER=['pre','understand','vocabulary','exam'];
+  const DEFAULT_SECTION_TITLES={pre:'Pre-reading',understand:'Understand the Article',vocabulary:'Vocabulary Work',exam:'Exam Preparation'};
+  const state={unitData:null,hasUnit:false,currentSection:'pre',registry:[],focus:'split',textSize:'medium',splitPct:47,timer:{remaining:0,running:false,lastTick:null,configured:false},highlights:[],linkedNotes:[],activeSubtabs:{},student:{studentNumber:'',fullName:'',studentClass:''},answers:{},thinking:{},generalNotes:'',lastSaved:null};
+  let timerInterval=null,saveDebounce=null;
+
+  const log=(level,msg,data)=>{const payload={time:new Date().toISOString(),level,msg,data}; console[level==='error'?'error':'log']('[ESP1]',payload); try{const key='esp1_debug_log';const arr=JSON.parse(localStorage.getItem(key)||'[]');arr.push(payload);localStorage.setItem(key,JSON.stringify(arr.slice(-150)));}catch(_){}};
+  const guard=(name,fn)=>{try{return fn()}catch(err){log('error',name,{message:err.message,stack:err.stack}); toast(`${name} failed. Core shell is still running.`);return null}};
+  const unitKey=()=>state.hasUnit?`esp1_unit${state.unitData.meta.unitNumber}_state`:'esp1_empty_shell_state';
+  const prefKey='esp1_global_preferences';
+
+  function boot(unitData){
+    guard('cache DOM',assertCoreDom);
+    guard('load preferences',loadPreferences);
+    guard('init landing',initLanding);
+    guard('init menu',initMenu);
+    guard('init navigation',initNavigation);
+    guard('init focus/divider',initFocusAndDivider);
+    guard('init timer',initTimer);
+    guard('init text size',initTextSize);
+    guard('init notes/highlighting',initNotesAndHighlighting);
+    guard('init ranking',initRanking);
+    guard('init autosave listeners',initAutosaveListeners);
+    guard('load unit data',()=>loadUnit(unitData));
+    guard('initial timer UI',updateTimerUi);
+  }
+
+  function assertCoreDom(){['landingPage','workspace','menuBtn','menuPanel','articlePane','taskPane','divider','timerDisplay','notesPanel'].forEach(id=>{if(!byId(id))throw new Error(`Missing core DOM element #${id}`)})}
+  function loadPreferences(){try{const p=JSON.parse(localStorage.getItem(prefKey)||'{}');state.focus=p.focus||'split';state.textSize=p.textSize||'medium';state.splitPct=Number.isFinite(p.splitPct)?p.splitPct:47}catch(_){}}
+  function savePreferences(){localStorage.setItem(prefKey,JSON.stringify({focus:state.focus,textSize:state.textSize,splitPct:state.splitPct}))}
+
+  function loadUnit(unitData){
+    if(!unitData){state.hasUnit=false;state.unitData=null;applyMeta();renderEmptyShell();restoreSavedState();updateAllStatus();return}
+    const validation=validateUnitData(unitData);
+    if(!validation.ok){state.hasUnit=false;state.unitData=unitData;applyMeta();renderValidationFailure(validation.errors);restoreSavedState();updateAllStatus();return}
+    state.hasUnit=true;state.unitData=unitData;applyMeta();renderArticle();renderCurrentSection();buildRegistry();restoreSavedState();updateAllStatus();
+  }
+
+  function validateUnitData(d){
+    const errors=[];
+    if(!d||typeof d!=='object')errors.push('UNIT_DATA must be an object.');
+    if(!d?.meta?.unitNumber)errors.push('meta.unitNumber is required.');
+    if(!d?.meta?.unitTitle)errors.push('meta.unitTitle is required.');
+    if(!Array.isArray(d?.sections))errors.push('sections must be an array.');
+    (d?.sections||[]).forEach((s,si)=>{
+      if(!SECTION_ORDER.includes(s.id))errors.push(`Section ${si+1}: invalid id "${s.id}".`);
+      const taskLists=[];
+      if(Array.isArray(s.tasks))taskLists.push({label:s.id,tasks:s.tasks});
+      if(Array.isArray(s.tabs)){
+        s.tabs.forEach((tab,ti)=>{
+          if(!tab.id)errors.push(`Section ${s.id}, tab ${ti+1}: missing tab id.`);
+          if(!Array.isArray(tab.tasks))errors.push(`Section ${s.id}, tab ${tab.id||ti+1}: tasks must be an array.`);
+          else taskLists.push({label:`${s.id}/${tab.id}`,tasks:tab.tasks});
+        });
+      }
+      if(!Array.isArray(s.tasks)&&!Array.isArray(s.tabs))errors.push(`Section ${s.id||si+1}: provide tasks or tabs.`);
+      taskLists.forEach(group=>group.tasks.forEach((t,ti)=>{
+        if(!t.id)errors.push(`Section ${group.label}, task ${ti+1}: missing task id.`);
+        if(!t.type)errors.push(`Task ${t.id||ti+1}: missing type.`);
+        else if(!window.ESP1TaskRenderers?.[t.type])errors.push(`Task ${t.id}: unsupported type "${t.type}" in section "${s.id}".`);
+      }));
+    });
+    return {ok:errors.length===0,errors};
+  }
+
+  function applyMeta(){
+    queryAll('[data-unit-number]').forEach(el=>el.textContent=state.unitData?.meta?.unitNumber??'—');
+    queryAll('[data-unit-title]').forEach(el=>el.textContent=state.unitData?.meta?.unitTitle||'No unit content loaded');
+    document.title=state.hasUnit?`ESP1 Unit ${state.unitData.meta.unitNumber} – ${state.unitData.meta.unitTitle}`:'ESP1 Master Shell';
+  }
+  function renderEmptyShell(){byId('articlePane').innerHTML='<div class="empty-state">Article pane ready.<br>No unit content loaded.</div>';byId('taskPane').innerHTML='<div class="empty-state">Task pane ready.<br>No unit content loaded.</div>';state.registry=[]}
+  function renderValidationFailure(errors){byId('articlePane').innerHTML='<div class="empty-state">Article pane ready.</div>';byId('taskPane').innerHTML=`<div class="task-error"><strong>UNIT_DATA validation failed</strong><ul>${errors.map(e=>`<li>${escapeHtml(e)}</li>`).join('')}</ul></div>`;state.registry=[]}
+
+  function articleBlockId(kind,index){
+    const u=state.unitData?.meta?.unitNumber??'x';
+    return `u${u}-article-${kind}-${index}`;
+  }
+  function renderArticle(){
+    const a=state.unitData.article||{};
+    const content=Array.isArray(a.content)?a.content.map((block,index)=>typeof block==='string'?`<p data-article-block-id="${articleBlockId('p',index+1)}">${escapeHtml(block)}</p>`:renderArticleBlock(block,index)).join(''):'';
+    byId('articlePane').innerHTML=`<div class="section-heading">MAIN ARTICLE</div>${a.title?`<h1 data-article-block-id="${articleBlockId('title',1)}">${a.title}</h1>`:''}${a.subtitle?`<div class="subtitle" data-article-block-id="${articleBlockId('subtitle',1)}">${a.subtitle}</div>`:''}${(a.author||a.date)?`<p class="byline" data-article-block-id="${articleBlockId('byline',1)}">${escapeHtml(a.author||'')}${a.author&&a.date?' · ':''}${escapeHtml(a.date||'')}</p>`:''}${content}`;
+    applyAllAnnotations();
+  }
+  function renderArticleBlock(b,index){
+    if(!b)return'';
+    const id=escapeHtml(b.id||articleBlockId(b.type==='heading'?'h':'p',index+1));
+    if(b.type==='html')return `<div data-article-block-id="${id}">${b.html||''}</div>`;
+    if(b.type==='paragraph')return `<p data-article-block-id="${id}">${b.number?`<strong style="color:#0759b7">${escapeHtml(b.number)}</strong> `:''}${b.html||escapeHtml(b.text||'')}</p>`;
+    if(b.type==='heading')return `<h2 data-article-block-id="${id}">${b.html||escapeHtml(b.text||'')}</h2>`;
+    return'';
+  }
+  function getSection(id){return state.unitData?.sections?.find(s=>s.id===id)}
+  function sectionTasks(s){
+    if(Array.isArray(s?.tabs))return s.tabs.flatMap(tab=>tab.tasks||[]);
+    return s?.tasks||[];
+  }
+  function findTaskById(id){for(const s of state.unitData?.sections||[]){for(const t of sectionTasks(s)){if(t.id===id)return t}}return null}
+  function renderTaskList(tasks,s){return (tasks||[]).map(t=>{const r=window.ESP1TaskRenderers?.[t.type];if(!r)return `<div class="task-error">Unsupported task type: ${escapeHtml(t.type)} (${escapeHtml(t.id)})</div>`;try{return r({...t,thinking:t.thinking??(s.id==='exam'&&t.type==='textarea-final'),section:s.id})}catch(err){log('error','task renderer',{taskId:t.id,section:s.id,error:err.message});return `<div class="task-error">Could not render task ${escapeHtml(t.id)}.</div>`}}).join('')}
+  function renderCurrentSection(){
+    if(!state.hasUnit){renderEmptyShell();return}
+    const s=getSection(state.currentSection);
+    if(!s){byId('taskPane').innerHTML='<div class="empty-state">No content in this section.</div>';return}
+    let inner='';
+    if(Array.isArray(s.tabs)&&s.tabs.length){
+      const activeId=state.activeSubtabs[s.id]&&s.tabs.some(t=>t.id===state.activeSubtabs[s.id])?state.activeSubtabs[s.id]:s.tabs[0].id;
+      state.activeSubtabs[s.id]=activeId;
+      const active=s.tabs.find(t=>t.id===activeId);
+      inner=`<div class="section-subtabs">${s.tabs.map(t=>`<button type="button" class="section-subtab ${t.id===activeId?'active':''}" data-section-subtab="${escapeHtml(t.id)}">${escapeHtml(t.title||t.id)}</button>`).join('')}</div>${active?.intro?`<div class="section-tab-intro">${active.intro}</div>`:''}${renderTaskList(active?.tasks||[],s)}`;
+    }else{inner=renderTaskList(s.tasks||[],s)}
+    byId('taskPane').innerHTML=`<div class="section-heading">SECTION ${SECTION_ORDER.indexOf(s.id)+1}</div><h2>${escapeHtml(s.title||DEFAULT_SECTION_TITLES[s.id])}</h2>${inner||'<div class="empty-state">No tasks in this section.</div>'}`;
+    hydrateRenderedInputs();
+    prepareTaskAnnotationBlocks();
+    applyTaskAnnotations();
+  }
+
+  function buildRegistry(){
+    state.registry=[];
+    const addTask=(s,t,tab=null)=>{
+      if(t.type==='thinking-only')return;
+      if(Array.isArray(t.subAnswers)&&t.subAnswers.length){
+        t.subAnswers.forEach((sa,subIndex)=>state.registry.push({
+          id:sa.id,section:s.id,type:sa.type||'short-text',required:!!sa.required,export:sa.export!==false,
+          exerciseTitle:sa.exerciseTitle??(subIndex===0?(t.exerciseTitle||''):''),
+          prompt:sa.prompt||'',prefix:sa.prefix||'',suffix:sa.suffix||'',
+          options:sa.options||[],exportGroupTitle:tab?(tab.exportTitle??tab.title??''):'',
+          exportParentId:t.id,exportFormat:t.exportFormat||'',exportTable:t.exportTable||null
+        }));
+        return;
+      }
+      state.registry.push({
+        id:t.id,
+        section:s.id,
+        type:t.type,
+        required:!!t.required,
+        export:t.export!==false,
+        exerciseTitle:t.exerciseTitle||'',
+        prompt:t.prompt||'',
+        prefix:t.prefix||'',
+        suffix:t.suffix||'',
+        options:t.options||[],minSelections:t.minSelections||1,maxSelections:t.maxSelections||null,
+        exportGroupTitle:tab?(tab.exportTitle??tab.title??''):''
+      });
+    };
+    (state.unitData?.sections||[]).forEach(s=>{
+      if(Array.isArray(s.tabs))s.tabs.forEach(tab=>(tab.tasks||[]).forEach(t=>addTask(s,t,tab)));
+      else (s.tasks||[]).forEach(t=>addTask(s,t));
+    });
+  }
+
+  function initLanding(){
+    byId('continueBtn').addEventListener('click',()=>{state.student=readStudentForm();if(!state.student.studentNumber||!state.student.fullName||!state.student.studentClass||!byId('saveConsent').checked){toast('Complete student information and confirm the saving notice.');return}saveNow();enterWorkspace()});
+    byId('startAgainBtn').addEventListener('click',()=>{resetCurrentUnit();toast(state.hasUnit?'Current unit work cleared.':'Empty-shell test state cleared.')});
+    byId('restoreBtn').addEventListener('click',()=>byId('restoreInput').click());
+    byId('restoreInput').addEventListener('change',restoreBackupFromFile);
+  }
+  function enterWorkspace(){byId('landingPage').classList.add('hidden');byId('workspace').classList.remove('hidden');applyFocus();applyTextSize();renderCurrentSection();hydrateRenderedInputs();updateAllStatus();updateTimerUi()}
+  function initMenu(){
+    const button=byId('menuBtn');
+    const panel=byId('menuPanel');
+
+    const setMenuOpen=open=>{
+      panel.classList.toggle('hidden',!open);
+      button.setAttribute('aria-expanded',String(open));
+    };
+    const closeMenu=()=>setMenuOpen(false);
+    const toggleMenu=()=>setMenuOpen(panel.classList.contains('hidden'));
+
+    button.addEventListener('click',e=>{e.stopPropagation();toggleMenu()});
+    panel.addEventListener('click',e=>{
+      const b=e.target.closest('button');
+      if(!b)return;
+      const a=b.dataset.action,t=b.dataset.toggle;
+      if(a==='download-backup'){downloadBackup();closeMenu()}
+      if(a==='export-pdf'){exportPdf();closeMenu()}
+      if(a==='toggle-notes'){toggleNotes();closeMenu()}
+      if(a==='toggle-timer'){toggleTimerPopover();closeMenu()}
+      if(t==='focus-submenu')byId('focusSubmenu').classList.toggle('hidden');
+      if(t==='text-submenu')byId('textSubmenu').classList.toggle('hidden');
+    });
+
+    // Menu behaves like a normal popover: click/tap anywhere outside closes it.
+    document.addEventListener('pointerdown',e=>{
+      if(panel.classList.contains('hidden'))return;
+      if(panel.contains(e.target)||button.contains(e.target))return;
+      closeMenu();
+    });
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+  }
+  function initNavigation(){
+    queryAll('.section-tab').forEach(b=>b.addEventListener('click',()=>switchSection(b.dataset.section)));
+    byId('prevBtn').addEventListener('click',()=>moveSection(-1));byId('nextBtn').addEventListener('click',()=>moveSection(1));
+    byId('taskPane').addEventListener('click',e=>{const b=e.target.closest('[data-section-subtab]');if(!b)return;captureVisibleInputs();state.activeSubtabs[state.currentSection]=b.dataset.sectionSubtab;renderCurrentSection();saveSoon()});
+  }
+  function switchSection(id){if(!SECTION_ORDER.includes(id))return;captureVisibleInputs();state.currentSection=id;renderCurrentSection();applyFocus();updateAllStatus();saveSoon()}
+  function moveSection(delta){const i=SECTION_ORDER.indexOf(state.currentSection);const ni=i+delta;if(ni<0||ni>=SECTION_ORDER.length)return;switchSection(SECTION_ORDER[ni])}
+
+  function initFocusAndDivider(){
+    queryAll('[data-focus]').forEach(b=>b.addEventListener('click',()=>{state.focus=b.dataset.focus;applyFocus();savePreferences()}));
+    let dragging=false;byId('divider').addEventListener('pointerdown',e=>{dragging=true;byId('divider').setPointerCapture(e.pointerId)});byId('divider').addEventListener('pointermove',e=>{if(!dragging)return;const r=byId('workArea').getBoundingClientRect();let pct=((e.clientX-r.left)/r.width)*100;pct=Math.max(25,Math.min(75,pct));state.splitPct=pct;applySplit();savePreferences()});byId('divider').addEventListener('pointerup',()=>dragging=false);
+    applyFocus();
+  }
+  function applyFocus(){const cf=byId('contentFrame');cf.classList.remove('split-mode','reading-mode','tasks-mode');const effectiveFocus=state.currentSection==='pre'?'tasks':state.focus;cf.classList.add(`${effectiveFocus}-mode`);queryAll('[data-focus]').forEach(b=>b.classList.toggle('active',b.dataset.focus===state.focus));applySplit(effectiveFocus)}
+  function applySplit(effectiveFocus=state.currentSection==='pre'?'tasks':state.focus){if(effectiveFocus==='split')byId('articlePane').style.width=`${state.splitPct}%`;else byId('articlePane').style.width=''}
+
+  function initTimer(){
+    const display=byId('timerDisplay');
+    const popover=byId('timerPopover');
+
+    const openTimer=()=>{popover.classList.remove('hidden');updateTimerUi()};
+    const closeTimer=()=>popover.classList.add('hidden');
+    const toggleTimer=()=>{popover.classList.contains('hidden')?openTimer():closeTimer()};
+
+    byId('timerStartBtn').addEventListener('click',()=>{
+      const min=parseInt(byId('timerMinutes').value,10);
+      if(!min||min<1){toast('Enter a valid number of minutes.');return}
+      state.timer={remaining:min*60,running:true,lastTick:Date.now(),configured:true};
+      byId('timerMessage').textContent='';
+      startTimerLoop();updateTimerUi();saveSoon();
+    });
+    byId('timerPauseBtn').addEventListener('click',()=>{
+      if(!state.timer.configured)return;
+      state.timer.running=!state.timer.running;
+      state.timer.lastTick=Date.now();
+      state.timer.running?startTimerLoop():stopTimerLoop();
+      updateTimerUi();saveSoon();
+    });
+    byId('timerResetBtn').addEventListener('click',()=>{
+      stopTimerLoop();
+      state.timer={remaining:0,running:false,lastTick:null,configured:false};
+      byId('timerMinutes').value='';byId('timerMessage').textContent='';
+      updateTimerUi();saveSoon();
+    });
+
+    // Header time is the primary timer control once a timer exists.
+    display.addEventListener('click',()=>{if(state.timer.configured)toggleTimer()});
+    display.addEventListener('keydown',e=>{if(state.timer.configured&&(e.key==='Enter'||e.key===' ')){e.preventDefault();toggleTimer()}});
+    display.setAttribute('role','button');display.setAttribute('tabindex','0');
+
+    // Clicking anywhere outside the timer closes it.
+    document.addEventListener('pointerdown',e=>{
+      if(popover.classList.contains('hidden'))return;
+      if(popover.contains(e.target)||display.contains(e.target)||e.target.closest('[data-action="toggle-timer"]'))return;
+      closeTimer();
+    });
+  }
+  function toggleTimerPopover(){const pop=byId('timerPopover');pop.classList.toggle('hidden');updateTimerUi()}
+  function startTimerLoop(){stopTimerLoop();timerInterval=setInterval(()=>{if(!state.timer.running)return;const now=Date.now();const elapsed=Math.max(1,Math.floor((now-(state.timer.lastTick||now))/1000));state.timer.lastTick=now;state.timer.remaining=Math.max(0,state.timer.remaining-elapsed);if(state.timer.remaining===0){state.timer.running=false;stopTimerLoop();byId('timerMessage').textContent="Time's up. You can continue working."}updateTimerUi();saveSoon(true)},1000)}
+  function stopTimerLoop(){if(timerInterval){clearInterval(timerInterval);timerInterval=null}}
+  function formatTimerDisplay(totalSeconds){
+    const s=Math.max(0,Math.floor(Number(totalSeconds)||0));
+    const hours=Math.floor(s/3600);
+    const minutes=Math.floor((s%3600)/60);
+    const seconds=s%60;
+    if(hours>0){
+      return `${String(hours).padStart(2,'0')}:${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
+    }
+    return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
+  }
+  function updateTimerUi(){const s=Math.max(0,state.timer.remaining||0);const configured=!!state.timer.configured;const display=byId('timerDisplay');display.textContent=configured?formatTimerDisplay(s):'';display.style.pointerEvents=configured?'auto':'none';display.setAttribute('aria-label',configured?'Open timer controls':'Timer not set');byId('timerSetup').classList.toggle('hidden',configured);byId('timerControls').classList.toggle('hidden',!configured);byId('timerPauseBtn').textContent=state.timer.running?'Pause':'Resume';byId('timerPauseBtn').classList.toggle('hidden',configured&&s===0);if(!configured)byId('timerMessage').textContent=''}
+
+  function initTextSize(){queryAll('[data-text-size]').forEach(b=>b.addEventListener('click',()=>{state.textSize=b.dataset.textSize;applyTextSize();savePreferences()}));applyTextSize()}
+  function applyTextSize(){document.body.classList.remove('text-small','text-medium','text-large','text-xlarge');document.body.classList.add(`text-${state.textSize}`);queryAll('[data-text-size]').forEach(b=>b.classList.toggle('active',b.dataset.textSize===state.textSize))}
+
+  const HIGHLIGHT_COLORS=['yellow','red','blue','green','purple'];
+  let selectedHighlightColor='yellow';
+  function updateHighlightPalette(){queryAll('[data-highlight-color]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.highlightColor===selectedHighlightColor)));byId('highlightSelectionBtn').style.background=({yellow:'#fff2b3',red:'#ffd4d8',blue:'#a9cff7',green:'#d9efce',purple:'#e8dafa'})[selectedHighlightColor]}
+  // Shared annotation records reserve scope and context for future task anchors.
+  function subtractIntervals(records,cuts){
+    return records.flatMap(record=>{
+      let pieces=[record];
+      for(const cut of cuts)pieces=pieces.flatMap(part=>{
+        if((part.scope||'article')!==(cut.scope||'article')||JSON.stringify(part.context||{})!==JSON.stringify(cut.context||{})||part.locator.start.blockId!==cut.locator.start.blockId)return[part];
+        const a=part.locator.start.offset,b=part.locator.end.offset,c=cut.locator.start.offset,d=cut.locator.end.offset;
+        if(d<=a||c>=b)return[part];const result=[];
+        if(a<c)result.push({...part,locator:{...part.locator,start:{...part.locator.start},end:{...part.locator.end,offset:c}}});
+        if(d<b)result.push({...part,locator:{...part.locator,start:{...part.locator.start,offset:d},end:{...part.locator.end}}});
+        return result;
+      });return pieces;
+    });
+  }
+  function articleSegments(locator){
+    const blocks=queryAll('[data-article-block-id]',byId('articlePane'));
+    const first=blocks.findIndex(b=>b.dataset.articleBlockId===locator?.start?.blockId),last=blocks.findIndex(b=>b.dataset.articleBlockId===locator?.end?.blockId);
+    if(first<0||last<first)return[];
+    return blocks.slice(first,last+1).flatMap((block,i)=>{const start=i===0?locator.start.offset:0,end=first+i===last?locator.end.offset:block.textContent.length;return end>start?[{start:{blockId:block.dataset.articleBlockId,offset:start},end:{blockId:block.dataset.articleBlockId,offset:end}}]:[]});
+  }
+  function normalizeArticleHighlights(){
+    let result=[];
+    for(const h of state.highlights){
+      if(h.scope&&h.scope!=='article'){result.push(h);continue}
+      const parts=articleSegments(h.locator).map(locator=>({...h,scope:'article',context:{},color:HIGHLIGHT_COLORS.includes(h.color)?h.color:'yellow',locator}));
+      result=[...subtractIntervals(result,parts),...parts];
+    }state.highlights=result;
+  }
+  let pendingSelectionRange=null,pendingSelectionText='',activeAnnotation=null;
+  function initNotesAndHighlighting(){
+    byId('closeNotesBtn').addEventListener('click',()=>byId('notesPanel').classList.add('hidden'));
+    initRichNotes();
+    queryAll('[data-highlight-color]').forEach(button=>{
+      button.addEventListener('pointerdown',e=>e.preventDefault());
+      button.addEventListener('click',()=>{selectedHighlightColor=button.dataset.highlightColor;updateHighlightPalette();try{localStorage.setItem('esp1_highlight_color',selectedHighlightColor)}catch(_){}applyPendingAnnotation('highlight')});
+    });
+    byId('removeSelectedHighlights').addEventListener('pointerdown',e=>e.preventDefault());
+    byId('removeSelectedHighlights').addEventListener('click',()=>applyPendingAnnotation('erase'));
+    try{const saved=localStorage.getItem('esp1_highlight_color');if(HIGHLIGHT_COLORS.includes(saved))selectedHighlightColor=saved}catch(_){}
+    updateHighlightPalette();
+    const article=byId('articlePane');
+    article.addEventListener('mouseup',()=>queueSelectionToolbar('mouse'));
+    article.addEventListener('touchend',()=>queueSelectionToolbar('touch'),{passive:true});
+    article.addEventListener('click',e=>handleAnnotationClick(e));
+    const tasks=byId('taskPane');
+    tasks.addEventListener('mouseup',()=>queueSelectionToolbar('mouse'));
+    tasks.addEventListener('touchend',()=>queueSelectionToolbar('touch'),{passive:true});
+    tasks.addEventListener('click',e=>{if(!getSelection().isCollapsed&&e.target.closest('.option-row'))e.preventDefault();handleAnnotationClick(e)});
+    tasks.addEventListener('scroll',hideAnnotationToolbar,{passive:true});
+    byId('highlightSelectionBtn').addEventListener('pointerdown',e=>e.preventDefault());
+    byId('noteSelectionBtn').addEventListener('pointerdown',e=>e.preventDefault());
+    byId('highlightSelectionBtn').addEventListener('click',()=>applyPendingAnnotation('highlight'));
+    byId('noteSelectionBtn').addEventListener('click',()=>applyPendingAnnotation('note'));
+    byId('removeAnnotationBtn').addEventListener('pointerdown',e=>e.preventDefault());
+    byId('removeAnnotationBtn').addEventListener('click',removeActiveAnnotation);
+    document.addEventListener('pointermove',e=>{
+      if(e.pointerType!=='mouse'||!activeAnnotation)return;
+      const toolbar=byId('annotationToolbar');
+      const mark=e.target.closest?.(activeAnnotation.kind==='note'?'[data-note-id]':'[data-highlight-id]');
+      const sameMark=mark&&(activeAnnotation.kind==='note'?mark.dataset.noteId:mark.dataset.highlightId)===activeAnnotation.id;
+      if(toolbar.contains(e.target)||sameMark){clearTimeout(annotationDismissTimer);annotationDismissTimer=null}
+      else if(!annotationDismissTimer)annotationDismissTimer=setTimeout(hideAnnotationToolbar,300);
+    });
+    byId('articlePane').addEventListener('scroll',hideAnnotationToolbar,{passive:true});
+    window.addEventListener('resize',hideAnnotationToolbar);
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')hideAnnotationToolbar()});
+    document.addEventListener('pointerdown',e=>{
+      const selectionTb=byId('selectionToolbar'),annotationTb=byId('annotationToolbar');
+      if(!selectionTb.classList.contains('hidden')&&!selectionTb.contains(e.target)&&!article.contains(e.target)&&!byId('taskPane').contains(e.target))hideSelectionToolbar(true);
+      if(!annotationTb.classList.contains('hidden')&&!annotationTb.contains(e.target))hideAnnotationToolbar();
+    });
+    byId('linkedNotesList').addEventListener('input',e=>{const ta=e.target.closest('textarea[data-note-id]');if(!ta)return;const n=state.linkedNotes.find(x=>x.id===ta.dataset.noteId);if(n)n.note=ta.value;saveSoon()});
+    byId('linkedNotesList').addEventListener('click',e=>{const b=e.target.closest('[data-remove-note]');if(!b)return;removeLinkedNote(b.dataset.removeNote)});
+  }
+  let notesRange=null,notesHistory=[],notesHistoryIndex=-1;
+  function cleanNotesHtml(html){
+    const template=document.createElement('template');template.innerHTML=String(html||'');
+    const allowed=new Set(['B','STRONG','I','EM','U','SPAN','P','DIV','BR','UL','OL','LI']);
+    function clean(parent){[...parent.childNodes].forEach(n=>{
+      if(n.nodeType===8){n.remove();return}if(n.nodeType!==1)return;
+      if(['SCRIPT','STYLE','IFRAME','OBJECT','SVG','MATH'].includes(n.tagName)){n.remove();return}
+      clean(n);if(!allowed.has(n.tagName)){n.replaceWith(...n.childNodes);return}
+      const color=n.style.color,size=n.style.fontSize,weight=n.style.fontWeight,italic=n.style.fontStyle,decoration=n.style.textDecoration;
+      [...n.attributes].forEach(a=>n.removeAttribute(a.name));
+      if(color)n.style.color=color;
+      if(/^(12|14|16|18|20|24|28|32)pt$/.test(size))n.style.fontSize=size;
+      if(weight==='bold'||Number(weight)>=600)n.style.fontWeight='bold';
+      if(italic==='italic')n.style.fontStyle='italic';
+      if(decoration.includes('underline'))n.style.textDecoration='underline';
+    })}clean(template.content);return template.innerHTML;
+  }
+  function loadNotesContent(html,text){
+    const editor=byId('generalNotes');
+    if(typeof html==='string')editor.innerHTML=cleanNotesHtml(html);
+    else editor.innerText=text||'';
+    syncNotesListSizes();notesRange=null;notesHistory=[editor.innerHTML];notesHistoryIndex=0;updateNotesHistoryButtons();
+  }
+  function updateNotesHistoryButtons(){
+    query('[data-note-command="undo"]').disabled=notesHistoryIndex<=0;
+    query('[data-note-command="redo"]').disabled=notesHistoryIndex>=notesHistory.length-1;
+  }
+  function syncNotesListSizes(){
+    const editor=byId('generalNotes');
+    editor.querySelectorAll('li').forEach(li=>{
+      const walker=document.createTreeWalker(li,NodeFilter.SHOW_TEXT);let text;
+      while(text=walker.nextNode()){
+        if(!text.textContent.trim()||text.parentElement.closest('li')!==li)continue;
+        const size=parseFloat(getComputedStyle(text.parentElement).fontSize)*72/96;
+        if(Number.isFinite(size))li.style.fontSize=size.toFixed(2).replace(/\.?0+$/,'')+'pt';
+        break;
+      }
+    });
+  }
+  function recordNotes(){
+    syncNotesListSizes();
+    const editor=byId('generalNotes');state.generalNotes=editor.innerText;
+    if(notesHistory[notesHistoryIndex]!==editor.innerHTML){notesHistory=notesHistory.slice(0,notesHistoryIndex+1);notesHistory.push(editor.innerHTML);if(notesHistory.length>200)notesHistory.shift();notesHistoryIndex=notesHistory.length-1}
+    updateNotesHistoryButtons();saveSoon();
+  }
+  function rememberNotesSelection(){const sel=getSelection(),editor=byId('generalNotes');if(sel.rangeCount&&editor.contains(sel.anchorNode)&&editor.contains(sel.focusNode))notesRange=sel.getRangeAt(0).cloneRange()}
+  function restoreNotesSelection(){
+    const editor=byId('generalNotes');editor.focus();const sel=getSelection();sel.removeAllRanges();
+    if(notesRange&&editor.contains(notesRange.commonAncestorContainer))sel.addRange(notesRange);
+    else{const range=document.createRange();range.selectNodeContents(editor);range.collapse(false);sel.addRange(range)}
+  }
+  function notesCommand(command,value){
+    restoreNotesSelection();
+    if(command==='undo'||command==='redo'){
+      const next=notesHistoryIndex+(command==='undo'?-1:1);if(next<0||next>=notesHistory.length)return;
+      notesHistoryIndex=next;byId('generalNotes').innerHTML=notesHistory[next];notesRange=null;restoreNotesSelection();state.generalNotes=byId('generalNotes').innerText;updateNotesHistoryButtons();saveSoon();return;
+    }
+    document.execCommand('styleWithCSS',false,false);
+    if(command==='foreColor'){document.execCommand('styleWithCSS',false,true)}
+    if(command==='fontSize'){
+      document.execCommand('fontSize',false,'7');
+      byId('generalNotes').querySelectorAll('font[size="7"]').forEach(font=>{const span=document.createElement('span');span.style.fontSize=value+'pt';span.innerHTML=font.innerHTML;font.replaceWith(span)});
+    }else document.execCommand(command,false,value||null);
+    rememberNotesSelection();recordNotes();
+  }
+  function initRichNotes(){
+    const editor=byId('generalNotes'),toolbar=byId('notesToolbar'),panel=byId('notesPanel'),handle=byId('notesResize');
+    notesHistory=[''];notesHistoryIndex=0;updateNotesHistoryButtons();
+    document.addEventListener('selectionchange',rememberNotesSelection);
+    editor.addEventListener('input',recordNotes);
+    toolbar.addEventListener('pointerdown',e=>{if(e.target.closest('button'))e.preventDefault();else rememberNotesSelection()});
+    toolbar.addEventListener('click',e=>{const b=e.target.closest('[data-note-command]');if(b)notesCommand(b.dataset.noteCommand)});
+    byId('notesFontSize').addEventListener('change',e=>notesCommand('fontSize',e.target.value));
+    byId('notesTextColor').addEventListener('input',e=>{document.documentElement.style.setProperty('--notes-text-color',e.target.value);notesCommand('foreColor',e.target.value)});
+    editor.addEventListener('keydown',e=>{
+      if(!(e.ctrlKey||e.metaKey)||e.altKey)return;const key=e.key.toLowerCase();
+      if(key==='z'||key==='y'){e.preventDefault();notesCommand(key==='y'||e.shiftKey?'redo':'undo')}
+    });
+    editor.addEventListener('paste',e=>{e.preventDefault();restoreNotesSelection();document.execCommand('insertText',false,e.clipboardData.getData('text/plain'));rememberNotesSelection();recordNotes()});
+    function setWidth(width){const max=byId('contentFrame').clientWidth;const bounded=Math.min(max,Math.max(Math.min(300,max),width));document.documentElement.style.setProperty('--notes-width',bounded+'px');return bounded}
+    try{const w=Number(localStorage.getItem('esp1_notes_width'));if(w>0)document.documentElement.style.setProperty('--notes-width',Math.max(300,w)+'px')}catch(_){}
+    let dragging=false;
+    handle.addEventListener('pointerdown',e=>{e.preventDefault();dragging=true;handle.setPointerCapture(e.pointerId)});
+    handle.addEventListener('pointermove',e=>{if(dragging)setWidth(byId('contentFrame').getBoundingClientRect().right-e.clientX)});
+    function endResize(){if(!dragging)return;dragging=false;try{localStorage.setItem('esp1_notes_width',String(panel.getBoundingClientRect().width))}catch(_){}}
+    handle.addEventListener('pointerup',endResize);handle.addEventListener('pointercancel',endResize);
+    handle.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();const w=setWidth(panel.getBoundingClientRect().width+(e.key==='ArrowLeft'?30:-30));try{localStorage.setItem('esp1_notes_width',String(w))}catch(_){}});
+  }
+  function toggleNotes(){byId('notesPanel').classList.toggle('hidden');renderLinkedNotes()}
+  let selectionQueued=false;
+  function queueSelectionToolbar(source){
+    if(selectionQueued)return;selectionQueued=true;
+    setTimeout(()=>{selectionQueued=false;showSelectionToolbarFromCurrentSelection()},source==='touch'?220:0);
+  }
+  function showSelectionToolbarFromCurrentSelection(){
+    if(!state.hasUnit)return;
+    const article=byId('articlePane'),sel=window.getSelection();
+    if(!sel||sel.rangeCount===0||sel.isCollapsed){hideSelectionToolbar();return}
+    const range=sel.getRangeAt(0);
+    if(!article.contains(range.startContainer)||!article.contains(range.endContainer)){if(!taskSelectionLocator(range)){hideSelectionToolbar();return}}
+    const text=sel.toString().trim();if(text.length<1){hideSelectionToolbar();return}
+    pendingSelectionRange=range.cloneRange();pendingSelectionText=text;hideAnnotationToolbar();
+    positionFloatingToolbar(byId('selectionToolbar'),range.getBoundingClientRect());
+  }
+  function positionFloatingToolbar(tb,rect){
+    tb.classList.remove('hidden');
+    const left=Math.max(8,Math.min(window.innerWidth-tb.offsetWidth-8,rect.left+rect.width/2-tb.offsetWidth/2));
+    const top=Math.max(8,rect.top-tb.offsetHeight-8);
+    tb.style.left=`${left}px`;tb.style.top=`${top}px`;
+  }
+  function hideSelectionToolbar(clearSelection=false){
+    byId('selectionToolbar').classList.add('hidden');pendingSelectionRange=null;pendingSelectionText='';
+    if(clearSelection){const sel=window.getSelection();if(sel)sel.removeAllRanges()}
+  }
+  let annotationDismissTimer=null;
+  function hideAnnotationToolbar(){clearTimeout(annotationDismissTimer);annotationDismissTimer=null;byId('annotationToolbar').classList.add('hidden');activeAnnotation=null}
+
+  function prepareTaskAnnotationBlocks(){
+    const excluded='input,textarea,select,button,option,.rank-number,.rank-status,.thinking-box,.final-box,[contenteditable]';
+    const containers='p,div,ul,ol,li,table,thead,tbody,tr,th,td,h3';
+    queryAll('.exercise',byId('taskPane')).forEach(exercise=>{
+      function walk(node,path){
+        if(node.nodeType===3){if(!node.textContent.trim())return;const span=document.createElement('span');span.dataset.taskBlockId='text-'+path;node.replaceWith(span);span.append(node);return}
+        if(node.nodeType!==1||node.matches(excluded))return;
+        if(node.hasAttribute('data-task-block-id'))return;
+        if(node.textContent.trim()&&!node.querySelector(excluded)&&!node.querySelector(containers)){
+          node.dataset.taskBlockId='block-'+path;return;
+        }
+        [...node.childNodes].forEach((child,i)=>walk(child,path+'-'+i));
+      }
+      [...exercise.childNodes].forEach((child,i)=>walk(child,String(i)));
+    });
+  }
+  function taskContext(block){
+    const exercise=block.closest('[data-task-id]');
+    return {section:state.currentSection,tab:state.activeSubtabs[state.currentSection]||'',taskId:exercise?.dataset.taskId||''};
+  }
+  function taskSelectionLocator(range){
+    const start=range.startContainer.nodeType===1?range.startContainer:range.startContainer.parentElement;
+    const end=range.endContainer.nodeType===1?range.endContainer:range.endContainer.parentElement;
+    const block=start.closest('[data-task-block-id]');
+    if(!block||block!==end.closest('[data-task-block-id]')||!byId('taskPane').contains(block)||block.querySelector('input,textarea,select,[contenteditable]'))return null;
+    return {scope:'task',context:taskContext(block),blockText:block.textContent,
+      start:{blockId:block.dataset.taskBlockId,offset:textOffsetWithinBlock(block,range.startContainer,range.startOffset)},
+      end:{blockId:block.dataset.taskBlockId,offset:textOffsetWithinBlock(block,range.endContainer,range.endOffset)}};
+  }
+  function taskLocatorToRange(locator){
+    if(locator.context?.section!==state.currentSection||locator.context?.tab!==(state.activeSubtabs[state.currentSection]||''))return null;
+    const exercise=queryAll('[data-task-id]',byId('taskPane')).find(e=>e.dataset.taskId===locator.context.taskId);
+    const block=exercise&&queryAll('[data-task-block-id]',exercise).find(b=>b.dataset.taskBlockId===locator.start.blockId);
+    if(!block||block.textContent!==locator.blockText||locator.start.blockId!==locator.end.blockId)return null;
+    if(locator.start.offset<0||locator.end.offset>block.textContent.length||locator.end.offset<=locator.start.offset)return null;
+    const a=boundaryFromTextOffset(block,locator.start.offset),b=boundaryFromTextOffset(block,locator.end.offset);
+    if(!a||!b)return null;const range=document.createRange();range.setStart(a.node,a.offset);range.setEnd(b.node,b.offset);return range;
+  }
+  function applyTaskAnnotations(){
+    const pane=byId('taskPane');
+    // Unwrap only annotation spans. Input elements, their values and listeners stay intact.
+    queryAll('span[data-highlight-id],span[data-note-id]',pane).reverse().forEach(span=>span.replaceWith(...span.childNodes));
+    queryAll('[data-task-block-id]',pane).forEach(block=>block.normalize());
+    for(const h of state.highlights){if(h.scope!=='task')continue;const range=taskLocatorToRange(h.locator);if(range)wrapRangeAcrossElements(range,'highlight-'+(HIGHLIGHT_COLORS.includes(h.color)?h.color:'yellow'),{highlightId:h.id})}
+    for(const n of state.linkedNotes){if(n.scope!=='task')continue;const range=taskLocatorToRange(n.locator);if(range)wrapRangeAcrossElements(range,'linked-note-mark',{noteId:n.id})}
+  }
+  function closestArticleBlock(node){
+    const el=node?.nodeType===Node.ELEMENT_NODE?node:node?.parentElement;
+    return el?.closest?.('[data-article-block-id]')||null;
+  }
+  function textOffsetWithinBlock(block,node,nodeOffset){
+    const r=document.createRange();r.selectNodeContents(block);r.setEnd(node,nodeOffset);return r.toString().length;
+  }
+  function rangeToLocator(range){
+    if(byId('taskPane').contains(range.startContainer))return taskSelectionLocator(range);
+    const startBlock=closestArticleBlock(range.startContainer),endBlock=closestArticleBlock(range.endContainer);
+    if(!startBlock||!endBlock)return null;
+    return {
+      start:{blockId:startBlock.dataset.articleBlockId,offset:textOffsetWithinBlock(startBlock,range.startContainer,range.startOffset)},
+      end:{blockId:endBlock.dataset.articleBlockId,offset:textOffsetWithinBlock(endBlock,range.endContainer,range.endOffset)}
+    };
+  }
+  function boundaryFromTextOffset(block,offset){
+    const walker=document.createTreeWalker(block,NodeFilter.SHOW_TEXT);let remaining=Math.max(0,offset),last=null;
+    while(walker.nextNode()){
+      const node=walker.currentNode,lastLen=node.nodeValue.length;last=node;
+      if(remaining<=lastLen)return{node,offset:remaining};
+      remaining-=lastLen;
+    }
+    return last?{node:last,offset:last.nodeValue.length}:null;
+  }
+  function locatorToRange(locator){
+    if(!locator?.start?.blockId||!locator?.end?.blockId)return null;
+    if(locator.scope==='task')return taskLocatorToRange(locator);
+    const article=byId('articlePane');
+    const sb=query(`[data-article-block-id="${cssEsc(locator.start.blockId)}"]`,article),eb=query(`[data-article-block-id="${cssEsc(locator.end.blockId)}"]`,article);
+    if(!sb||!eb)return null;
+    const s=boundaryFromTextOffset(sb,locator.start.offset),e=boundaryFromTextOffset(eb,locator.end.offset);if(!s||!e)return null;
+    const r=document.createRange();try{r.setStart(s.node,s.offset);r.setEnd(e.node,e.offset);return r}catch(_){return null}
+  }
+  function selectedTextNodes(range,root){
+    const nodes=[],walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){if(!node.nodeValue||!node.nodeValue.length)return NodeFilter.FILTER_REJECT;try{return range.intersectsNode(node)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}catch(_){return NodeFilter.FILTER_REJECT}}});
+    while(walker.nextNode())nodes.push(walker.currentNode);return nodes;
+  }
+  function wrapRangeAcrossElements(range,className,dataset={}){
+    const root=byId('taskPane').contains(range.startContainer)?byId('taskPane'):byId('articlePane'),nodes=selectedTextNodes(range,root);
+    const fragments=nodes.map(node=>({node,start:node===range.startContainer?range.startOffset:0,end:node===range.endContainer?range.endOffset:node.nodeValue.length}));
+    fragments.reverse().forEach(({node,start,end})=>{
+      if(end<=start)return;
+      const r=document.createRange();r.setStart(node,start);r.setEnd(node,end);if(!r.toString())return;
+      const span=document.createElement('span');span.className=className;Object.entries(dataset).forEach(([k,v])=>span.dataset[k]=v);
+      try{r.surroundContents(span)}catch(err){log('error','annotation fragment',{message:err.message})}
+    });
+  }
+  function applyAllAnnotations(){
+    if(!state.hasUnit)return;
+    normalizeArticleHighlights();
+    for(const h of state.highlights||[]){if(h.scope&&h.scope!=='article')continue;const r=locatorToRange(h.locator);if(r)wrapRangeAcrossElements(r,'highlight-'+h.color,{highlightId:h.id})}
+    for(const n of state.linkedNotes||[]){if(n.scope&&n.scope!=='article')continue;const r=locatorToRange(n.locator);if(r)wrapRangeAcrossElements(r,'linked-note-mark',{noteId:n.id})}
+  }
+  function rebuildArticleWithAnnotations(){if(!state.hasUnit)return;renderArticle();applyTaskAnnotations()}
+  function applyPendingAnnotation(kind){
+    if(!pendingSelectionRange||!pendingSelectionText)return;
+    const locator=rangeToLocator(pendingSelectionRange);if(!locator){toast('Could not anchor this selection.');return}
+    const quote=pendingSelectionText,id=`${kind==='highlight'?'hl':'note'}-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;
+    if(kind==='highlight'||kind==='erase'){
+      normalizeArticleHighlights();
+      const parts=(locator.scope==='task'?[locator]:articleSegments(locator)).map(locator=>({id,scope:locator.scope||'article',context:locator.context||{},locator,quote,color:selectedHighlightColor}));
+      state.highlights=subtractIntervals(state.highlights,parts);
+      if(kind==='highlight')state.highlights.push(...parts);
+    }
+    if(kind==='note'){state.linkedNotes.push({id,scope:locator.scope||'article',context:locator.context||{},locator,quote,note:''});renderLinkedNotes();byId('notesPanel').classList.remove('hidden');requestAnimationFrame(()=>query(`[data-note-id="${cssEsc(id)}"]`,byId('linkedNotesList'))?.scrollIntoView({block:'nearest'}))}
+    hideSelectionToolbar(true);rebuildArticleWithAnnotations();saveSoon();
+  }
+  function handleAnnotationClick(e){
+    const selection=getSelection();if(selection&&!selection.isCollapsed)return;
+    const h=e.target.closest('[data-highlight-id]'),n=e.target.closest('[data-note-id]');if(!h&&!n)return;
+    const el=n||h;activeAnnotation={kind:n?'note':'highlight',id:n?n.dataset.noteId:h.dataset.highlightId};hideSelectionToolbar(true);
+    if(n){byId('notesPanel').classList.remove('hidden');renderLinkedNotes();requestAnimationFrame(()=>query(`[data-note-id="${cssEsc(n.dataset.noteId)}"]`,byId('linkedNotesList'))?.scrollIntoView({block:'nearest'}))}
+    positionFloatingToolbar(byId('annotationToolbar'),el.getBoundingClientRect());
+    byId('removeAnnotationBtn').textContent=n?'Remove note':'Remove highlight';
+  }
+  function removeActiveAnnotation(){
+    if(!activeAnnotation)return;
+    if(activeAnnotation.kind==='highlight')removeHighlight(activeAnnotation.id);else removeLinkedNote(activeAnnotation.id);
+    hideAnnotationToolbar();
+  }
+  function removeHighlight(id){state.highlights=state.highlights.filter(h=>h.id!==id);rebuildArticleWithAnnotations();saveSoon()}
+  function removeLinkedNote(id){state.linkedNotes=state.linkedNotes.filter(n=>n.id!==id);rebuildArticleWithAnnotations();renderLinkedNotes();saveSoon()}
+  function renderLinkedNotes(){const box=byId('linkedNotesList');if(!state.linkedNotes.length){box.innerHTML='<p class="muted">No linked notes yet.</p>';return}box.innerHTML=state.linkedNotes.map(n=>`<div class="linked-note-card"><div class="linked-note-quote"><small>${n.scope==='task'?'Task · '+escapeHtml(n.context?.taskId||''):'Reading'}</small><br>${escapeHtml(n.quote)}</div><textarea data-note-id="${escapeHtml(n.id)}" placeholder="Write your note...">${escapeHtml(n.note||'')}</textarea><button class="remove-note" data-remove-note="${escapeHtml(n.id)}">Remove note</button></div>`).join('')}
+
+  function rankingValues(task){return(task?.options||[]).map(o=>typeof o==='string'?o:o.value)}
+  function validRanking(task,value){const ids=rankingValues(task);return ids.length>0&&Array.isArray(value?.order)&&value.order.length===ids.length&&new Set(value.order).size===ids.length&&value.order.every(id=>ids.includes(id))}
+  function hydrateRankings(){
+    queryAll('[data-ranking-id]',byId('taskPane')).forEach(box=>{
+      const task=findTaskById(box.dataset.rankingId),value=state.answers[task.id],list=query('.ranking-list',box);
+      if(validRanking(task,value))value.order.forEach(id=>{const row=queryAll('[data-rank-value]',box).find(r=>r.dataset.rankValue===id);if(row)list.append(row)});
+      updateRankingUi(box);
+    });
+  }
+  function updateRankingUi(box){
+    const rows=queryAll('.ranking-row',box);rows.forEach((row,i)=>{query('.rank-number',row).textContent=i+1;query('[data-rank-move="-1"]',row).disabled=i===0;query('[data-rank-move="1"]',row).disabled=i===rows.length-1});
+    const task=findTaskById(box.dataset.rankingId),value=state.answers[task.id],confirmed=validRanking(task,value)&&value.confirmed;
+    query('.rank-status',box).textContent=confirmed?'Ranking confirmed ✓':'Not confirmed — confirm your order';query('[data-rank-confirm]',box).textContent=confirmed?'Confirmed ✓':'Confirm ranking';
+  }
+  function saveRankingOrder(box,confirmed=false){
+    state.answers[box.dataset.rankingId]={order:queryAll('.ranking-row',box).map(r=>r.dataset.rankValue),confirmed};updateRankingUi(box);updateAllStatus();saveSoon();
+  }
+  function initRanking(){
+    const pane=byId('taskPane');let drag=null;
+    pane.addEventListener('click',e=>{
+      const box=e.target.closest('[data-ranking-id]');if(!box)return;
+      if(e.target.closest('[data-rank-confirm]')){saveRankingOrder(box,true);return}
+      const button=e.target.closest('[data-rank-move]');if(!button)return;
+      hideSelectionToolbar(true);hideAnnotationToolbar();const row=button.closest('.ranking-row');
+      if(button.dataset.rankMove==='-1'&&row.previousElementSibling)row.parentElement.insertBefore(row,row.previousElementSibling);
+      if(button.dataset.rankMove==='1'&&row.nextElementSibling)row.parentElement.insertBefore(row.nextElementSibling,row);
+      saveRankingOrder(box);button.focus();
+    });
+    pane.addEventListener('pointerdown',e=>{
+      const handle=e.target.closest('.rank-handle');if(!handle||e.button>0)return;
+      e.preventDefault();hideSelectionToolbar(true);hideAnnotationToolbar();
+      drag={handle,row:handle.closest('.ranking-row'),box:handle.closest('[data-ranking-id]'),pointerId:e.pointerId,startY:e.clientY,moved:false};handle.setPointerCapture?.(e.pointerId);
+    });
+    pane.addEventListener('pointermove',e=>{
+      if(!drag||drag.pointerId!==e.pointerId)return;e.preventDefault();
+      if(!drag.moved&&Math.abs(e.clientY-drag.startY)<5)return;
+      drag.moved=true;drag.row.classList.add('rank-dragging');
+      const list=query('.ranking-list',drag.box),rows=queryAll('.ranking-row',drag.box).filter(row=>row!==drag.row);
+      const target=rows.find(row=>e.clientY<row.getBoundingClientRect().top+row.getBoundingClientRect().height/2);
+      list.insertBefore(drag.row,target||null);
+      const rect=pane.getBoundingClientRect();if(e.clientY<rect.top+45)pane.scrollTop-=12;else if(e.clientY>rect.bottom-45)pane.scrollTop+=12;
+      queryAll('.ranking-row',drag.box).forEach((row,i)=>query('.rank-number',row).textContent=i+1);
+    });
+    const finish=e=>{if(!drag||drag.pointerId!==e.pointerId)return;const current=drag;drag=null;current.row.classList.remove('rank-dragging');if(current.moved)saveRankingOrder(current.box);current.handle.releasePointerCapture?.(e.pointerId)};
+    pane.addEventListener('pointerup',finish);pane.addEventListener('pointercancel',finish);
+  }
+  function initAutosaveListeners(){
+    byId('taskPane').addEventListener('change',e=>{
+      const el=e.target;if(el.type!=='checkbox'||!el.checked)return;
+      const task=findTaskById(el.dataset.answerId);if(!task?.maxSelections)return;
+      const checked=queryAll('input[type="checkbox"]',el.closest('.exercise')).filter(x=>x.checked);
+      if(checked.length>task.maxSelections){el.checked=false;toast(`Choose no more than ${task.maxSelections} options.`)}
+    });
+    byId('taskPane').addEventListener('input',()=>{captureVisibleInputs();updateAllStatus();saveSoon()});byId('taskPane').addEventListener('change',()=>{captureVisibleInputs();updateSelectionSummaries();updateAllStatus();saveSoon()});
+    ['studentNumber','fullName','studentClass'].forEach(id=>byId(id).addEventListener('input',()=>{state.student=readStudentForm();saveSoon()}));
+    window.addEventListener('beforeunload',()=>{captureVisibleInputs();saveNow()});
+  }
+  function readStudentForm(){return{studentNumber:byId('studentNumber').value.trim(),fullName:byId('fullName').value.trim(),studentClass:byId('studentClass').value.trim()}}
+  function captureVisibleInputs(){
+    queryAll('[data-answer-id]',byId('taskPane')).forEach(el=>{const id=el.dataset.answerId,type=el.dataset.answerType;if(type==='checkbox'){state.answers[id]=queryAll(`input[type="checkbox"][data-answer-id="${cssEsc(id)}"]`,byId('taskPane')).filter(x=>x.checked).map(x=>x.value)}else if(type==='radio'){const c=query(`input[type="radio"][data-answer-id="${cssEsc(id)}"]:checked`,byId('taskPane'));state.answers[id]=c?c.value:''}else state.answers[id]=el.value});
+    queryAll('[data-thinking-id]',byId('taskPane')).forEach(el=>state.thinking[el.dataset.thinkingId]=el.value);
+  }
+  function hydrateRenderedInputs(){
+    queryAll('[data-answer-id]',byId('taskPane')).forEach(el=>{const id=el.dataset.answerId,type=el.dataset.answerType,v=state.answers[id];if(type==='checkbox')el.checked=Array.isArray(v)&&v.includes(el.value);else if(type==='radio')el.checked=v===el.value;else el.value=v??''});
+    queryAll('[data-thinking-id]',byId('taskPane')).forEach(el=>el.value=state.thinking[el.dataset.thinkingId]??'');hydrateRankings();updateSelectionSummaries();
+  }
+  function optionLabel(task,value){const o=(task?.options||[]).find(x=>(typeof x==='string'?x:(x.value??x.label??''))===value);return typeof o==='string'?o:(o?.label??value)}
+  function updateSelectionSummaries(){queryAll('[data-summary-for]',byId('taskPane')).forEach(box=>{const id=box.dataset.summaryFor,v=state.answers[id];const s=Array.isArray(v)?(v.length?v.join(', '):'—'):(v||'—');const span=query('small span',box);if(span)span.textContent=s})}
+
+  function isComplete(reg){const v=state.answers[reg.id];if(reg.type==='ranking')return validRanking(findTaskById(reg.id),v)&&v.confirmed;
+    if(reg.type==='checkbox')return Array.isArray(v)&&v.length>=(reg.minSelections||1)&&(!reg.maxSelections||v.length<=reg.maxSelections);return typeof v==='string'?v.trim().length>0:!!v}
+  function updateAllStatus(){updateSectionTabs();updateNavButtons();updateExportState();updateTimerUi();updateLastSavedText()}
+  function updateSectionTabs(){queryAll('.section-tab').forEach(tab=>{const id=tab.dataset.section;tab.classList.remove('current','finished','empty');if(id===state.currentSection){tab.classList.add('current');return}if(!state.hasUnit){tab.classList.add('empty');return}const req=state.registry.filter(r=>r.section===id&&r.required);if(req.length===0||req.every(isComplete))tab.classList.add('finished')})}
+  function updateNavButtons(){const i=SECTION_ORDER.indexOf(state.currentSection);byId('prevBtn').disabled=i===0;byId('nextBtn').disabled=i===SECTION_ORDER.length-1;byId('prevBtn').textContent=i>0?`‹ PREVIOUS: ${DEFAULT_SECTION_TITLES[SECTION_ORDER[i-1]].toUpperCase()}`:'‹ PREVIOUS';byId('nextBtn').textContent=i<SECTION_ORDER.length-1?`NEXT: ${DEFAULT_SECTION_TITLES[SECTION_ORDER[i+1]].toUpperCase()} ›`:'END OF UNIT'}
+  function updateExportState(){const b=byId('exportPdfMenu');if(!state.hasUnit){b.disabled=true;byId('remainingCount').textContent='No unit';return}const req=state.registry.filter(r=>r.required&&r.export),rem=req.filter(r=>!isComplete(r)).length;b.disabled=rem>0;byId('remainingCount').textContent=rem?`${rem} left`:'Ready'}
+
+  function setSaveStatus(text){const el=byId('saveStatus');if(el)el.textContent=text}
+  function saveSoon(silent=false){
+    clearTimeout(saveDebounce);
+    if(!silent)setSaveStatus('Saving…');
+    saveDebounce=setTimeout(()=>saveNow({silent}),250);
+  }
+  function saveNow({silent=false}={}){try{captureVisibleInputs();state.lastSaved=new Date().toISOString();const payload={course:state.unitData?.meta?.course||'ESP1',unitNumber:state.unitData?.meta?.unitNumber??null,unitTitle:state.unitData?.meta?.unitTitle||null,version:state.unitData?.meta?.version||null,student:state.student,currentSection:state.currentSection,answers:state.answers,thinking:state.thinking,generalNotes:state.generalNotes,generalNotesHtml:byId('generalNotes').innerHTML,highlights:state.highlights,linkedNotes:state.linkedNotes,activeSubtabs:state.activeSubtabs,timer:state.timer,lastSaved:state.lastSaved};localStorage.setItem(unitKey(),JSON.stringify(payload));setSaveStatus('Saved locally ✓');updateLastSavedText()}catch(err){log('error','saveNow',{message:err.message});setSaveStatus('Save failed')} }
+  function restoreSavedState(){try{const raw=localStorage.getItem(unitKey());if(!raw){applyPreferencesToUi();return}const p=JSON.parse(raw);Object.assign(state,{student:p.student||state.student,currentSection:p.currentSection||'pre',answers:p.answers||{},thinking:p.thinking||{},generalNotes:p.generalNotes||'',highlights:Array.isArray(p.highlights)?p.highlights:[],linkedNotes:Array.isArray(p.linkedNotes)?p.linkedNotes.filter(n=>n&&n.locator):[],activeSubtabs:p.activeSubtabs||{},timer:p.timer?{...state.timer,...p.timer,configured:(typeof p.timer.configured==='boolean'?p.timer.configured:(p.timer.remaining>0))}:state.timer,lastSaved:p.lastSaved||null});byId('studentNumber').value=state.student.studentNumber||'';byId('fullName').value=state.student.fullName||'';byId('studentClass').value=state.student.studentClass||'';loadNotesContent(p.generalNotesHtml,state.generalNotes);if(state.hasUnit)renderArticle();renderLinkedNotes();if(state.timer.running){state.timer.lastTick=Date.now();startTimerLoop()}applyPreferencesToUi();renderCurrentSection();hydrateRenderedInputs()}catch(err){log('error','restoreSavedState',{message:err.message})}}
+  function applyPreferencesToUi(){applyFocus();applyTextSize();updateTimerUi()}
+  function resetCurrentUnit(){stopTimerLoop();localStorage.removeItem(unitKey());state.currentSection='pre';state.answers={};state.thinking={};state.generalNotes='';state.highlights=[];state.linkedNotes=[];state.activeSubtabs={};state.timer={remaining:0,running:false,lastTick:null,configured:false};state.student={studentNumber:'',fullName:'',studentClass:''};state.lastSaved=null;['studentNumber','fullName','studentClass'].forEach(id=>byId(id).value='');loadNotesContent('','');byId('saveConsent').checked=false;if(state.hasUnit)renderArticle();renderLinkedNotes();renderCurrentSection();updateAllStatus();setSaveStatus('Saved locally ✓')}
+  function updateLastSavedText(){byId('lastSavedText').textContent=state.lastSaved?`last saved ${new Date(state.lastSaved).toLocaleString()}`:''}
+
+  function downloadBackup(){saveNow();const payload={format:'ESP1_BACKUP_V1',course:state.unitData?.meta?.course||'ESP1',unitNumber:state.unitData?.meta?.unitNumber??null,unitTitle:state.unitData?.meta?.unitTitle||null,version:state.unitData?.meta?.version||null,student:state.student,state:JSON.parse(localStorage.getItem(unitKey())||'{}')};downloadBlob(JSON.stringify(payload,null,2),'application/json',backupFilename())}
+  function backupFilename(){return sanitize(`Backup - ${state.student.studentClass||'Class'} - ${state.student.studentNumber||'Student Number'} - ${state.student.fullName||'Full name'} - Unit ${state.unitData?.meta?.unitNumber??'X'}.json`)}
+  async function restoreBackupFromFile(e){
+    const input=e.target;
+    const f=input.files?.[0];
+    if(!f)return;
+
+    const status=byId('restoreStatus');
+    const filenameEl=byId('restoreFilename');
+    const currentUnit=String(state.unitData?.meta?.unitNumber??'');
+
+    const showRestoreStatus=(message,type)=>{
+      if(!status)return;
+      status.textContent=message;
+      status.classList.remove('hidden','error','success');
+      status.classList.add(type);
+    };
+
+    // Do not display/accept the filename until the backup passes validation.
+    filenameEl.textContent='Checking backup...';
+    if(status)status.classList.add('hidden');
+
+    try{
+      const data=JSON.parse(await f.text());
+      if(data.format!=='ESP1_BACKUP_V1'){
+        throw new Error('Unsupported backup format.');
+      }
+
+      // Validate the unit from every trustworthy place available.
+      const declaredUnits=[];
+      if(data.unitNumber!==undefined && data.unitNumber!==null)declaredUnits.push(String(data.unitNumber));
+      if(data.state?.unitNumber!==undefined && data.state?.unitNumber!==null)declaredUnits.push(String(data.state.unitNumber));
+
+      // Also inspect the standard filename as a second guard.
+      const filenameMatch=f.name.match(/(?:^|\s|-)Unit\s*(\d+)(?=\s|\.|-|$)/i);
+      if(filenameMatch)declaredUnits.push(String(filenameMatch[1]));
+
+      const conflictingUnit=declaredUnits.find(u=>u!==currentUnit);
+      if(conflictingUnit){
+        throw new Error(`Wrong backup file: this backup is for Unit ${conflictingUnit}, but this worksheet is Unit ${currentUnit}. Please choose a Unit ${currentUnit} backup.`);
+      }
+
+      if(!declaredUnits.length){
+        throw new Error(`Cannot verify which unit this backup belongs to. Please use a backup created by Unit ${currentUnit}.`);
+      }
+
+      localStorage.setItem(unitKey(),JSON.stringify(data.state||{}));
+      restoreSavedState();
+
+      filenameEl.textContent=f.name;
+      showRestoreStatus(`Backup restored successfully for Unit ${currentUnit}.`,'success');
+      toast(`Unit ${currentUnit} backup restored successfully.`);
+    }catch(err){
+      // Reject the file completely.
+      input.value='';
+      filenameEl.textContent='No backup file selected';
+      showRestoreStatus(err.message,'error');
+      toast(err.message);
+      log('error','restore backup',{message:err.message,file:f.name,currentUnit});
+    }
+  }
+
+  function exportPdf(){
+    captureVisibleInputs();if(!state.hasUnit){toast('No unit content loaded');return}const req=state.registry.filter(r=>r.required&&r.export),rem=req.filter(r=>!isComplete(r));if(rem.length){toast(`${rem.length} required final answer(s) remaining.`);return}
+    const sections=SECTION_ORDER.map(id=>({id,title:getSection(id)?.title||DEFAULT_SECTION_TITLES[id],items:state.registry.filter(r=>r.section===id&&r.export).map(r=>({...r,answer:state.answers[r.id]}))})).filter(s=>s.items.length);
+    const popup=window.open('','_blank');if(!popup){toast('Allow pop-ups to export PDF.');return}popup.document.write(buildPrintableHtml(sections));popup.document.close();popup.focus();setTimeout(()=>popup.print(),300);
+  }
+  function stripHtml(html){const d=document.createElement('div');d.innerHTML=html||'';return (d.textContent||'').replace(/\s+/g,' ').trim()}
+  function printableAnswer(item){const v=item.answer;if(item.type==='ranking')return v?.confirmed?(v.order||[]).map((id,i)=>`${i+1}. ${optionLabel(item,id)}`).join('\n'):'Not confirmed';if(Array.isArray(v))return v.map(x=>optionLabel(item,x)).join('\n');if(item.type==='radio')return optionLabel(item,v||'');return String(v??'')}
+  function printableTextWithBreaks(value){
+    const div=document.createElement('div');div.innerHTML=String(value||'');
+    div.querySelectorAll('br').forEach(br=>br.replaceWith('\n'));
+    div.querySelectorAll('p,div,li,h1,h2,h3').forEach(block=>block.append('\n'));
+    return (div.textContent||'').split('\n').map(line=>line.replace(/[ \t\r]+/g,' ').trim()).join('\n').replace(/\n{3,}/g,'\n\n').trim();
+  }
+  function printablePrompt(item){if(item.type==='gap-fill')return `${stripHtml(item.prefix)} _____ ${stripHtml(item.suffix)}`.replace(/\s+/g,' ').trim();return printableTextWithBreaks(item.prompt)||stripHtml(item.exerciseTitle)||'Final answer'}
+  function printableExportTable(meta){
+    const table=meta?.exportTable;
+    if(!table||!Array.isArray(table.columns)||!Array.isArray(table.rows))return '';
+    const head=`<thead><tr>${table.columns.map(c=>`<th>${escapeHtml(c)}</th>`).join('')}</tr></thead>`;
+    const body=table.rows.map(row=>`<tr>${(row.cells||[]).map(cell=>{
+      const value=cell&&cell.answerId!=null?String(state.answers[cell.answerId]??''):String(cell?.text??'');
+      return `<td style="white-space:pre-wrap">${escapeHtml(value)}</td>`;
+    }).join('')}</tr>`).join('');
+    return `<table class="print-table">${head}<tbody>${body}</tbody></table>`;
+  }
+  function buildPrintableHtml(sections){
+    const m=state.unitData.meta,exported=new Date().toLocaleString();
+    const rows=sections.map(s=>{
+      let lastGroup=null;
+      const renderedParents=new Set();
+      const items=s.items.map((it,idx)=>{
+        const group=it.exportGroupTitle||'';
+        const groupHeading=group&&group!==lastGroup?`<h3 class="export-group-title">${escapeHtml(group)}</h3>`:'';
+        lastGroup=group;
+        if(it.exportFormat==='table'&&it.exportParentId){
+          if(renderedParents.has(it.exportParentId))return groupHeading;
+          renderedParents.add(it.exportParentId);
+          return `${groupHeading}<div class="print-item">${it.exerciseTitle?`<div class="exercise-title">${escapeHtml(stripHtml(it.exerciseTitle))}</div>`:''}${printableExportTable(it)}</div>`;
+        }
+        return `${groupHeading}<div class="print-item">${it.exerciseTitle?`<div class="exercise-title">${escapeHtml(stripHtml(it.exerciseTitle))}</div>`:''}<div class="question">${escapeHtml(printablePrompt(it))}</div><div class="answer">${escapeHtml(printableAnswer(it)).replace(/\n/g,'<br>')}</div></div>`;
+      }).join('');
+      return `<section class="print-section"><h2>${escapeHtml(s.title)}</h2>${items}</section>`;
+    }).join('');
+    return `<!doctype html><html><head><meta charset="utf-8"><title>${escapeHtml(pdfFilename())}</title><style>
+      *{box-sizing:border-box}body{font-family:Arial,Helvetica,sans-serif;color:#17212b;margin:0;font-size:11pt;line-height:1.35}main{max-width:780px;margin:0 auto}.course-kicker{color:#1558b0;font-weight:800;font-size:11pt;margin-bottom:3px}.unit-title{font-size:20pt;font-weight:800;margin:0 0 4px;color:#1d2b3a}.instructor{font-size:9.5pt;color:#65758a}.blue-rule{height:2px;background:#1558b0;margin:10px 0 14px}.student-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px 34px;font-size:9.5pt;margin-bottom:18px}.student-grid strong{color:#28405b}.print-section{margin:0 0 18px;break-inside:auto}.print-section h2{font-size:13pt;color:#1558b0;border-bottom:1px solid #c8d6e5;padding-bottom:5px;margin:0 0 9px}.export-group-title{font-size:10.5pt;color:#28405b;font-weight:800;margin:11px 0 7px}.print-item{margin:0 0 12px;break-inside:avoid}.exercise-title{font-size:10pt;font-weight:800;margin-bottom:3px}.question{font-size:10pt;font-weight:700;margin-bottom:5px;white-space:pre-line}.answer{background:#f3f7fb;border-left:3px solid #86b4e8;padding:7px 9px;min-height:28px;white-space:pre-wrap}.print-table{width:100%;border-collapse:collapse;margin:6px 0 12px;font-size:9.5pt}.print-table th,.print-table td{border:1px solid #c8d6e5;padding:6px 8px;text-align:left;vertical-align:top}.print-table th{background:#eef4fa;color:#28405b;font-weight:800}.footer-note{font-size:8pt;color:#7c8794;margin-top:14px}@page{size:A4;margin:14mm 16mm}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+    </style></head><body><main><div class="course-kicker">ESP1 - Reading Speaking Skills</div><div class="unit-title">Unit ${m.unitNumber} - ${escapeHtml(m.unitTitle)}</div><div class="instructor">Instructor: Ms. Tra</div><div class="blue-rule"></div><div class="student-grid"><div><strong>Student Number:</strong> ${escapeHtml(state.student.studentNumber)}</div><div><strong>Full name:</strong> ${escapeHtml(state.student.fullName)}</div><div><strong>Class:</strong> ${escapeHtml(state.student.studentClass)}</div><div><strong>Exported:</strong> ${escapeHtml(exported)}</div></div>${rows}<div class="footer-note">Final answers only. Thinking spaces, highlights and notes are not included.</div></main><script>window.onafterprint=()=>window.close()<\/script></body></html>`
+  }
+  function pdfFilename(){return sanitize(`${state.student.studentClass||'Class'} - ${state.student.studentNumber||'Student Number'} - ${state.student.fullName||'Full name'} - Unit ${state.unitData?.meta?.unitNumber??'X'}.pdf`)}
+
+  function downloadBlob(text,type,name){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},0)}
+  function toast(msg){const t=byId('toast');if(!t)return;t.textContent=msg;t.classList.remove('hidden');setTimeout(()=>t.classList.add('hidden'),2600)}
+  function sanitize(s){return s.replace(/[\\/:*?"<>|]+/g,'-').replace(/\s+/g,' ').trim()}
+  function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+  function cssEsc(s){return window.CSS?.escape?CSS.escape(String(s)):String(s).replace(/"/g,'\\"')}
+
+  window.ESP1Shell={boot,validateUnitData,_state:state,annotationUtils:{subtractIntervals}};
+})();
+
+  </script>
+  <!-- MASTER SHELL CLEAN — Ranking / XL / Rich Notes / Reading & Task Annotations
+       Keep UNIT_DATA separate from the shell.
+       For testing/deployment, load or define window.UNIT_DATA before the boot script below.
+       With no UNIT_DATA, the shell intentionally opens in empty-shell mode.
+       RANKING: type='ranking', options=[{value:'stable-id',label:'Visible label'}],
+       required/export configurable. Answer: {order:[option IDs],confirmed:boolean}.
+       Buttons/drag reorder; order changes invalidate confirmation; backup includes order.
+       CHECKBOX: optional minSelections/maxSelections. TABLE CELLS: multiline or options.
+       Exam textarea-final tasks include a Thinking Space by default; thinking:false opts out.
+       PDF question text preserves explicit line/paragraph breaks.
+       CONTENT INTEGRATION:
+       - Use the section IDs pre, understand, vocabulary, exam.
+       - Keep task IDs, sub-answer IDs, article block IDs and tab IDs unique/stable.
+       - Fixed task text receives annotation anchors automatically during rendering.
+       - Explicit data-task-block-id values can provide stable custom anchors.
+       - Keep existing fixed-text markup stable; changed text invalidates its old marks.
+       - Inputs, Thinking Space, Final Answer and controls are excluded.
+       - Task selections currently stay within one anchored text block.
+       - Give every real Unit its own meta.unitNumber; never use the test key. -->
+  <script>
+    window.UNIT_DATA = {
+  "meta": {
+    "course": "ESP1 - Reading Speaking Skills",
+    "unitNumber": 7,
+    "unitTitle": "Exploring the World",
+    "version": "1.0-ranking"
+  },
+  "article": {
+    "title": "As anti-tourism protests grow in Europe, we need a rethink – but that’s no reason to stop travelling",
+    "subtitle": "Visitors could be more sensitive, while the authorities should seek sustainable solutions for residents and tourists. But just staying at home is no answer",
+    "content": [
+      {
+        "id": "u7-p1",
+        "type": "paragraph",
+        "number": "1",
+        "html": "After coordinated protests across Europe last weekend, it’s easy for the ethically conscious tourist to feel uncertain. Across southern Europe – and particularly in Spain, Italy and Portugal – there are headlines blaming visitors for everything from overcrowding to housing shortages. In gentrifying neighbourhoods, slogans such as “Tourists go home” have appeared on walls and windows, with some angry residents grabbing headlines by squirting water pistols at tourists."
+      },
+      {
+        "id": "u7-p2",
+        "type": "paragraph",
+        "number": "2",
+        "html": "Does that mean <strong><u>a golden age of tourism</u></strong> is over? No. Does the complicated relationship between those who want to visit the world’s most interesting places and those who live in them need a reset? Probably."
+      },
+      {
+        "id": "u7-p3",
+        "type": "paragraph",
+        "number": "3",
+        "html": "For the most part, protesters are <strong><u>calling for a total overhaul</u></strong> of a model of tourism that, they argue, drives up housing costs, harms the environment and creates low-paid, unstable jobs – while concentrating profits in the hands of a few."
+      },
+      {
+        "id": "u7-p4",
+        "type": "paragraph",
+        "number": "4",
+        "html": "I’ve seen this first-hand. I live in Lavapiés, a vibrant and multicultural neighbourhood near Madrid’s main train station. When I moved here 12 years ago, the area was a haven of traditional bars and restaurants and independent shops. Today, many of those restaurants – once offering a full menú del día for €8 (£6.80) – have doubled their prices. A recently built Ibis hotel, complete with a digital price board resembling a petrol station display, now advertises fluctuating nightly rates of about €150 to €250. Local businesses have been replaced by ground-floor tourist accommodation, with passersby able to peer straight into capsule bedrooms from the street."
+      },
+      {
+        "id": "u7-p5",
+        "type": "paragraph",
+        "number": "5",
+        "html": "Lavapiés has one of the highest concentrations of unlicensed tourist rentals in Madrid. These small flats, originally built in the 18th and 19th centuries to house the city’s growing industrial workforce, remained affordable for centuries. Now, thousands of such flats are listed on Airbnb at rates rivalling those in the city’s wealthiest neighbourhoods. But tourists aren’t choosing these places maliciously – short-term rental platforms offer cheaper, more flexible options for groups, especially in a market where a basic hotel room can easily cost €100 or more a night."
+      },
+      {
+        "id": "u7-p6",
+        "type": "paragraph",
+        "number": "6",
+        "html": "This is not just a story of tourists replacing local people; it’s one of policy failure and economic imbalance. In Madrid, decent food is often still relatively affordable – but the same can’t be said for accommodation. The charming, no-frills guesthouses with lace curtains and wrought-iron balconies are disappearing fast, and the gap they leave behind is being filled by unlicensed rentals in former homes. There are roughly 15,000 illegal tourist apartments in Madrid alone, rising to more than 66,000 across the country."
+      },
+      {
+        "id": "u7-p7",
+        "type": "paragraph",
+        "number": "7",
+        "html": "To its credit, Spain’s leftwing coalition government has attempted to regulate rents and pledged to build more housing. But these plans, combined with resistance from regional governments, fail to address the immediate impact that tourist rentals have on the availability of affordable homes. In the case of Madrid, the regional government, presided over by the rightwing People’s party (PP), has refused to declare “<strong><u>high-tension areas</u></strong>” in order to allow city councils to limit rent increases as provided for in the new national legislation."
+      },
+      {
+        "id": "u7-p8",
+        "type": "paragraph",
+        "number": "8",
+        "html": "Likewise, the PP-dominated Madrid city council recently approved a modification of town planning rules, formally separating tourist accommodation from residential buildings. Although the official line is that this is a step towards protecting housing for local people, it has in reality paved the way for entire buildings to be converted into tourist-only properties and made it easier to transform ground-floor commercial premises into tourist lets."
+      },
+      {
+        "id": "u7-p9",
+        "type": "paragraph",
+        "number": "9",
+        "html": "As southern Europe’s cities and islands <strong><u>have passed a tipping point</u></strong>, some are calling for an outright ban on tourist flats, starting with those that are unlicensed. That may be necessary, but solving the housing crisis will take more than just tighter regulations and housebuilding – the other half of the equation is addressing the lack of decent, mid-range places for tourists to stay. Spain continues to build hotels, but too many new developments are glitzy four- and five-star projects aimed at luxury travellers. This shortage of modest, comfortable accommodation mirrors the broader shortage of affordable housing for residents."
+      },
+      {
+        "id": "u7-p10",
+        "type": "paragraph",
+        "number": "10",
+        "html": "As Europe responds with growing resentment towards tourists, many people are asking: is it even possible to enjoy a trip without contributing to the problem? Can you still visit Madrid, Barcelona or the Canary Islands without encountering the “Tourists go home” signs – or being squirted with water pistols? Should you?"
+      },
+      {
+        "id": "u7-p11",
+        "type": "paragraph",
+        "number": "11",
+        "html": "The answer is yes. First, it’s important to put the water pistol incidents in perspective: these are symbolic, isolated acts and <strong><u>far from the norm</u></strong>. More importantly, tourism is vital to Spain’s economy, accounting for roughly 12% of GDP. The country wants tourists, but that doesn’t mean business as usual should continue. National and regional governments, and city councils, must do far more to regulate short-term rentals, support local communities and invest in affordable infrastructure – for residents and visitors."
+      },
+      {
+        "id": "u7-p12",
+        "type": "paragraph",
+        "number": "12",
+        "html": "But travellers have an important role to play too: by choosing accommodation designed for tourists wherever possible; by learning about housing pressures in the places they visit; or by <strong><u>exercising judgment about</u></strong> where and when to travel. Opting to visit a resort town on the mainland rather than a city on an island might put less pressure on local communities and resources, for example."
+      },
+      {
+        "id": "u7-p13",
+        "type": "paragraph",
+        "number": "13",
+        "html": "Times can be tense, but don’t let guilt define your presence as a tourist. Feeling bad for visiting a place only plays into resentment and shifts the focus away from where it belongs: on deficits in housing and tourist accommodation. My advice is no more water pistols: instead, plan and build so countries work for residents and tourists."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "pre",
+      "title": "Pre-reading",
+      "tasks": [
+        {
+          "id": "u7-pre-choice",
+          "type": "radio",
+          "exerciseTitle": "Exercise 1 — Choose your accommodation",
+          "prompt": "<p><strong>You are planning a four-day trip to a very popular European city such as Venice or Paris. Which option would you choose, and why?</strong></p>",
+          "options": [
+            "A. A cheap Airbnb in a residential neighbourhood",
+            "B. A mid-range hotel farther from the city centre",
+            "C. An expensive hotel in the city centre",
+            "D. A nearby resort town with day trips into the city"
+          ],
+          "required": false,
+          "export": false,
+          "thinking": true,
+          "thinkingPlaceholder": "Why would you choose this accommodation?",
+          "finalSummary": false
+        },
+        {
+          "id": "u7-pre-impact-options",
+          "type": "checkbox",
+          "exerciseTitle": "Exercise 2 — Think about the impact",
+          "prompt": "<p><strong>What possible benefits and problems could your choice create for the destination and the people who live there?<br>Choose 1–2 perspectives below.</strong></p>",
+          "options": [
+            "local residents",
+            "local businesses",
+            "housing and accommodation",
+            "transport and public spaces",
+            "the local environment"
+          ],
+          "minSelections": 1,
+          "maxSelections": 2,
+          "required": true,
+          "export": true
+        },
+        {
+          "id": "u7-pre-impact-answer",
+          "type": "textarea-final",
+          "exerciseTitle": "",
+          "prompt": "<p><strong>Explain the possible benefits and problems of your choice for the perspective(s) selected above.</strong></p>",
+          "required": true,
+          "export": true
+        },
+        {
+          "id": "u7-pre-ranking",
+          "type": "ranking",
+          "exerciseTitle": "Exercise 3 — Rank responsibility",
+          "prompt": "<p><strong>Who should bear the greatest responsibility for reducing the negative effects of overtourism?<br>Rank the following from 1 = most responsible to 4 = least responsible, then explain your top choice.<br>Drag the handle or use ↑/↓, then confirm your ranking.</strong></p>",
+          "options": [
+            {
+              "value": "party-1",
+              "label": "Tourists"
+            },
+            {
+              "value": "party-2",
+              "label": "Local governments"
+            },
+            {
+              "value": "party-3",
+              "label": "Tourism businesses and platforms"
+            },
+            {
+              "value": "party-4",
+              "label": "Property owners"
+            }
+          ],
+          "required": true,
+          "export": true
+        },
+        {
+          "id": "u7-pre-ranking-reason",
+          "type": "textarea-final",
+          "exerciseTitle": "",
+          "prompt": "<p><strong>Explain why your top-ranked group should bear the greatest responsibility.</strong></p>",
+          "required": true,
+          "export": true
+        }
+      ]
+    },
+    {
+      "id": "understand",
+      "title": "Understand the Article",
+      "tasks": [
+        {
+          "id": "u7-uta-table",
+          "type": "editable-table",
+          "exerciseTitle": "Exercise 1",
+          "prompt": "<p><strong>Read the article and complete the table with brief notes in your own words. Identify the status quo of tourism in Europe, the causes, and current responses.</strong></p>",
+          "columns": [
+            "Status quo",
+            "Causes",
+            "Current responses"
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "answerId": "u7-uta-status",
+                  "multiline": true,
+                  "placeholder": "Write brief notes in your own words..."
+                },
+                {
+                  "answerId": "u7-uta-causes",
+                  "multiline": true,
+                  "placeholder": "Write brief notes in your own words..."
+                },
+                {
+                  "answerId": "u7-uta-responses",
+                  "multiline": true,
+                  "placeholder": "Write brief notes in your own words..."
+                }
+              ]
+            }
+          ],
+          "subAnswers": [
+            {
+              "id": "u7-uta-status",
+              "type": "short-text",
+              "required": true,
+              "export": true,
+              "prompt": ""
+            },
+            {
+              "id": "u7-uta-causes",
+              "type": "short-text",
+              "required": true,
+              "export": true,
+              "prompt": ""
+            },
+            {
+              "id": "u7-uta-responses",
+              "type": "short-text",
+              "required": true,
+              "export": true,
+              "prompt": ""
+            }
+          ],
+          "exportFormat": "table",
+          "exportTable": {
+            "columns": [
+              "Status quo",
+              "Causes",
+              "Current responses"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "answerId": "u7-uta-status",
+                    "multiline": true,
+                    "placeholder": "Write brief notes in your own words..."
+                  },
+                  {
+                    "answerId": "u7-uta-causes",
+                    "multiline": true,
+                    "placeholder": "Write brief notes in your own words..."
+                  },
+                  {
+                    "answerId": "u7-uta-responses",
+                    "multiline": true,
+                    "placeholder": "Write brief notes in your own words..."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "vocabulary",
+      "title": "Vocabulary Work",
+      "tasks": [
+        {
+          "id": "u7-vocab-match",
+          "type": "editable-table",
+          "exerciseTitle": "Exercise 1",
+          "prompt": "<p><strong>Match each phrase with its rhetorical function.</strong></p>",
+          "columns": [
+            "Phrase",
+            "Rhetorical function",
+            "Answer"
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "text": "1. to its credit"
+                },
+                {
+                  "text": "a. reporting an institution’s stated position, often with some distance"
+                },
+                {
+                  "answerId": "u7-vocab-match-1",
+                  "options": [
+                    {
+                      "value": "a",
+                      "label": "a"
+                    },
+                    {
+                      "value": "b",
+                      "label": "b"
+                    },
+                    {
+                      "value": "c",
+                      "label": "c"
+                    },
+                    {
+                      "value": "d",
+                      "label": "d"
+                    },
+                    {
+                      "value": "e",
+                      "label": "e"
+                    },
+                    {
+                      "value": "f",
+                      "label": "f"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "2. paved the way for"
+                },
+                {
+                  "text": "b. helping judge something in a broader or more balanced context"
+                },
+                {
+                  "answerId": "u7-vocab-match-2",
+                  "options": [
+                    {
+                      "value": "a",
+                      "label": "a"
+                    },
+                    {
+                      "value": "b",
+                      "label": "b"
+                    },
+                    {
+                      "value": "c",
+                      "label": "c"
+                    },
+                    {
+                      "value": "d",
+                      "label": "d"
+                    },
+                    {
+                      "value": "e",
+                      "label": "e"
+                    },
+                    {
+                      "value": "f",
+                      "label": "f"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "3. the official line is that"
+                },
+                {
+                  "text": "c. acknowledging something positive before introducing criticism"
+                },
+                {
+                  "answerId": "u7-vocab-match-3",
+                  "options": [
+                    {
+                      "value": "a",
+                      "label": "a"
+                    },
+                    {
+                      "value": "b",
+                      "label": "b"
+                    },
+                    {
+                      "value": "c",
+                      "label": "c"
+                    },
+                    {
+                      "value": "d",
+                      "label": "d"
+                    },
+                    {
+                      "value": "e",
+                      "label": "e"
+                    },
+                    {
+                      "value": "f",
+                      "label": "f"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "4. play into sth"
+                },
+                {
+                  "text": "d. showing that one development enabled or facilitated another"
+                },
+                {
+                  "answerId": "u7-vocab-match-4",
+                  "options": [
+                    {
+                      "value": "a",
+                      "label": "a"
+                    },
+                    {
+                      "value": "b",
+                      "label": "b"
+                    },
+                    {
+                      "value": "c",
+                      "label": "c"
+                    },
+                    {
+                      "value": "d",
+                      "label": "d"
+                    },
+                    {
+                      "value": "e",
+                      "label": "e"
+                    },
+                    {
+                      "value": "f",
+                      "label": "f"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "5. shift the focus away from"
+                },
+                {
+                  "text": "e. unintentionally reinforcing or contributing to something negative"
+                },
+                {
+                  "answerId": "u7-vocab-match-5",
+                  "options": [
+                    {
+                      "value": "a",
+                      "label": "a"
+                    },
+                    {
+                      "value": "b",
+                      "label": "b"
+                    },
+                    {
+                      "value": "c",
+                      "label": "c"
+                    },
+                    {
+                      "value": "d",
+                      "label": "d"
+                    },
+                    {
+                      "value": "e",
+                      "label": "e"
+                    },
+                    {
+                      "value": "f",
+                      "label": "f"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "6. put … in perspective"
+                },
+                {
+                  "text": "f. redirecting attention from one issue to another"
+                },
+                {
+                  "answerId": "u7-vocab-match-6",
+                  "options": [
+                    {
+                      "value": "a",
+                      "label": "a"
+                    },
+                    {
+                      "value": "b",
+                      "label": "b"
+                    },
+                    {
+                      "value": "c",
+                      "label": "c"
+                    },
+                    {
+                      "value": "d",
+                      "label": "d"
+                    },
+                    {
+                      "value": "e",
+                      "label": "e"
+                    },
+                    {
+                      "value": "f",
+                      "label": "f"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "subAnswers": [
+            {
+              "id": "u7-vocab-match-1",
+              "type": "short-text",
+              "required": true,
+              "export": true,
+              "prompt": ""
+            },
+            {
+              "id": "u7-vocab-match-2",
+              "type": "short-text",
+              "required": true,
+              "export": true,
+              "prompt": ""
+            },
+            {
+              "id": "u7-vocab-match-3",
+              "type": "short-text",
+              "required": true,
+              "export": true,
+              "prompt": ""
+            },
+            {
+              "id": "u7-vocab-match-4",
+              "type": "short-text",
+              "required": true,
+              "export": true,
+              "prompt": ""
+            },
+            {
+              "id": "u7-vocab-match-5",
+              "type": "short-text",
+              "required": true,
+              "export": true,
+              "prompt": ""
+            },
+            {
+              "id": "u7-vocab-match-6",
+              "type": "short-text",
+              "required": true,
+              "export": true,
+              "prompt": ""
+            }
+          ],
+          "exportFormat": "table",
+          "exportTable": {
+            "columns": [
+              "Phrase",
+              "Rhetorical function",
+              "Answer"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "1. to its credit"
+                  },
+                  {
+                    "text": "a. reporting an institution’s stated position, often with some distance"
+                  },
+                  {
+                    "answerId": "u7-vocab-match-1",
+                    "options": [
+                      {
+                        "value": "a",
+                        "label": "a"
+                      },
+                      {
+                        "value": "b",
+                        "label": "b"
+                      },
+                      {
+                        "value": "c",
+                        "label": "c"
+                      },
+                      {
+                        "value": "d",
+                        "label": "d"
+                      },
+                      {
+                        "value": "e",
+                        "label": "e"
+                      },
+                      {
+                        "value": "f",
+                        "label": "f"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "2. paved the way for"
+                  },
+                  {
+                    "text": "b. helping judge something in a broader or more balanced context"
+                  },
+                  {
+                    "answerId": "u7-vocab-match-2",
+                    "options": [
+                      {
+                        "value": "a",
+                        "label": "a"
+                      },
+                      {
+                        "value": "b",
+                        "label": "b"
+                      },
+                      {
+                        "value": "c",
+                        "label": "c"
+                      },
+                      {
+                        "value": "d",
+                        "label": "d"
+                      },
+                      {
+                        "value": "e",
+                        "label": "e"
+                      },
+                      {
+                        "value": "f",
+                        "label": "f"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "3. the official line is that"
+                  },
+                  {
+                    "text": "c. acknowledging something positive before introducing criticism"
+                  },
+                  {
+                    "answerId": "u7-vocab-match-3",
+                    "options": [
+                      {
+                        "value": "a",
+                        "label": "a"
+                      },
+                      {
+                        "value": "b",
+                        "label": "b"
+                      },
+                      {
+                        "value": "c",
+                        "label": "c"
+                      },
+                      {
+                        "value": "d",
+                        "label": "d"
+                      },
+                      {
+                        "value": "e",
+                        "label": "e"
+                      },
+                      {
+                        "value": "f",
+                        "label": "f"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "4. play into sth"
+                  },
+                  {
+                    "text": "d. showing that one development enabled or facilitated another"
+                  },
+                  {
+                    "answerId": "u7-vocab-match-4",
+                    "options": [
+                      {
+                        "value": "a",
+                        "label": "a"
+                      },
+                      {
+                        "value": "b",
+                        "label": "b"
+                      },
+                      {
+                        "value": "c",
+                        "label": "c"
+                      },
+                      {
+                        "value": "d",
+                        "label": "d"
+                      },
+                      {
+                        "value": "e",
+                        "label": "e"
+                      },
+                      {
+                        "value": "f",
+                        "label": "f"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "5. shift the focus away from"
+                  },
+                  {
+                    "text": "e. unintentionally reinforcing or contributing to something negative"
+                  },
+                  {
+                    "answerId": "u7-vocab-match-5",
+                    "options": [
+                      {
+                        "value": "a",
+                        "label": "a"
+                      },
+                      {
+                        "value": "b",
+                        "label": "b"
+                      },
+                      {
+                        "value": "c",
+                        "label": "c"
+                      },
+                      {
+                        "value": "d",
+                        "label": "d"
+                      },
+                      {
+                        "value": "e",
+                        "label": "e"
+                      },
+                      {
+                        "value": "f",
+                        "label": "f"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "6. put … in perspective"
+                  },
+                  {
+                    "text": "f. redirecting attention from one issue to another"
+                  },
+                  {
+                    "answerId": "u7-vocab-match-6",
+                    "options": [
+                      {
+                        "value": "a",
+                        "label": "a"
+                      },
+                      {
+                        "value": "b",
+                        "label": "b"
+                      },
+                      {
+                        "value": "c",
+                        "label": "c"
+                      },
+                      {
+                        "value": "d",
+                        "label": "d"
+                      },
+                      {
+                        "value": "e",
+                        "label": "e"
+                      },
+                      {
+                        "value": "f",
+                        "label": "f"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "u7-vocab-rewrite-1",
+          "type": "textarea-final",
+          "exerciseTitle": "Exercise 2",
+          "prompt": "<p><strong>Rewrite each sentence using the phrase in brackets. Make any necessary changes.<br><br>1. The university has been criticised for its high fees, but it has significantly expanded financial support for low-income students.<br>(to its credit)</strong></p>",
+          "required": true,
+          "export": true
+        },
+        {
+          "id": "u7-vocab-rewrite-2",
+          "type": "textarea-final",
+          "exerciseTitle": "",
+          "prompt": "<p><strong>2. Officials publicly state that the new surveillance system is intended only to improve public safety.<br>(the official line is that)</strong></p>",
+          "required": true,
+          "export": true
+        },
+        {
+          "id": "u7-vocab-rewrite-3",
+          "type": "textarea-final",
+          "exerciseTitle": "",
+          "prompt": "<p><strong>3. The discovery of a cheaper production method made large-scale use of the technology possible.<br>(paved the way for)</strong></p>",
+          "required": true,
+          "export": true
+        },
+        {
+          "id": "u7-vocab-rewrite-4",
+          "type": "textarea-final",
+          "exerciseTitle": "",
+          "prompt": "<p><strong>4. Constant media coverage of isolated incidents may unintentionally strengthen public fears about crime.<br>(play into)</strong></p>",
+          "required": true,
+          "export": true
+        },
+        {
+          "id": "u7-vocab-rewrite-5",
+          "type": "textarea-final",
+          "exerciseTitle": "",
+          "prompt": "<p><strong>5. Focusing only on employees’ mistakes can distract attention from weaknesses in the organisation’s management system.<br>(shift the focus away from)</strong></p>",
+          "required": true,
+          "export": true
+        },
+        {
+          "id": "u7-vocab-rewrite-6",
+          "type": "textarea-final",
+          "exerciseTitle": "",
+          "prompt": "<p><strong>6. Although the company lost 200 customers last month, it still serves more than 500,000 people nationwide. This broader information helps us judge the loss more realistically.<br>(put … in perspective)</strong></p>",
+          "required": true,
+          "export": true
+        },
+        {
+          "id": "u7-vocab-thinking",
+          "type": "thinking-only",
+          "exerciseTitle": "",
+          "prompt": "<p><strong>Use this space for vocabulary notes and working ideas.</strong></p>",
+          "export": false,
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "exam",
+      "title": "Exam Preparation",
+      "tabs": [
+        {
+          "id": "words",
+          "title": "Words & Phrases",
+          "tasks": [
+            {
+              "id": "u7-exam-word-1",
+              "type": "textarea-final",
+              "exerciseTitle": "",
+              "prompt": "<p><strong>a. a golden age of tourism</strong></p>",
+              "required": true,
+              "export": true,
+              "thinking": true
+            },
+            {
+              "id": "u7-exam-word-2",
+              "type": "textarea-final",
+              "exerciseTitle": "",
+              "prompt": "<p><strong>b. calling for a total overhaul</strong></p>",
+              "required": true,
+              "export": true,
+              "thinking": true
+            },
+            {
+              "id": "u7-exam-word-3",
+              "type": "textarea-final",
+              "exerciseTitle": "",
+              "prompt": "<p><strong>c. high-tension areas</strong></p>",
+              "required": true,
+              "export": true,
+              "thinking": true
+            },
+            {
+              "id": "u7-exam-word-4",
+              "type": "textarea-final",
+              "exerciseTitle": "",
+              "prompt": "<p><strong>d. have passed a tipping point</strong></p>",
+              "required": true,
+              "export": true,
+              "thinking": true
+            },
+            {
+              "id": "u7-exam-word-5",
+              "type": "textarea-final",
+              "exerciseTitle": "",
+              "prompt": "<p><strong>e. far from the norm</strong></p>",
+              "required": true,
+              "export": true,
+              "thinking": true
+            },
+            {
+              "id": "u7-exam-word-6",
+              "type": "textarea-final",
+              "exerciseTitle": "",
+              "prompt": "<p><strong>f. exercising judgment about</strong></p>",
+              "required": true,
+              "export": true,
+              "thinking": true
+            }
+          ],
+          "intro": "Explain the following words and expressions, as used in the article."
+        },
+        {
+          "id": "comprehension",
+          "title": "Comprehension",
+          "tasks": [
+            {
+              "id": "u7-exam-comp-1",
+              "type": "textarea-final",
+              "exerciseTitle": "",
+              "prompt": "<p><strong>1. How has tourism changed Lavapiés, and why does the writer use the neighbourhood as an example?</strong></p>",
+              "required": true,
+              "export": true,
+              "thinking": true
+            },
+            {
+              "id": "u7-exam-comp-2",
+              "type": "textarea-final",
+              "exerciseTitle": "",
+              "prompt": "<p><strong>2. Is the number of tourists itself the main problem? If not, what underlying problems are identified in the article?</strong></p>",
+              "required": true,
+              "export": true,
+              "thinking": true
+            },
+            {
+              "id": "u7-exam-comp-3",
+              "type": "textarea-final",
+              "exerciseTitle": "",
+              "prompt": "<p><strong>3. What is the author’s opinion on the measures taken by the government and local authorities to address the problem?</strong></p>",
+              "required": true,
+              "export": true,
+              "thinking": true
+            },
+            {
+              "id": "u7-exam-comp-4",
+              "type": "textarea-final",
+              "exerciseTitle": "",
+              "prompt": "<p><strong>4. How can a shortage of affordable tourist accommodation put greater pressure on local housing?</strong></p>",
+              "required": true,
+              "export": true,
+              "thinking": true
+            },
+            {
+              "id": "u7-exam-comp-5",
+              "type": "textarea-final",
+              "exerciseTitle": "",
+              "prompt": "<p><strong>5. What changes does the writer suggest to make tourism more sustainable for both residents and visitors?</strong></p>",
+              "required": true,
+              "export": true,
+              "thinking": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+  </script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => ESP1Shell.boot(window.UNIT_DATA));
+  </script>
+</body>
+</html>
