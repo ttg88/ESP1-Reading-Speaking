@@ -58,7 +58,7 @@
 .notes-editor li::marker{font-size:1em}
 
 .highlight-yellow{background:#fff2b3}.highlight-red{background:#ffd4d8}.highlight-blue{background:#a9cff7}.highlight-green{background:#d9efce}.highlight-purple{background:#e8dafa}
-.highlight-palette{display:flex;gap:5px;align-items:center}
+.highlight-palette{display:grid;gap:6px}.highlight-palette-row{display:grid;grid-template-columns:repeat(5,27px);gap:5px;align-items:center}
 .selection-toolbar .highlight-palette button{width:27px;height:27px;padding:0;border:2px solid transparent;border-radius:50%;background:var(--swatch);box-shadow:inset 0 0 0 1px #0002}
 .selection-toolbar .highlight-palette button[aria-pressed=true]{border-color:#334155;outline:1px solid #fff;outline-offset:-4px}
 .linked-note-mark{background:transparent;border-bottom:2px dotted #65758a}
@@ -72,6 +72,9 @@
 .task-data-table textarea{width:100%;min-height:240px;resize:vertical;padding:10px;border:1px solid #b8c7d8;border-radius:7px;font:inherit;background:#fff}.task-data-table .cell-answer-wrap{align-items:flex-start}.print-table td{white-space:pre-wrap}
 
 .u8-word-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 22px;margin:18px 0 22px;line-height:1.5}.u8-word-list>span{min-width:0;overflow-wrap:anywhere}
+
+.selection-toolbar{align-items:center}
+.highlight-red{background:#ffd4d8}.highlight-orange{background:#ffd3a1}.highlight-yellow{background:#fff2b3}.highlight-green{background:#d9efce}.highlight-purple{background:#e8dafa}.highlight-word-blue{background:#4cc9ff}.highlight-word-orange{background:#ffad33}.highlight-word-yellow{background:#fff000}.highlight-word-green{background:#66f24f}.highlight-word-purple{background:#c58aff}.highlight-word-grey{background:#bfbfbf}
 </style>
 </head>
 <body>
@@ -197,7 +200,7 @@
       </div>
 
       <div id="selectionToolbar" class="selection-toolbar hidden" role="toolbar" aria-label="Reading selection actions">
-        <div class="highlight-palette" role="group" aria-label="Highlight color"><button type="button" data-highlight-color="yellow" title="Highlight: yellow" aria-label="Highlight yellow" style="--swatch:#fff2b3"></button><button type="button" data-highlight-color="red" title="Highlight: red" aria-label="Highlight red" style="--swatch:#ffd4d8"></button><button type="button" data-highlight-color="blue" title="Highlight: blue" aria-label="Highlight blue" style="--swatch:#a9cff7"></button><button type="button" data-highlight-color="green" title="Highlight: green" aria-label="Highlight green" style="--swatch:#d9efce"></button><button type="button" data-highlight-color="purple" title="Highlight: purple" aria-label="Highlight purple" style="--swatch:#e8dafa"></button></div><button id="highlightSelectionBtn" class="highlight-action" type="button" title="Apply selected color">Highlight</button><button id="removeSelectedHighlights" type="button" title="Remove highlight from selected text">Remove</button>
+        <div class="highlight-palette" role="group" aria-label="Highlight colors"><div class="highlight-palette-row" role="group" aria-label="Pastel colors"><button type="button" data-highlight-color="red" title="Pastel pink / red" aria-label="Highlight pastel pink / red" style="--swatch:#ffd4d8"></button><button type="button" data-highlight-color="orange" title="Pastel orange" aria-label="Highlight pastel orange" style="--swatch:#ffd3a1"></button><button type="button" data-highlight-color="yellow" title="Pastel yellow" aria-label="Highlight pastel yellow" style="--swatch:#fff2b3"></button><button type="button" data-highlight-color="green" title="Pastel green" aria-label="Highlight pastel green" style="--swatch:#d9efce"></button><button type="button" data-highlight-color="purple" title="Pastel purple" aria-label="Highlight pastel purple" style="--swatch:#e8dafa"></button></div><div class="highlight-palette-row" role="group" aria-label="Bright colors"><button type="button" data-highlight-color="word-blue" title="Bright blue" aria-label="Highlight bright blue" style="--swatch:#4cc9ff"></button><button type="button" data-highlight-color="word-orange" title="Bright orange" aria-label="Highlight bright orange" style="--swatch:#ffad33"></button><button type="button" data-highlight-color="word-yellow" title="Bright yellow" aria-label="Highlight bright yellow" style="--swatch:#fff000"></button><button type="button" data-highlight-color="word-green" title="Bright green" aria-label="Highlight bright green" style="--swatch:#66f24f"></button><button type="button" data-highlight-color="word-purple" title="Bright purple" aria-label="Highlight bright purple" style="--swatch:#c58aff"></button></div></div><button id="highlightSelectionBtn" class="highlight-action" type="button" title="Apply selected color">Highlight</button><button id="removeSelectedHighlights" type="button" title="Remove highlight from selected text">Remove</button>
         <button id="noteSelectionBtn" class="note-action" type="button">Note</button>
       </div>
       <div id="annotationToolbar" class="selection-toolbar hidden" role="toolbar" aria-label="Reading annotation actions">
@@ -540,9 +543,12 @@
   function initTextSize(){queryAll('[data-text-size]').forEach(b=>b.addEventListener('click',()=>{state.textSize=b.dataset.textSize;applyTextSize();savePreferences()}));applyTextSize()}
   function applyTextSize(){document.body.classList.remove('text-small','text-medium','text-large','text-xlarge');document.body.classList.add(`text-${state.textSize}`);queryAll('[data-text-size]').forEach(b=>b.classList.toggle('active',b.dataset.textSize===state.textSize))}
 
-  const HIGHLIGHT_COLORS=['yellow','red','blue','green','purple'];
+  const HIGHLIGHT_PALETTE=Object.freeze({"red":"#ffd4d8","orange":"#ffd3a1","yellow":"#fff2b3","green":"#d9efce","purple":"#e8dafa","word-blue":"#4cc9ff","word-orange":"#ffad33","word-yellow":"#fff000","word-green":"#66f24f","word-purple":"#c58aff"});
+  const HIGHLIGHT_COLORS=Object.keys(HIGHLIGHT_PALETTE);
+  // Preserve legacy highlight anchors while mapping the retired blue slot to orange.
+  function highlightColor(value){return value==='blue'?'orange':value==='word-grey'?'word-grey':HIGHLIGHT_COLORS.includes(value)?value:'yellow'}
   let selectedHighlightColor='yellow';
-  function updateHighlightPalette(){queryAll('[data-highlight-color]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.highlightColor===selectedHighlightColor)));byId('highlightSelectionBtn').style.background=({yellow:'#fff2b3',red:'#ffd4d8',blue:'#a9cff7',green:'#d9efce',purple:'#e8dafa'})[selectedHighlightColor]}
+  function updateHighlightPalette(){queryAll('[data-highlight-color]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.highlightColor===selectedHighlightColor)));byId('highlightSelectionBtn').style.background=HIGHLIGHT_PALETTE[selectedHighlightColor]}
   // Shared annotation records reserve scope and context for future task anchors.
   function subtractIntervals(records,cuts){
     return records.flatMap(record=>{
@@ -567,7 +573,7 @@
     let result=[];
     for(const h of state.highlights){
       if(h.scope&&h.scope!=='article'){result.push(h);continue}
-      const parts=articleSegments(h.locator).map(locator=>({...h,scope:'article',context:{},color:HIGHLIGHT_COLORS.includes(h.color)?h.color:'yellow',locator}));
+      const parts=articleSegments(h.locator).map(locator=>({...h,scope:'article',context:{},color:highlightColor(h.color),locator}));
       result=[...subtractIntervals(result,parts),...parts];
     }state.highlights=result;
   }
@@ -581,7 +587,7 @@
     });
     byId('removeSelectedHighlights').addEventListener('pointerdown',e=>e.preventDefault());
     byId('removeSelectedHighlights').addEventListener('click',()=>applyPendingAnnotation('erase'));
-    try{const saved=localStorage.getItem('esp1_highlight_color');if(HIGHLIGHT_COLORS.includes(saved))selectedHighlightColor=saved}catch(_){}
+    try{const saved=localStorage.getItem('esp1_highlight_color');if(saved){const color=highlightColor(saved);selectedHighlightColor=HIGHLIGHT_COLORS.includes(color)?color:'yellow'}}catch(_){}
     updateHighlightPalette();
     const article=byId('articlePane');
     article.addEventListener('mouseup',()=>queueSelectionToolbar('mouse'));
@@ -777,7 +783,7 @@
     // Unwrap only annotation spans. Input elements, their values and listeners stay intact.
     queryAll('span[data-highlight-id],span[data-note-id]',pane).reverse().forEach(span=>span.replaceWith(...span.childNodes));
     queryAll('[data-task-block-id]',pane).forEach(block=>block.normalize());
-    for(const h of state.highlights){if(h.scope!=='task')continue;const range=taskLocatorToRange(h.locator);if(range)wrapRangeAcrossElements(range,'highlight-'+(HIGHLIGHT_COLORS.includes(h.color)?h.color:'yellow'),{highlightId:h.id})}
+    for(const h of state.highlights){if(h.scope!=='task')continue;h.color=highlightColor(h.color);const range=taskLocatorToRange(h.locator);if(range)wrapRangeAcrossElements(range,'highlight-'+highlightColor(h.color),{highlightId:h.id})}
     for(const n of state.linkedNotes){if(n.scope!=='task')continue;const range=taskLocatorToRange(n.locator);if(range)wrapRangeAcrossElements(range,'linked-note-mark',{noteId:n.id})}
   }
   function closestArticleBlock(node){
